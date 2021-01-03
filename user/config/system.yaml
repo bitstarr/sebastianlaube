@@ -1,0 +1,23 @@
+home:
+  alias: '/home'
+
+pages:
+  theme: chassis
+  markdown:
+    extra: true
+  process:
+    markdown: true
+    twig: true
+  frontmatter:
+    process_twig: true
+
+session:
+  initialize: false
+  name: grav-site
+
+languages:
+  supported: [ de ]
+  include_default_lang: false
+
+username_regex: '^[a-z0-9_-]{3,16}$'
+pwd_regex: '^[ -~]{8,}$'

@@ -1,0 +1,9 @@
+{% if post.header.post_image is defined %}
+    {% if post.header.post_image matches '~^\/|^https?:\/\/~' %}
+        <img class="article__image" src="{{ post.header.post_image }}" alt="" />
+    {% else %}
+        {% set image = post.media[post.header.post_image] %}
+        {# <img class="article__image" src="{{ image.url }}" alt="" /> #}
+        {{ image.derivatives(640,960,1920).html( null, null, 'article__image' ) }}
+    {% endif %}
+{% endif %}

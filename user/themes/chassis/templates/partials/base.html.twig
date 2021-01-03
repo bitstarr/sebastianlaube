@@ -1,0 +1,133 @@
+{% set body_classes = [
+    body_classes|default( '' ),
+    tpl_body_classes|default(''),
+    header.body_classes,
+]|join( ' ' )|trim %}
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+{% set blog = page.find(site.blog.route|defined(theme_var('blog-page'))) %}
+{% set title = '' %}
+{% if header.title and page.slug != 'home' %}
+    {% set title = header.title|e('html') ~ ' - ' %}
+{% endif %}
+{% if title_overwrite != null %}
+    {% set title = title_overwrite ~ ' - ' %}
+{% endif %}
+{% set title = title ~ site.title|e('html') %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+    <title>{{ title }}</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include 'partials/metadata.html.twig' %}
+
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+{% endblock head %}
+
+{% block stylesheets %}
+    {% do assets.addCss('theme://dist/css/main.css', 100) %}
+    {% if page.header.page_css %}
+        {% do assets.addCss('theme://dist/css/' ~ page.header.page_css ~ '.css', 99) %}
+    {% endif %}
+{% endblock %}
+<link rel="stylesheet"
+    href="{{ url( 'theme://dist/css/fonts.css' )}}"
+    media="print" onload="this.media='all'" />
+
+<noscript>
+    <link rel="stylesheet" href="{{ url( 'theme://dist/css/fonts.css' )}}" />
+</noscript>
+
+{% block javascripts %}
+    {% do assets.addJs('theme://dist/js/main.js', { group:'bottom', priority: 101 }) %}
+    {% if config.system.dev_mode %}
+        {% do assets.addJs('theme://dist/js/dev.js', { group:'bottom' }) %}
+    {% endif %}
+{% endblock %}
+
+{% block assets deferred %}
+    {{ assets.css()|raw }}
+    {{ assets.js()|raw }}
+{% endblock %}
+</head>
+<body id="top" class="{{ body_classes }}">
+
+{% block header %}
+    <header class="header wrapping">
+        <div class="wrapped">
+            <a class="logo" href="{{ home_url }}">
+                {{ svg('logo', 'logo__img icon', { preserveAspectRatio: 'xMaxYMax'}) }}
+                Sebastian Laube
+            </a>
+            <div class="header__main">
+                {% block header_navigation %}
+                    {% include 'partials/navigation.html.twig' %}
+                {% endblock %}
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block hero %}
+    {% if page.header.hero_image %}
+        {% include 'partials/hero.html.twig' %}
+    {% endif %}
+{% endblock %}
+
+{% block breadcrumbs %}
+    {% if config.plugins.breadcrumbs.enabled and page.header.hide_breadcrumbs == false %}
+        {% include 'partials/breadcrumbs.html.twig' %}
+    {% endif %}
+{% endblock %}
+
+{% block body %}
+    <main class="main">
+        {% block content %}{% endblock %}
+    </main>
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer wrapping">
+        <div class="wrapped">
+            {# <a href="#top" class="go-up" title="Zum Angang der Seite springen"><span class="icon">↑</span> nach oben</a> #}
+            {% if site.footer.menu %}
+                <nav class="footer__nav">
+                    <ul class="menu">
+                    {% for item in site.footer.menu %}
+                        <li class="menu__item">
+                            <a href="{{ item.url }}" class="menu__link">{{ item.title }}</a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </nav>
+            {% endif %}
+
+            <aside class="quote" lang="en">{{ chassis.qotm() }}</aside>
+
+            {% if site.footer.social %}
+                <ul class="footer__social">
+                {% for item in site.footer.social %}
+                    <li class="footer__social__item">
+                        <a href="{{ item.url }}" class="footer__social__link icon--{{ item.icon }}">{{ svg(item.icon, 'icon', { 'title': item.title }) }}</a>
+                    </li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </footer>
+{% endblock %}
+
+{% block bottom %}
+    {{ assets.js('bottom')|raw }}
+{% endblock %}
+
+{#}
+{% if config.system.dev_mode %}
+    {% include 'partials/dev.html.twig' %}
+{% endif %}
+{#}
+</body>
+</html>

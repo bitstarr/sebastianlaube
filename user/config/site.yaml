@@ -1,0 +1,50 @@
+title: 'Sebastian Laube'
+default_lang: de
+author:
+  name: 'Sebastian Laube'
+  email: hello@sebastianlaube.de
+metadata:
+  generator: ''
+  description: ''
+summary:
+  enabled: true
+  format: short
+  size: 200
+  delimiter: '==='
+blog:
+  route: /blog
+taxonomies:
+  - category
+  - tag
+
+redirects:
+  '/feed': 'blog.rss'
+#  '/old/(.*)': '/new/$1
+
+footer:
+  menu:
+    - title: Startseite
+      url: /
+    - title: Impressum
+      url: /impressum
+    - title: Datenschutz
+      url: /datenschutz
+  social:
+    - title: Twitter
+      icon: twitter
+      url: https://twitter.com/sebastianlaube
+    - title: Github
+      icon: github
+      url: https://github.com/bitstarr
+    - title: DeviantArt
+      icon: deviantart
+      url: https://www.deviantart.com/bitstarr
+    - title: Pinboard
+      icon: bookmark
+      url: https://pinboard.in/u:bitstarr/
+    - title: Untappd
+      icon: untappd
+      url: https://untappd.com/user/bitstarr
+    - title: RSS Feed
+      icon: rss
+      url: /blog.rss

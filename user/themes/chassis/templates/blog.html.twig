@@ -1,0 +1,40 @@
+{% set tpl_body_classes = 't-blog' %}
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+<div class="wrapping blog">
+    {% for post in page.collection() if post.header.hidden != true %}
+    <article class="article">
+
+        <header class="article__header">
+            <h2 class="article__title">
+                <a href="{{ post.url }}" rel="bookmark">
+                {{ post.title }}
+                </a>
+            </h2>
+            <p class="article__date">
+                <time class="article__datetime dt-published" datetime="{{ post.date|date("c") }}">
+                    {{ post.date|localizeddate( 'long', 'none', site.default_lang ) }}
+                </time>
+            </p>
+        </header>
+        {% include 'partials/blog/image.html.twig' with { post: post } %}
+        <div class="textflow">
+            {{ post.summary }}
+            {% if post.content|length > post.summary|length %}
+            <p>
+                <a href="{{ post.url }}#continue" class="continue">Weiterlesen →</a>
+            </p>
+            {% endif %}
+        </div>
+    </article>
+    {% endfor %}
+</div>
+
+{% if config.plugins.pagination.enabled and page.collection.params.pagination %}
+    <div class="wrapping">
+    {% include 'partials/pagination.html.twig' with {base_url: page.url, pagination: page.collection.params.pagination} %}
+    </div>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,61 @@
+git:
+    problems:
+        url: https://github.com/getgrav/grav-plugin-problems
+        path: user/plugins/problems
+        branch: master
+    error:
+        url: https://github.com/getgrav/grav-plugin-error
+        path: user/plugins/error
+        branch: master
+    markdown-notices:
+        url: https://github.com/getgrav/grav-plugin-markdown-notices
+        path: user/plugins/markdown-notices
+        branch: master
+    form:
+        url: https://github.com/getgrav/grav-plugin-form
+        path: user/plugins/form
+        branch: master
+    email:
+        url: https://github.com/getgrav/grav-plugin-email
+        path: user/plugins/email
+        branch: master
+    login:
+        url: https://github.com/getgrav/grav-plugin-login
+        path: user/plugins/login
+        branch: master
+    devtools:
+        url: https://github.com/getgrav/grav-plugin-devtools
+        path: user/plugins/devtools
+        branch: master
+    svg-extension:
+        url: https://github.com/bitstarr/grav-plugin-svg-extension
+        path: user/plugins/svg-extension
+        branch: master
+    feed:
+        url: https://github.com/getgrav/grav-plugin-feed
+        path: user/plugins/feed
+        branch: master
+    pagination:
+        url: https://github.com/getgrav/grav-plugin-pagination
+        path: user/plugins/pagination
+        branch: master
+    taxonomylist:
+        url: https://github.com/getgrav/grav-plugin-taxonomylist
+        path: user/plugins/taxonomylist
+        branch: master
+    archives:
+        url: https://github.com/getgrav/grav-plugin-archives
+        path: user/plugins/archives
+        branch: master
+    twig-extensions:
+        url: https://github.com/Perlkonig/grav-plugin-twig-extensions
+        path: user/plugins/twig-extensions
+        branch: master
+    markdown-details:
+        url: https://github.com/bitstarr/grav-plugin-markdown-details
+        path: user/plugins/markdown-details
+        branch: master
+    image-captions:
+        url: https://github.com/trilbymedia/grav-plugin-image-captions
+        path: user/plugins/image-captions
+        branch: master

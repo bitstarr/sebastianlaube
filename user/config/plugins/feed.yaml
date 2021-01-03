@@ -1,0 +1,7 @@
+enabled: true
+limit: 10
+title: 'Sebastian Laube'
+description: 'Sebastians Notiz Blog'
+length: 0
+enable_json_feed: false
+show_last_modified: false

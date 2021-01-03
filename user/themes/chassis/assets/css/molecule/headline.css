@@ -1,0 +1,5 @@
+.headline {
+    font-size: 2em;
+    line-height: calc( 1ex / .38 );
+    color: var( --color-primary-darker );
+}

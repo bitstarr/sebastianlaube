@@ -1,0 +1,85 @@
+.footer {
+    --comp-txt: #fff;
+
+    margin-top: var( --gap-jupiter );
+    padding: var( --gap-mars ) 0;
+    color: #fff;
+    background: #444;
+    border-bottom: 3px solid var( --orange );
+    box-shadow: 0 2px 2px rgba( 0, 0, 0, .3 ) inset;
+
+    &__nav {
+        --link-color: currentColor;
+        margin-bottom: 1ex;
+        font-size: .9em;
+        line-height: 1.5;
+
+        .menu__item {
+            display: block;
+        }
+    }
+
+    &__social {
+        display: flex;
+        margin-left: calc( var( --gap-moon ) * -1 );
+        font-size: 1.3em;
+
+        &__link {
+            --link-color: var( --comp-txt );
+            padding: var( --gap-moon );
+        }
+    }
+
+    .quote {
+        --link-color: currentColor;
+        display: block;
+        max-width: 40ch;
+        padding-top: 1ex;
+        font-size: .8em;
+        font-style: italic;
+        line-height: 1.2;
+        color: #aaa;
+        border-top: 1px solid #666;
+    }
+
+    @media( min-width: 28em ) {
+        &__nav {
+            .menu {
+                display: flex;
+            }
+
+            .menu__item + .menu__item {
+                margin-left: var(--gap-moon);
+            }
+        }
+    }
+
+    @media( max-width: 40em ) {
+        &__social {
+            margin-top: var( --gap );
+        }
+    }
+
+    @media( min-width: 40em ) {
+        .wrapped {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 0 var( --gap-moon );
+            grid-template-areas:
+                'nav icons'
+                'random icons';
+        }
+
+        &__nav {
+            grid-area: nav;
+            align-self: end;
+        }
+        &__social {
+            grid-area: icons;
+            justify-self: end;
+            align-self: center;
+        }
+        .quote { grid-area: random; }
+    }
+}

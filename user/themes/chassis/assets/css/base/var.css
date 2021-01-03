@@ -1,0 +1,66 @@
+/* stylelint-disable */
+html{
+    /* define design tokens */
+
+    /* new cross OS sans font stack */
+    --font-stack: 'Verb SL', BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+    --wrapper: 50rem;
+    --wrapper-offset: .5fr;
+    @media( min-width: 40rem ) {
+        --wrapper-offset: 4rem;
+    }
+
+    /* imagine some distances relative to earth */
+    --gap: 1.25rem; /* default distance */
+    --gap-moon: .625rem;
+    --gap-venus: 1.25rem;
+    --gap-mars: 2.5rem;
+    --gap-jupiter: 4rem;
+    --gap-saturn: 8rem;
+
+    --grey: #707070;
+
+    --orange: #d40;
+    --orange-hs: 18, 100%;
+    --orange-l: 43%;
+    --blue: #37a;
+    --blue-hs: 206, 54%;
+    --blue-l: 43%;
+
+    --color-primary: var( --orange );
+    --color-primary-darker: hsl( var( --orange-hs ) calc( var( --orange-l ) - 15% ) );
+    --color-primary-lighter: hsl( var( --orange-hs ) calc( var( --orange-l ) + 20% ) );
+    --color-primary-inside: #222;
+    --color-secondary: var( --blue );
+    --color-secondary-darker: hsl( var( --blue-hs ) calc( var( --blue-l ) - 15% ) );
+    --color-secondary-lighter: hsl( var( --blue-hs ) calc( var( --blue-l ) + 20% ) );
+    --color-secondary-inside: #fff;
+
+    --color-border: #ddd;
+    --color-ui: #f4f4f4;
+
+    --text-default: #444;
+    --text-muted: var( --grey );
+    --link-color: var( --orange );
+    --link-color-hover: var( --blue );
+
+    --body-bg: #eeebe3;
+    --body-fz: 1em;
+    --body-lh: calc( 1ex / .32 );
+
+    --scroll-bg: rgb( 0 0 0 / .2 );
+    --scroll-fg: rgb( 0 0 0 / .5 );
+
+    --breadcrumb-text: var( --grey );
+
+    --input-bg: #fff;
+    --input-txt: var( --text-default );
+    --input-brd: var( --color-border );
+    --input-placeholder: #777;
+    --input-active-brd: var( --color-primary );
+
+    --overlay-bg: #fff;
+    --overlay-txt: var( --blue );
+}
+/* stylelint-endable */

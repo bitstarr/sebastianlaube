@@ -1,0 +1,4 @@
+enabled: true
+dropdown:
+  enabled: true
+blog-page: /blog

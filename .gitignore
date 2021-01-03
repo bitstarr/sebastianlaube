@@ -1,0 +1,9 @@
+/**
+!/.gitignore
+!/.ddev/
+!/.ddev/config.yaml
+!/.ddev/*.sh
+!/user/
+!/user/**
+!/Makefile
+!/readme.md

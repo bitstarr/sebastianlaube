@@ -1,0 +1,16 @@
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+    font-weight: 300;
+    color: inherit;
+
+    &__img {
+        display: block;
+        height: 3em;
+        width: auto;
+        fill: currentColor;
+        margin-right: 1em;
+    }
+}

@@ -1,0 +1,24 @@
+.icon {
+    fill: currentColor;
+    height: 1em;
+    width: 1em;
+    overflow: hidden;
+    vertical-align: -.125em;
+
+    transition: color .2s;
+
+    &--twitter:focus,
+    &--twitter:hover { color: #55acee; }
+    &--deviantart:focus,
+    &--deviantart:hover { color: #00e59b; }
+    &--bookmark:focus,
+    &--bookmark:hover { color: #4283fb; }
+    &--untappd:focus,
+    &--untappd:hover { color: #fc0; }
+    &--bitbucket:focus,
+    &--bitbucket:hover { color: #205081; }
+    &--github:focus,
+    &--github:hover { color: #171515; }
+    &--rss:focus,
+    &--rss:hover { color: var( --orange ); }
+}

@@ -1,0 +1,11 @@
+{% set tpl_body_classes = 't-error' %}
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    <div class="textflow wrapping">
+        {{ page.content }}
+        <p class="errorcode">
+        {{ 'PLUGIN_ERROR.ERROR'|t }} {{ page.header.http_response_code }}
+        </p>
+    </div>
+{% endblock %}
