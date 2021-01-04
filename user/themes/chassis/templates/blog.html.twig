@@ -1,8 +1,23 @@
 {% set tpl_body_classes = 't-blog' %}
 {% extends 'partials/base.html.twig' %}
 
+{% set page_title = page.header.headline|default( page.title ) %}
+{% if uri.param( 'category' ) %}
+    {% set page_title = 'Archiv für <q>' ~ uri.param( 'category' ) ~ '</q>' %}
+{% endif %}
+{% if uri.param( 'tag' ) %}
+    {% set page_title = 'Archiv für <q>' ~ uri.param( 'tag' ) ~ '</q>' %}
+{% endif %}
+
 {% block content %}
 <div class="wrapping blog">
+
+    <div class="wrapping">
+        <h1 class="headline">
+            {{ page_title }}
+        </h1>
+    </div>
+
     {% for post in page.collection() if post.header.hidden != true %}
     <article class="article">
 
@@ -18,7 +33,7 @@
                 </time>
             </p>
         </header>
-        {% include 'partials/blog/image.html.twig' with { post: post } %}
+        {% include 'partials/blog/image.html.twig' with { post: post, link: true } %}
         <div class="textflow">
             {{ post.summary }}
             {% if post.content|length > post.summary|length %}

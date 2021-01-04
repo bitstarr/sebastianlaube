@@ -1,0 +1,12 @@
+{% set taxlist = children_only is defined ? taxonomylist.getChildPagesTags() : taxonomylist.get() %}
+
+{% if taxlist %}
+<ul class="archive__list">
+    {% for tax, count in taxlist[taxonomy]|ksort %}
+    <li class="archive__entry">
+        {% set label_class = uri.param(taxonomy) == tax ? 'label-primary' : 'label-secondary' %}
+        <a class="label label-rounded {{ label_class }}" href="{{ blog.url }}/{{ taxonomy }}{{ config.system.param_sep }}{{ tax }}">{{ tax }} ({{count}})</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}

@@ -1,5 +1,6 @@
 ---
 title: Blog
+headline: Mein Notizblog
 content:
     items: '@self.children'
     limit: 10

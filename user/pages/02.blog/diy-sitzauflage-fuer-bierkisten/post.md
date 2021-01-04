@@ -6,7 +6,9 @@ routes:
   aliases:
     - '/2014/05/diy-sitzauflage-fuer-bierkisten'
 taxonomy:
-    category: DIY
+    category:
+      - DIY
+      - Make Something Cool
     tag:
         - Bier
         - Bierkasten

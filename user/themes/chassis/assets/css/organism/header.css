@@ -1,16 +1,23 @@
 .header {
-    --comp-bg: var( --header-bg );
-    --comp-txt: var( --header-text );
-
     margin-bottom: var( --gap-mars );
-    color: var( --comp-txt );
-    background-color: var( --comp-bg );
 
     .wrapped {
         display: flex;
-        justify-content: space-between;
         align-items: center;
         padding: var( --gap ) 0;
-        height: 100%;
+    }
+
+    @media ( max-width: 44.99em ) {
+        .wrapped {
+            flex-direction: column;
+        }
+        .navigation {
+            margin-top: var( --gap );
+        }
+    }
+    @media ( min-width: 45em ) {
+        .wrapped {
+            justify-content: space-between;
+        }
     }
 }

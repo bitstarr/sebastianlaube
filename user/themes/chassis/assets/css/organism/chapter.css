@@ -1,0 +1,11 @@
+.chapter {
+    @media ( min-width: 50em ) {
+        display: grid;
+        grid-template-columns: clamp( 11em, 27vw, 15em ) 1fr;
+        grid-gap: var( --gap-mars );
+
+        &__title {
+            text-align: right;
+        }
+    }
+}

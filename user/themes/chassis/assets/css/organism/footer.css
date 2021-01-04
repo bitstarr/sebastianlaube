@@ -2,11 +2,15 @@
     --comp-txt: #fff;
 
     margin-top: var( --gap-jupiter );
-    padding: var( --gap-mars ) 0;
     color: #fff;
     background: #444;
     border-bottom: 3px solid var( --orange );
     box-shadow: 0 2px 2px rgba( 0, 0, 0, .3 ) inset;
+
+    .wrapped {
+        position: relative;
+        padding: var( --gap-mars ) 0;
+    }
 
     &__nav {
         --link-color: currentColor;
@@ -39,7 +43,40 @@
         font-style: italic;
         line-height: 1.2;
         color: #aaa;
-        border-top: 1px solid #666;
+        border-top: 1px solid hsl( 0 0% 100% / .2 );
+    }
+
+    .elevator {
+        position: absolute;
+        top: 0;
+        right: 0;
+        position: absolute;
+
+        padding: 1ex 2ex 1ex 3ex;
+        font-size: .8em;
+        line-height: 1;
+        background: var( --body-bg );
+        border-radius: 0 0 5px 5px;
+        box-shadow: 0 2px 2px  rgb( 0 0 0 / .3 );
+        background-clip: padding-box;
+        transition: box-shadow .2s ease-out;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            transform: translateY( -50% ) rotate( 45deg );
+            transform-origin: -.4em 0;
+            width: .6em;
+            height: .6em;
+            border-top: .2em solid;
+            border-left: .2em solid;
+        }
+
+        &:focus,
+        &:hover {
+            color: var( --text-default );
+            box-shadow: 0 5px 5px  rgb( 0 0 0 / .3 );
+        }
     }
 
     @media( min-width: 28em ) {
@@ -69,6 +106,7 @@
             grid-template-areas:
                 'nav icons'
                 'random icons';
+            padding-top: var( --gap-jupiter );
         }
 
         &__nav {
@@ -79,6 +117,8 @@
             grid-area: icons;
             justify-self: end;
             align-self: center;
+            margin-left: 0;
+            margin-right: calc( var( --gap-moon ) * -1 );
         }
         .quote { grid-area: random; }
     }

@@ -1,0 +1,4 @@
+---
+title: Skills
+---
+Schon beim Konzept und im Designprozess, lege ich viel Wert auf <strong>Usability</strong> und <strong>Performance</strong>. Ebenso spielen <strong>Typografie</strong> und <strong>UI-Design</strong> eine wichtige Rolle. Mein Handwerkszeug ist natürlich sauber geschriebenes und semantisches <strong>(X)HTML</strong> nach aktuellen Webstandards, das mit <strong>CSS</strong> Leben eingehaucht bekommt. Das ganze erfolgt natürlich als <strong lang="en">Responsive Webdesign</strong> mit <strong lang="en">Mobile First</strong> Umsetzung. Für Dynamik sorgen dann <strong>JavaScript</strong> und <strong>PHP</strong>. Bei meinen Projekten setzte ich in der Vergangenheit oft <strong>WordPress</strong> ein aber inzwischen verwende ich lieber <strong><a href="https://getgrav.org">grav</a></strong>. Beide Systeme schätze ich für ihre Anpassbarkeit. Darüber hinaus fühle ich mich auch in Satz und Layout von <strong>Druckprodukten</strong> zu hause.

@@ -5,20 +5,20 @@
 ]|join( ' ' )|trim %}
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 {% set blog = page.find(site.blog.route|defined(theme_var('blog-page'))) %}
-{% set title = '' %}
+{% set doc_title = '' %}
 {% if header.title and page.slug != 'home' %}
-    {% set title = header.title|e('html') ~ ' - ' %}
+    {% set doc_title = header.title|e('html') ~ ' - ' %}
 {% endif %}
 {% if title_overwrite != null %}
-    {% set title = title_overwrite ~ ' - ' %}
+    {% set doc_title = title_overwrite ~ ' - ' %}
 {% endif %}
-{% set title = title ~ site.title|e('html') %}
+{% set doc_title = doc_title ~ site.title|e('html') %}
 <!DOCTYPE html>
 <html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
 <head>
 {% block head %}
     <meta charset="utf-8" />
-    <title>{{ title }}</title>
+    <title>{{ doc_title }}</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,14 +59,12 @@
     <header class="header wrapping">
         <div class="wrapped">
             <a class="logo" href="{{ home_url }}">
-                {{ svg('logo', 'logo__img icon', { preserveAspectRatio: 'xMaxYMax'}) }}
+                {{ svg('logo', 'logo__img icon', { preserveAspectRatio: 'xMidYMid'}) }}
                 Sebastian Laube
             </a>
-            <div class="header__main">
-                {% block header_navigation %}
-                    {% include 'partials/navigation.html.twig' %}
-                {% endblock %}
-            </div>
+            {% block header_navigation %}
+                {% include 'partials/navigation.html.twig' %}
+            {% endblock %}
         </div>
     </header>
 {% endblock %}
@@ -92,7 +90,7 @@
 {% block footer %}
     <footer class="footer wrapping">
         <div class="wrapped">
-            {# <a href="#top" class="go-up" title="Zum Angang der Seite springen"><span class="icon">↑</span> nach oben</a> #}
+            <a href="#top" class="elevator" title="Zum Angang der Seite springen">nach oben</a>
             {% if site.footer.menu %}
                 <nav class="footer__nav">
                     <ul class="menu">
