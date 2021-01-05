@@ -1,0 +1,42 @@
+{% set tpl_body_classes = 't-portfolio' %}
+{% set page_title = page.header.headline|default( page.title ) %}
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+<div class="wrapping blog">
+
+    <div class="wrapping">
+        <h1 class="headline">
+            {{ page_title }}
+        </h1>
+    </div>
+
+    <div class="reference__list">
+    {% for post in page.collection() if post.header.hidden != true %}
+        {% if post.header.url matches '~^\/|^https?:\/\/~' %}
+            {% set post_url = post.header.url %}
+        {% else %}
+            {% set post_url = post.media[post.header.url].url %}
+        {% endif %}
+        <article class="reference">
+            <header class="reference__header">
+                <h2 class="reference__title">
+                    <a href="{{ post_url }}" rel="bookmark">
+                        {{ post.title }}
+                    </a>
+                </h2>
+                <p class="reference__date">
+                    {{ post.date|localizeddate( 'none', 'none', site.default_lang, null, 'MM/yyyy' ) }}
+                </p>
+            </header>
+            {% set image = post.media[post.header.image] %}
+            {{ image.html( null, null, 'reference__image' ) }}
+            <div class="textflow">
+                {{ post.content }}
+            </div>
+        </article>
+    {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

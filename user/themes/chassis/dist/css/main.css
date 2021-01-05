@@ -1247,6 +1247,18 @@ a.button:hover,
             display: none;
         }
     }
+.archive + .archive {
+        margin-top: var( --gap-jupiter );
+    }
+.archive__title {
+        margin-bottom: var( --gap );
+        font-size: 1.6em;
+        font-weight: 700;
+    }
+.archive__list {
+        -moz-columns: 12em;
+             columns: 12em;
+    }
 .modular + .modular {
         margin-top: var( --gap-mars );
     }
@@ -1267,6 +1279,18 @@ a.button:hover,
         .chapter__title {
             text-align: right;
         }
+    }
+.reference__list {
+        --size: 18em;
+        --grid-gap: var( --gap );
+        display: grid;
+        grid-gap: var( --grid-gap );
+        grid-template-columns: repeat( auto-fill, minmax( var( --size ), 1fr ) );
+    }
+.reference__image {
+        display: block;
+        max-width: 100%;
+        height: auto;
     }
 /* layouts define the relations between modules on a specific page type */
 /*

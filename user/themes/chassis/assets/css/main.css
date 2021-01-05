@@ -29,8 +29,10 @@
 @import 'organism/article.css';
 @import 'organism/postnav.css';
 @import 'organism/pager.css';
+@import 'organism/archive.css';
 @import 'organism/modular.css';
 @import 'organism/chapter.css';
+@import 'organism/reference.css';
 
 /* layouts define the relations between modules on a specific page type */
 @import 'template/global.css';

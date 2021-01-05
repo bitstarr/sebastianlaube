@@ -9,8 +9,8 @@ process:
   twig: true
 ---
 
-## Der Seite hat wohl jemand den Stecker gezogen.
+## Hoppla.
 
-* Sollten Sie die Adresse von Hand eingegeben haben, überprüfen Sie die Eingabe.
-* Hat Sie ein defekter Link hier her geführt? [Lassen Sie es uns wissen](/kontakt)!
-* Vielleicht ist die Seite, die Sie suchen umgezogen. Sie können versuchen, sie über unsere [Homepage](/) zu finden.
+* Solltest du die Adresse von Hand eingegeben haben, überprüfe die Eingabe.
+* Hat dich ein defekter Link hier her geführt? Lass' es mich wissen!
+* Vielleicht ist die Seite, die du suchst umgezogen. versuche, sie über die [Startseite](/) zu finden.

@@ -1,0 +1,16 @@
+.reference {
+
+    &__list {
+        --size: 18em;
+        --grid-gap: var( --gap );
+        display: grid;
+        grid-gap: var( --grid-gap );
+        grid-template-columns: repeat( auto-fill, minmax( var( --size ), 1fr ) );
+    }
+
+    &__image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+}

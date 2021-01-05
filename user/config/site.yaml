@@ -27,8 +27,8 @@ footer:
       url: /
     - title: Impressum
       url: /impressum
-    - title: Datenschutz
-      url: /datenschutz
+    - title: Archiv
+      url: /blog/archiv
   social:
     - title: Twitter
       icon: twitter

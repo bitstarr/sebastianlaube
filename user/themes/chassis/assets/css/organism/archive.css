@@ -1,0 +1,15 @@
+.archive {
+    & + & {
+        margin-top: var( --gap-jupiter );
+    }
+
+    &__title {
+        margin-bottom: var( --gap );
+        font-size: 1.6em;
+        font-weight: 700;
+    }
+
+    &__list {
+        columns: 12em;
+    }
+}
