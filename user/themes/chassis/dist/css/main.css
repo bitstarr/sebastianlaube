@@ -1280,17 +1280,58 @@ a.button:hover,
             text-align: right;
         }
     }
+.reference {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    box-shadow:
+        0 2.3px 3.3px rgb( 0 0 0 / .028 ),
+        0 7.8px 11.2px rgb( 0 0 0 / .042 ),
+        0 35px 50px rgb( 0 0 0 / .07)
+    ;
+}
 .reference__list {
-        --size: 18em;
-        --grid-gap: var( --gap );
+        --size: 28em;
+        --grid-gap: var( --gap-mars );
         display: grid;
         grid-gap: var( --grid-gap );
         grid-template-columns: repeat( auto-fill, minmax( var( --size ), 1fr ) );
+        width: 90vw;
+        max-width: 80rem;
+        margin: 0 auto var( --gap-jupiter );
     }
+@media ( max-width: 30rem ) {
+
+    .reference__list {
+            --size: 90vw
+    }
+        }
 .reference__image {
         display: block;
         max-width: 100%;
         height: auto;
+    }
+.reference__image__link {
+            display: block;
+        }
+.reference__info {
+        padding: var( --gap );
+        padding-bottom: 0;
+    }
+.reference__title {
+        margin-bottom: var( --gap );
+        font-size: 1.2em;
+        font-weight: 700;
+    }
+.reference__meta {
+        display: flex;
+        margin-top: auto;
+        padding: var( --gap );
+        font-size: .9em;
+        line-height: 1.3;
+    }
+.reference__date {
+        padding-right: 1em;
     }
 /* layouts define the relations between modules on a specific page type */
 /*

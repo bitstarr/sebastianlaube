@@ -3,7 +3,7 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-<div class="wrapping blog">
+<div class="blog">
 
     <div class="wrapping">
         <h1 class="headline">
@@ -19,20 +19,26 @@
             {% set post_url = post.media[post.header.url].url %}
         {% endif %}
         <article class="reference">
-            <header class="reference__header">
+            <a class="reference__image__link" href="{{ post_url }}" target="_blank" rel="noopener">
+                {{ post.media[post.header.image].html( null, null, 'reference__image' ) }}
+            </a>
+            <div class="reference__info">
                 <h2 class="reference__title">
-                    <a href="{{ post_url }}" rel="bookmark">
+                    <a href="{{ post_url }}" target="_blank" rel="noopener">
                         {{ post.title }}
                     </a>
                 </h2>
+                <div class="textflow">
+                    {{ post.content }}
+                </div>
+            </div>
+            <div class="reference__meta">
                 <p class="reference__date">
                     {{ post.date|localizeddate( 'none', 'none', site.default_lang, null, 'MM/yyyy' ) }}
                 </p>
-            </header>
-            {% set image = post.media[post.header.image] %}
-            {{ image.html( null, null, 'reference__image' ) }}
-            <div class="textflow">
-                {{ post.content }}
+                <p class="reference__tags">
+                    {{ post.taxonomy.service|join( ', ' )|trim}}
+                </p>
             </div>
         </article>
     {% endfor %}
