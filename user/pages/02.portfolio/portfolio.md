@@ -7,6 +7,8 @@ content:
     order:
         by: date
         dir: desc
+    filter:
+        published: true
 ---
 
 @todo:

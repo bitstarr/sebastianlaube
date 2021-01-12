@@ -12,15 +12,15 @@
     </div>
 
     <div class="reference__list">
-    {% for post in page.collection() if post.header.hidden != true %}
+    {% for post in page.collection() %}
         {% if post.header.url matches '~^\/|^https?:\/\/~' %}
             {% set post_url = post.header.url %}
         {% else %}
             {% set post_url = post.media[post.header.url].url %}
         {% endif %}
-        <article class="reference">
+        <article class="reference" id="{{ post.title|hyphenize }}">
             <a class="reference__image__link" href="{{ post_url }}" target="_blank" rel="noopener">
-                {{ post.media[post.header.image].html( null, null, 'reference__image' ) }}
+                {{ post.media[post.header.image].html( null, null, 'reference__image' )|raw }}
             </a>
             <div class="reference__info">
                 <h2 class="reference__title">

@@ -1,0 +1,12 @@
+<article class="home__news entry">
+    <h3 class="title">
+        <a class="link" href="{{ post.url }}" rel="bookmark">
+            {{ post.title }}
+        </a>
+    </h3>
+    <p class="date">
+        <time class="datetime dt-published" datetime="{{ post.date|date("c") }}">
+            {{ post.date|localizeddate( 'long', 'none', site.default_lang ) }}
+        </time>
+    </p>
+</article>

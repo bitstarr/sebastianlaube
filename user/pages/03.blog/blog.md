@@ -7,6 +7,8 @@ content:
     order:
         by: date
         dir: desc
+    filter:
+        published: true
     pagination: true
     url_taxonomy_filters: true
 feed:

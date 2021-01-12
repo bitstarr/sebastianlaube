@@ -1,4 +1,5 @@
 ---
 title: Archiv
-hidden: true
+visible: false
+published: false
 ---

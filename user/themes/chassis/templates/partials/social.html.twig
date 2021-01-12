@@ -1,0 +1,9 @@
+{% if site.footer.social %}
+    <ul class="social">
+    {% for item in site.footer.social %}
+        <li class="social__item">
+            <a href="{{ item.url }}" class="social__link icon--{{ item.icon }}">{{ svg(item.icon, 'icon', { 'title': item.title }) }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endif %}

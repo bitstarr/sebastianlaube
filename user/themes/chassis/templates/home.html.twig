@@ -1,0 +1,64 @@
+{% set tpl_body_classes = 't-home' %}
+{% set page_title = page.header.headline|default( page.title ) %}
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+<div class="home wrapping">
+    <h1 class="headline">
+        {{ page_title }}
+    </h1>
+
+    <div class="home__intro">
+        <div class="about">
+            {{ page.content }}
+        </div>
+        <div class="connect">
+            {% include 'partials/social.html.twig' %}
+            <a href="/about" class="more">Mehr über mich</a>
+        </div>
+    </div>
+
+    <div class="home__streams">
+        <section class="home__stream references">
+            <h2 class="home__stream__name">
+                Das hab ich gemacht
+            </h2>
+            {% set opt = {
+                items: { '@page.children': '/portfolio' },
+                'limit': 5,
+                'filter': {
+                    'published': true,
+                },
+                'order': {'by': 'date', 'dir': 'desc'},
+            } %}
+            {% set posts = page.collection( opt ) %}
+            {% for post in posts if post.header.hidden != true %}
+                {% include 'partials/home-reference.html.twig' with { post: post } %}
+            {% endfor %}
+            <p class="callout">
+                <a href="/portfolio" class="more">Mehr Projekte</a>
+            </p>
+        </section>
+        <section class="home__stream news">
+            <h2 class="home__stream__name">
+                Das hab' ich zu erzählen
+            </h2>
+            {% set opt = {
+                items: { '@page.children': '/blog' },
+                'limit': 5,
+                'filter': {
+                    'published': true,
+                },
+                'order': {'by': 'date', 'dir': 'desc'},
+            } %}
+            {% set posts = page.collection( opt ) %}
+            {% for post in posts if post.header.hidden != true %}
+                {% include 'partials/home-news.html.twig' with { post: post } %}
+            {% endfor %}
+            <p class="callout">
+                <a href="/blog" class="more">Zum Blog</a>
+            </p>
+        </section>
+    </div>
+</div>
+{% endblock %}

@@ -105,15 +105,7 @@
 
             <aside class="quote" lang="en">{{ chassis.qotm() }}</aside>
 
-            {% if site.footer.social %}
-                <ul class="footer__social">
-                {% for item in site.footer.social %}
-                    <li class="footer__social__item">
-                        <a href="{{ item.url }}" class="footer__social__link icon--{{ item.icon }}">{{ svg(item.icon, 'icon', { 'title': item.title }) }}</a>
-                    </li>
-                {% endfor %}
-                </ul>
-            {% endif %}
+            {% include 'partials/social.html.twig' %}
         </div>
     </footer>
 {% endblock %}
@@ -121,11 +113,5 @@
 {% block bottom %}
     {{ assets.js('bottom')|raw }}
 {% endblock %}
-
-{#}
-{% if config.system.dev_mode %}
-    {% include 'partials/dev.html.twig' %}
-{% endif %}
-{#}
 </body>
 </html>

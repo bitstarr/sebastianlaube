@@ -8,7 +8,7 @@ taxonomy:
         - Web Design
         - Entwicklung
         - WordPress
-hidden: true
+published: false
 disconnected: true
 ---
 Freya Klinger ist Mitglied des sächsischen Landtags und setzt sich für Antifaschismus und bessere Bildung ein. Redesign als Wordpress Theme. Als Vorlage diente das Flyerdesign von Joan M. Trinks.

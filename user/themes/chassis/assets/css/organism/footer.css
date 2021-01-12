@@ -23,15 +23,8 @@
         }
     }
 
-    &__social {
-        display: flex;
+    .social {
         margin-left: calc( var( --gap-moon ) * -1 );
-        font-size: 1.3em;
-
-        &__link {
-            --link-color: var( --comp-txt );
-            padding: var( --gap-moon );
-        }
     }
 
     .quote {
@@ -68,8 +61,8 @@
             transform-origin: -.4em 0;
             width: .6em;
             height: .6em;
-            border-top: .2em solid;
-            border-left: .2em solid;
+            border-top: .15em solid;
+            border-left: .15em solid;
         }
 
         &:focus,
@@ -92,7 +85,7 @@
     }
 
     @media( max-width: 40em ) {
-        &__social {
+        .social {
             margin-top: var( --gap );
         }
     }
@@ -113,7 +106,7 @@
             grid-area: nav;
             align-self: end;
         }
-        &__social {
+        .social {
             grid-area: icons;
             justify-self: end;
             align-self: center;

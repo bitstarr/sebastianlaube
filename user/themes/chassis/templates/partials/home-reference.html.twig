@@ -1,0 +1,8 @@
+<article class="home__reference entry">
+    <a class="link" href="/portfolio#{{ post.title|hyphenize }}">
+        {{ post.media[post.header.image].cropResize(100, 56).html( null, null, 'image' )|raw }}
+        <h3 class="title">
+            {{ post.title }}
+        </h3>
+    </a>
+</article>

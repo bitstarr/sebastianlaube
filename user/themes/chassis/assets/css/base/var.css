@@ -31,7 +31,7 @@ html{
     --color-primary: var( --orange );
     --color-primary-darker: hsl( var( --orange-hs ) calc( var( --orange-l ) - 15% ) );
     --color-primary-lighter: hsl( var( --orange-hs ) calc( var( --orange-l ) + 20% ) );
-    --color-primary-inside: #222;
+    --color-primary-inside: #fff;
     --color-secondary: var( --blue );
     --color-secondary-darker: hsl( var( --blue-hs ) calc( var( --blue-l ) - 15% ) );
     --color-secondary-lighter: hsl( var( --blue-hs ) calc( var( --blue-l ) + 20% ) );

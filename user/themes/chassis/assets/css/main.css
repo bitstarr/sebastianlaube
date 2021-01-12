@@ -19,7 +19,7 @@
 @import 'organism/navigation.css';
 @import 'organism/footer.css';
 @import 'organism/breadcrumbs.css';
-@import 'organism/footer.css';
+@import 'organism/social.css';
 @import 'organism/form.css';
 @import 'organism/textflow.css';
 @import 'organism/notice.css';
@@ -38,5 +38,6 @@
 @import 'template/global.css';
 @import 'template/page.css';
 @import 'template/error.css';
+@import 'template/home.css';
 
 /* vendor (third-party) sprecific */

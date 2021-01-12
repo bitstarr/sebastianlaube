@@ -1,4 +1,121 @@
 /* front page specific stuff */
-.home {
+.t-home {
+    .headline {
+        margin-top: var( --gap-mars );
+        font-weight: 700;
+    }
+}
 
+.home {
+    .more {
+        position: relative;
+        display: inline-block;
+        padding: .6em 1.4em .6em .6em;
+        line-height: 1;
+        text-transform: uppercase;
+        border: .15em solid;
+        border-radius: .2em;
+        transition: all .2s;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: .6em;
+            transform: translateY( -50% ) rotate( 225deg );
+            width: .6em;
+            height: .6em;
+            border-bottom: .15em solid;
+            border-left: .15em solid;
+            transition: opacity .2s;
+        }
+
+        &:focus,
+        &:hover {
+            color: var( --color-primary-inside );
+            background-color: var( --color-primary );
+            border-color: var( --color-primary );
+        }
+    }
+
+    &__intro  {
+        margin-top: var( --gap-mars );
+        margin-bottom: var( --gap-jupiter );
+
+        @media (min-width: 45rem ) {
+            display: grid;
+            grid-gap: var( --gap-mars );
+            grid-template-columns: 3fr 2fr;
+        }
+
+        @media (max-width: 44.99rem ) {
+            .about {
+                margin-bottom: var( --gap );
+            }
+        }
+        .social {
+            margin-left: calc( var( --gap-moon ) * -1 );
+            margin-bottom: var( --gap );
+        }
+    }
+
+    &__streams {
+        @media (min-width: 45rem ) {
+            display: grid;
+            grid-gap: var( --gap-mars );
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    &__stream {
+        @media (max-width: 44.99rem ) {
+            & + & {
+                margin-top: var( --gap-mars );
+            }
+        }
+        &__name {
+            margin-bottom: var( --gap );
+            font-size: 1.5em;
+            line-height: 1.1;
+            padding-bottom: .5em;
+            border-bottom: .1em solid var( --color-primary );
+        }
+        .callout {
+            margin-top: var( --gap-mars );
+        }
+
+        .entry + .entry {
+            margin-top: var( --gap );
+        }
+
+        .link {
+            --link-color: currentColor;
+
+            &:focus,
+            &:hover {
+                --link-color: var( --color-primary );
+            }
+        }
+    }
+
+    &__news {
+        .title {
+            font-weight: 700;
+        }
+        .date {
+            font-size: .8em;
+            line-height: 1;
+        }
+    }
+
+    &__reference {
+        .link {
+            display: flex;
+            align-items: center;
+        }
+        .image {
+            display: block;
+            margin-right: var( --gap );
+        }
+    }
 }

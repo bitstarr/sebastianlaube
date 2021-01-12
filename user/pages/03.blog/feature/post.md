@@ -7,7 +7,7 @@ routes:
 taxonomy:
   category:
     - Webdesign
-hidden: true
+published: false
 ---
 Offenbar finden andere Leute das Redesign meiner Seite auch ganz schick, denn ich hab ein Paar Features in CSS Gallerien und Blogs bekommen. Juhu!<!--more-->
 

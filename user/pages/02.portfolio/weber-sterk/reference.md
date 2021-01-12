@@ -8,7 +8,7 @@ taxonomy:
         - Web Design
         - Entwicklung
         - Web-Visitenkarte\
-hidden: true
+published: false
 disconnected: true
 ---
 Auch kleine Betriebe sollten im Internet vertreten sein. Für den Fachbetrieb Weber und Sterk habe ich eine simple Web-Visitenkarte mit allen wichtigen Fakten produziert.

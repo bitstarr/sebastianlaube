@@ -50,8 +50,8 @@
             top: 50%;
             width: .6em;
             height: .6em;
-            border-bottom: .2em solid;
-            border-left: .2em solid;
+            border-bottom: .15em solid;
+            border-left: .15em solid;
             transition: opacity .2s;
         }
     }

@@ -1,0 +1,9 @@
+.social {
+    display: flex;
+    font-size: 1.3em;
+
+    &__link {
+        --link-color: currentColor;
+        padding: var( --gap-moon );
+    }
+}

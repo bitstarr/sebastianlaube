@@ -18,9 +18,8 @@
         </h1>
     </div>
 
-    {% for post in page.collection() if post.header.hidden != true %}
+    {% for post in page.collection() %}
     <article class="article">
-
         <header class="article__header">
             <h2 class="article__title">
                 <a href="{{ post.url }}" rel="bookmark">
