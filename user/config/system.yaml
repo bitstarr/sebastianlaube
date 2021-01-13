@@ -2,7 +2,7 @@ home:
   alias: '/home'
 
 pages:
-  theme: chassis
+  theme: laube
   markdown:
     extra: true
   process:

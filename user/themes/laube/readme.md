@@ -1,6 +1,6 @@
-# Grav Theme Boilerplate "Chassis"
+# Grav Theme Laube
 
-This is a WIP starting point for custom themes for grav CMS.
+This build upon my [grav theme boilerplate chassis](https://github.com/bitstarr/grav-theme-chassis).
 
 We are using some gulp magic to help with boring and repetitive tasks. Please learn first about the file structure and the way assets are organized and processed in this project.
 
@@ -42,8 +42,8 @@ We are using some gulp magic to help with boring and repetitive tasks. Please le
 │   ├── /partials               template parts
 │   └── *.html.twig             page templates
 ├── blueprints.yaml         theme definition
-├── chassis.php             theme functions
-├── chassis.yaml            theme config file
+├── laube.php             theme functions
+├── laube.yaml            theme config file
 ├── gulpfile.js
 └── package.json
 ````

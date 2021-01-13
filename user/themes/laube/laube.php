@@ -3,9 +3,9 @@ namespace Grav\Theme;
 
 use Grav\Common\Grav;
 use Grav\Common\Theme;
-use Grav\Theme\Chassis\Utils;
+use Grav\Theme\Laube\Utils;
 
-class Chassis extends Theme
+class Laube extends Theme
 {
     public static function getSubscribedEvents()
     {
@@ -63,6 +63,6 @@ class Chassis extends Theme
     public function onTwigSiteVariables()
     {
         require_once __DIR__ . '/classes/Utils.php';
-        $this->grav['twig']->twig_vars['chassis'] = new Utils();
+        $this->grav['twig']->twig_vars['laube'] = new Utils();
     }
 }

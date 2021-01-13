@@ -1,5 +1,5 @@
 <?php
-namespace Grav\Theme\Chassis;
+namespace Grav\Theme\Laube;
 
 use Grav\Common\Grav;
 use Grav\Common\Filesystem\Folder;
@@ -10,7 +10,7 @@ class Utils
     {
         list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
         return [$r, $g, $b];
-        // {{ chassis.hexToRGB('#ffffff') }
+        // {{ laube.hexToRGB('#ffffff') }
     }
 
     function preloadFonts()
