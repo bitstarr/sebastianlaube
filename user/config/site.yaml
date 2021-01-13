@@ -23,12 +23,12 @@ redirects:
 
 footer:
   menu:
-    - title: Startseite
-      url: /
-    - title: Impressum
-      url: /impressum
+    - title: Blog
+      url: /blog
     - title: Archiv
-      url: /blog/archiv
+      url: /archiv
+    - title: About
+      url: /about
   social:
     - title: Twitter
       icon: twitter

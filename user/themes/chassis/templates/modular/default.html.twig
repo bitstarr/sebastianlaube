@@ -8,7 +8,9 @@
 {% endif %}
 
 <section class="{{ modular_classes|join( ' ' )|trim }}">
+    {% if page.header.no_title is not defined %}
     <h2 class="modular__title">{{ page.title }}</h2>
+    {% endif %}
     <div class="textflow">
         {{ page.content }}
     </div>

@@ -889,7 +889,7 @@ a.button:hover,
 .textflow tr + tr td {
         border-top: 1px solid var( --color-border );
     }
-.textflow svg,
+.textflow svg:not(.icon),
     .textflow img {
         max-width: 100%;
         height: auto;
@@ -899,6 +899,24 @@ a.button:hover,
         display: block;
         max-width: 100%;
         height: auto;
+    }
+@media only screen and (max-width: 29.99em) {
+        .textflow .left,
+        .textflow .right {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+@media only screen and (min-width: 30em) {
+        .textflow .right {
+            float: right;
+            margin-left: var( --gap );
+        }
+        .textflow .left {
+            float: left;
+            margin-right: var( --gap );
+        }
     }
 .textflow a {
         text-decoration: underline;
