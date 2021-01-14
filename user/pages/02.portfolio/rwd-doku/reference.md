@@ -2,7 +2,7 @@
 title: Resposnive Webdesign Doku
 date: 30-04-2014
 url: http://rwd.sebastianlaube.de/
-image: responsive.jpg
+image: responsive-doku.jpg
 taxonomy:
     service:
         - Design

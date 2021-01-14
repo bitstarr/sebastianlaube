@@ -2,7 +2,7 @@
 title: Sekundenmilliardär
 date: 01-10-2011
 url: http://10hoch9.de/
-image: gigasek.jpg
+image: gigasekunde.jpg
 taxonomy:
     service:
         - Web Design

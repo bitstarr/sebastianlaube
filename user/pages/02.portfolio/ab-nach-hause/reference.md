@@ -2,7 +2,7 @@
 title: Ab nach Hause
 date: 01-08-2011
 url: http://ab-nach-hause.de/
-image: nachhause.jpg
+image: nach-hause.jpg
 taxonomy:
     service:
         - Web Design

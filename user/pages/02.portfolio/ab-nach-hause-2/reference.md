@@ -2,7 +2,7 @@
 title: Ab nach Hause 2.0
 date: 10-10-2013
 url: http://ab-nach-hause.de/
-image: nachhause2.jpg
+image: nach-hause-2.jpg
 taxonomy:
     service:
         - Web Design

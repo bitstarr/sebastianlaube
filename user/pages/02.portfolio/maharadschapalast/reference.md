@@ -2,7 +2,7 @@
 title: Maharadscha Palast
 date: 01-05-2014
 url: http://maharadschapalast.de/
-image: maharadscha.jpg
+image: maharadschapalast.jpg
 taxonomy:
     service:
         - Design
