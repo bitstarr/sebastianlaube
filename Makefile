@@ -43,16 +43,16 @@ plugin:
 
 .PHONY: lint
 lint:
-	npm run lint --prefix user/themes/chassis/
+	npm run lint --prefix user/themes/laube/
 
 .PHONY: watch
 watch:
-	npm run watch --prefix user/themes/chassis/
+	npm run watch --prefix user/themes/laube/
 
 .PHONY: build
 build:
-	npm run build --prefix user/themes/chassis/
+	npm run build --prefix user/themes/laube/
 
 .PHONY: cssmin
 cssmin:
-	npm run cssmin --prefix user/themes/chassis/
+	npm run cssmin --prefix user/themes/laube/

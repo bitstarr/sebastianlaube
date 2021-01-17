@@ -11,5 +11,18 @@
 
     &__list {
         columns: 12em;
+
+        a {
+            text-decoration: underline;
+
+            &:focus,
+            &:hover {
+                --link-color: var( --link-color-hover );
+            }
+            &:focus {
+                outline: 2px solid;
+                outline-offset: 3px;
+            }
+        }
     }
 }

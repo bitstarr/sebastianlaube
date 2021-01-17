@@ -22,10 +22,10 @@ html{
     --grey: #707070;
 
     --orange: #d40;
-    --orange-hs: 18, 100%;
+    --orange-hs: 18 100%;
     --orange-l: 43%;
     --blue: #37a;
-    --blue-hs: 206, 54%;
+    --blue-hs: 206 54%;
     --blue-l: 43%;
 
     --color-primary: var( --orange );

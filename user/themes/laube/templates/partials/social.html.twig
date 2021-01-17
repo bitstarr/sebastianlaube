@@ -2,7 +2,10 @@
     <ul class="social">
     {% for item in site.footer.social %}
         <li class="social__item">
-            <a href="{{ item.url }}" class="social__link icon--{{ item.icon }}">{{ svg(item.icon, 'icon', { 'title': item.title }) }}</a>
+            <a href="{{ item.url }}" class="social__link icon--{{ item.icon }}">
+                {{ svg(item.icon, 'icon', { 'title': item.title }) }}
+                <span class="vh">{{ item.title }}</span>
+            </a>
         </li>
     {% endfor %}
     </ul>

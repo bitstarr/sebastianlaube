@@ -20,10 +20,10 @@ html{
     --grey: #707070;
 
     --orange: #d40;
-    --orange-hs: 18, 100%;
+    --orange-hs: 18 100%;
     --orange-l: 43%;
     --blue: #37a;
-    --blue-hs: 206, 54%;
+    --blue-hs: 206 54%;
     --blue-l: 43%;
 
     --color-primary: var( --orange );
@@ -1279,6 +1279,17 @@ a.button:hover,
         -moz-columns: 12em;
              columns: 12em;
     }
+.archive__list a {
+            text-decoration: underline;
+        }
+.archive__list a:focus,
+            .archive__list a:hover {
+                --link-color: var( --link-color-hover );
+            }
+.archive__list a:focus {
+                outline: 2px solid;
+                outline-offset: 3px;
+            }
 .modular + .modular {
         margin-top: var( --gap-mars );
     }
@@ -1351,6 +1362,26 @@ a.button:hover,
         font-size: .9em;
         line-height: 1.3;
     }
+.reference__link:focus,
+        .reference__link:hover {
+            --link-color: var( --color-secondary );
+        }
+.reference__image__link {
+        position: relative;
+    }
+.reference__image__link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            box-shadow: inset 0 0 0 .3em var( --hover-brd, hsl( 0 0% 0% / 0 ) );
+            pointer-events: none;
+        }
+.reference__image__link:focus {
+            --hover-brd: hsl( var( --orange-hs ) var( --orange-l ) / .5 );
+        }
 .reference__date {
         padding-right: 1em;
     }
@@ -1514,6 +1545,9 @@ body {
             .home__stream .link:hover {
                 --link-color: var( --color-primary );
             }
+.home__stream .title {
+            line-height: 1.2;
+        }
 .home__news .title {
             font-weight: 700;
         }

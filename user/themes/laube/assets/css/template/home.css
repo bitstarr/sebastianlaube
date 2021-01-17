@@ -96,6 +96,10 @@
                 --link-color: var( --color-primary );
             }
         }
+
+        .title {
+            line-height: 1.2;
+        }
     }
 
     &__news {
