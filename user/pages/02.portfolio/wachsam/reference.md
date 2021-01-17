@@ -8,6 +8,6 @@ taxonomy:
         - Web Design
         - Entwicklung
         - WordPress
-        - Printdesign
+        - Print Design
 ---
 Chemnitz hat ein Problem - Nazis. Diese Website ist eine Situationsanalyse der rechten Strukturen in Chemnitz und beleuchtet auch den versteckten Rassismus in uns.

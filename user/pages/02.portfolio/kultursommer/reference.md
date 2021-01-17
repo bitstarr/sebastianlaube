@@ -7,6 +7,7 @@ taxonomy:
     service:
         - Logo
         - Corporate Design
+        - Web Design
         - Entwicklung
         - WordPress
 ---

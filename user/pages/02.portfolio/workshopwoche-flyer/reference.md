@@ -5,6 +5,6 @@ url: selbstausloeser.pdf
 image: selbstausloeser-flyer.jpg
 taxonomy:
     service:
-        - Printdesign
+        - Print Design
 ---
 Die Jugendinitiative Klick hat 2011 zusammen mit jungen Leuten aus Mittelsachsen die regionale Geschichte erkundet (siehe unten). Um auch außerhalb der digitalen Welt Interessenten anzusprechen, benötigte die Initiative Flyer. 4-Seitiger Folder auf 150g/qm Recyclingpapier.

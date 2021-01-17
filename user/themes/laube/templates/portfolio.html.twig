@@ -27,6 +27,9 @@
                     <a href="{{ post_url }}" target="_blank" rel="noopener">
                         {{ post.title }}
                     </a>
+                    {% if post.header.disconnected == true %}
+                        <small>(offline)</small>
+                    {% endif %}
                 </h2>
                 <div class="textflow">
                     {{ post.content }}
