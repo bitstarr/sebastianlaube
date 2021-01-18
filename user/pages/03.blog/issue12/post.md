@@ -21,4 +21,5 @@ Seitdem habe ich schon einiges mit diesem Dateibasierten Multitalent angestellt 
 Das Design orientier sich noch am Vorgänger, aber das wird sich auch noch ändern. Wichtiger ist aber das bloggen. Ich habe eine kleine Todo-List mit Themen, dich baldmöglich abdecken will. Zum Beispiel eine Einführung in grav und verschiedene Szenarios, wie wir grav bei Zebra eingesetzt haben.
 
 Also, wer auch immer das liest, kann gespannt sei.
+
 ===
