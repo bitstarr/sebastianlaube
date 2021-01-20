@@ -19,11 +19,12 @@
         text-transform: uppercase;
     }
     &__category {
-        --link-color: var( --text-muted );
+        --link-color: inherit;
 
         order: -1;
         margin-bottom: 1ex;
         font-weight: 700;
+        color: var( --text-muted );
 
         a:focus,
         a:hover {

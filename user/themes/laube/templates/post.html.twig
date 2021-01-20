@@ -21,7 +21,7 @@
                     {{ page.summary }}
                 {% endif %}
                 <a name="continue vh"></a>
-                {{ page.content|slice(page.summary|length) }}
+                {{ page.content|slice(page.summary|length)|raw }}
             {% else %}
                 {{ page.content|raw }}
             {% endif %}

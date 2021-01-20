@@ -34,7 +34,7 @@
         </header>
         {% include 'partials/blog/image.html.twig' with { post: post, link: true } %}
         <div class="textflow">
-            {{ post.summary }}
+            {{ post.summary|raw }}
             {% if post.content|length > post.summary|length %}
             <p>
                 <a href="{{ post.url }}#continue" class="continue">Weiterlesen →</a>

@@ -59,7 +59,7 @@
     <header class="header wrapping">
         <div class="wrapped">
             <a class="logo" href="{{ home_url }}">
-                {{ svg('logo', 'logo__img icon', { preserveAspectRatio: 'xMidYMid'}) }}
+                {{ svg('logo', 'logo__img icon', { preserveAspectRatio: 'xMidYMid'})|raw }}
                 Sebastian Laube
             </a>
             {% block header_navigation %}

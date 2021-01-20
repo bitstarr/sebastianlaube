@@ -11,7 +11,7 @@
     {% if page.content|length %}
         <div class="modular wrapping">
             <div class="textflow">
-                {{ page.content }}
+                {{ page.content|raw }}
             </div>
         </div>
     {% endif %}

@@ -13,4 +13,4 @@ process:
 
 * Solltest du die Adresse von Hand eingegeben haben, überprüfe die Eingabe.
 * Hat dich ein defekter Link hier her geführt? Lass' es mich wissen!
-* Vielleicht ist die Seite, die du suchst umgezogen. versuche, sie über die [Startseite](/) zu finden.
+* Vielleicht ist die Seite, die du suchst umgezogen. Versuche, sie über die [Startseite](/) zu finden.

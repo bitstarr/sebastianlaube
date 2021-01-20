@@ -2,8 +2,7 @@
     <p class="article__category">
         <span class="vh">Abgelegt in: </span>
         {% for category in post.taxonomy.category %}
-            <a class="category" rel="category tag" href="{{ blog.url|rtrim('/') }}/category{{ config.system.param_sep }}{{ category }}">{{ category }}</a>
-            {% if loop.last == false %}, {% endif %}
+            <a class="category" rel="category tag" href="{{ blog.url|rtrim('/') }}/category{{ config.system.param_sep }}{{ category }}">{{ category }}</a>{% if loop.last == false %}, {% endif %}
         {% endfor %}
     </p>
 {% endif %}
