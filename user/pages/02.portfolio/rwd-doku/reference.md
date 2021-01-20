@@ -1,5 +1,5 @@
 ---
-title: Resposnive Webdesign Doku
+title: Responsive Webdesign Doku
 date: 30-04-2014
 url: http://rwd.sebastianlaube.de/
 image: responsive-doku.jpg
