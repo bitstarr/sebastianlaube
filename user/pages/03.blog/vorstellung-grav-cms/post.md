@@ -180,3 +180,29 @@ Im Templates können wir auch auf alle Konfigurationen zugreifen, also `system`,
 * Chassis
 * Kickstart
 * sl.de
+
+
+
+andere ideen/aufteilung
+
+* intro
+* inhalte
+  * seiten
+  * frontmatter/yaml
+  * markdown
+  * medien
+* themes
+  * struktur
+  * twig
+  * assets
+  * variablen/'konstanten'
+  * config
+* plugins
+* advanced
+  * blueprints
+  * cli
+  * forms
+  * git/skeleton
+* community
+
+https://davidwalsh.name/grav-building-fast-flexible-websites

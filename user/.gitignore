@@ -5,6 +5,7 @@ data/*
 !data/.*
 plugins/*
 !plugins/.*
+config/versions.yaml
 
 # OS Generated
 .DS_Store*
