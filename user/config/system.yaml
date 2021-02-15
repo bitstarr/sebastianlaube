@@ -16,7 +16,7 @@ session:
   name: grav-site
 
 languages:
-  supported: [ de ]
+  supported: [ de, en ]
   include_default_lang: false
 
 username_regex: '^[a-z0-9_-]{3,16}$'

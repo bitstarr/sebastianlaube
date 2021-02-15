@@ -60,38 +60,15 @@ form:
             #   accept:
             #     - image/*
 
-            header.hero_media:
-              type: file
-              label: PLUGIN_ADMIN.PAGE_MEDIA
-              destination: 'page@:/_heros'
-              multiple: true
-              filesize: .8
-              accept:
-                - image/*
-
             header.hero_image:
               type: filepicker
               label: Titelbild
               preview_images: true
-              folder: 'page@:/_heros'
+              folder: '@self'
+              accept:
+                - image/*
 
             header.headline:
               type: text
               label: Überschrift auf dem Titelbild
               toggleable: true
-
-            header.hero_actions:
-              name: buttons
-              type: list
-              label: Buttons
-              max: 3
-              fields:
-                .label:
-                  type: text
-                  label: Text
-                .url:
-                  type: text
-                  label: URL
-                .classes:
-                  type: text
-                  label: CSS Klassen
