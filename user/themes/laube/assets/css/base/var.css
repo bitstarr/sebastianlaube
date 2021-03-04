@@ -37,7 +37,7 @@ html{
     --color-secondary-lighter: hsl( var( --blue-hs ) calc( var( --blue-l ) + 20% ) );
     --color-secondary-inside: #fff;
 
-    --color-border: #ddd;
+    --color-border: #93a1a1;
     --color-ui: #f4f4f4;
 
     --text-default: #444;

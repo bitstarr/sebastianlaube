@@ -18,7 +18,7 @@
         <div class="textflow">
             {% if page.rawMarkdown matches '/' ~ config.site.summary.delimiter ~ '/' %}
                 {% if page.header.hide_summary != true %}
-                    {{ page.summary }}
+                    {{ page.summary|raw }}
                 {% endif %}
                 <a name="continue vh"></a>
                 {{ page.content|slice(page.summary|length)|raw }}

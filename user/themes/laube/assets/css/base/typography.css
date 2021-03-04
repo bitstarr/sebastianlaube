@@ -36,7 +36,6 @@ kbd,
 samp { font-family: monospace, sans-serif; }
 /* http://www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
 pre {
-    padding: 1em;
     white-space: pre; /* CSS2 */
     white-space: pre-wrap; /* CSS 2.1 */
     word-wrap: break-word; /* IE */
