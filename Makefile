@@ -9,37 +9,28 @@ list:
 	@echo ""
 	@echo "  install      > install everything to run the project"
 	@echo "  update       > update grav and plugins to latest stable version"
-	@echo "  user         > create a new user"
-	@echo "  theme        > create a new blank theme"
-	@echo "  plugin       > create a new blank plugin"
+	@echo "  clear        > clear grav cache"
 	@echo ""
-	@echo "  init         > prepare to setup a new project"
+	@echo "  lint         > check frontend code for errors and bad style"
+	@echo "  watch        > start watching frontend code"
+	@echo "  build        > build frontend"
+	@echo "  cssmin       > quick frontend CSS minifing"
+	@echo "  jsmin        > quick frontend JS minifing"
 	@echo ""
 
 .PHONY: install
 install:
 	.ddev/install.sh
-
-.PHONY: init
-init:
-	.ddev/initialize.sh
+	npm install --prefix user/themes/laube/
 
 .PHONY: update
 update:
 	./bin/gpm selfupgrade
 	./bin/gpm update
 
-.PHONY: user
-user:
-	./bin/plugin login newuser -s enabled
-
-.PHONY: theme
-theme:
-	bin/plugin devtools new-theme
-
-.PHONY: plugin
+.PHONY: clear
 plugin:
-	bin/plugin devtools new-plugin
+	bin/grav cache
 
 .PHONY: lint
 lint:
@@ -56,3 +47,7 @@ build:
 .PHONY: cssmin
 cssmin:
 	npm run cssmin --prefix user/themes/laube/
+
+.PHONY: jsmin
+jsmin:
+	npm run jsmin --prefix user/themes/laube/
