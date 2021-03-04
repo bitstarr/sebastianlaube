@@ -13,6 +13,8 @@
     &--deviantart:hover { color: #00e59b; }
     &--bookmark:focus,
     &--bookmark:hover { color: #4283fb; }
+    &--codepen:focus,
+    &--codepen:hover { color: #ffdd40; }
     &--untappd:focus,
     &--untappd:hover { color: #fc0; }
     &--bitbucket:focus,

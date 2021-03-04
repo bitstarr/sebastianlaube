@@ -10,7 +10,7 @@
 
     <div class="home__intro">
         <div class="about">
-            {{ page.content }}
+            {{ page.content|raw }}
         </div>
         <div class="connect">
             {% include 'partials/social.html.twig' %}

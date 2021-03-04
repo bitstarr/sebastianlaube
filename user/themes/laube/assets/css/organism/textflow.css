@@ -109,21 +109,13 @@
 
     blockquote {
         position: relative;
-        padding-left: 2rem;
+        padding-left: 1.5rem;
         font-size: 1.2em;
         word-break: break-word;
+        border-left: .3em solid var( --color-border );
 
-        &:after,
-        &:before {
-            content: '';
-            position: absolute;
-        }
-        &:after {
-            top: 0;
-            bottom: 0;
-            left: .5rem;
-            border-left: .2em solid;
-            opacity: .6;
+        & > * + * {
+            margin-top: var( --body-lh );
         }
     }
     code {
