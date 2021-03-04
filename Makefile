@@ -29,7 +29,7 @@ update:
 	./bin/gpm update
 
 .PHONY: clear
-plugin:
+clear:
 	bin/grav cache
 
 .PHONY: lint
