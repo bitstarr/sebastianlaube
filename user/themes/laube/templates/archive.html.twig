@@ -10,12 +10,12 @@
 
         {% if config.plugins.taxonomylist.enabled %}
         <section class="archive">
-            <h2 class="archive__title">Kategorien</h2>
+            <h2 class="archive__title">{{ 'THEME_C.BLOG.CATEGORIES'|t|e }}</h2>
             {% include 'partials/blog/taxonomylist.html.twig' with { 'taxonomy': 'category' } %}
         </section>
 
         <section class="archive">
-            <h2 class="archive__title">Tags</h2>
+            <h2 class="archive__title">{{ 'THEME_C.BLOG.TAGS'|t|e }}</h2>
             {% include 'partials/blog/taxonomylist.html.twig' with { 'taxonomy': 'tag' } %}
         </section>
         {% endif %}

@@ -12,7 +12,7 @@ content:
     pagination: true
     url_taxonomy_filters: true
 feed:
-    description: 'Sample Blog Description'
+    description: 'Blog von Sebastian Laube'
     limit: 10
 pagination: true
 ---

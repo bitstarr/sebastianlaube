@@ -1,0 +1,57 @@
+en:
+  THEME_C:
+    HOME:
+      MADE_BY_ME: That's what I made
+      MORE_ABOUT: More about me
+      MORE_PROJECTS: More projects
+      WRITTEN_BY_ME: What I have to tell
+      MORE_BLOG: The Blog
+    NAV:
+      MENU: Menu
+      REVEAL: Open Menu
+      HIDE: Hide Menu
+      SUBMENU: Submenu
+      CURRENT_PAGE: Current Page
+      GO_TOP: go to top
+      GO_TOP_ALT: Jump to the top of the page
+    PAGINATION:
+      NEWER: Newer
+      OLDER: Older
+    BLOG:
+      CONTINUE_READING: Continue reading →
+      POST_NAV: Post Navigation
+      NEXT_POST: Next Post
+      PREV_POST: Previous Post
+      POSTED_IN: Posted in
+      CATEGORIES: Categories
+      TAGS: Tags
+      ARCHIVE_OF: Achive of
+
+de:
+  THEME_C:
+    HOME:
+      MADE_BY_ME: Das hab ich gemacht
+      MORE_ABOUT: Mehr über mich
+      MORE_PROJECTS: Mehr Projekte
+      WRITTEN_BY_ME: Das hab' ich zu erzählen
+      MORE_BLOG: Zum Blog
+    NAV:
+      MENU: Menü
+      REVEAL: Menü öffnen
+      HIDE: Menü schließen
+      SUBMENU: Untermenü
+      CURRENT_PAGE: Aktuelle Seite
+      GO_TOP: nach oben
+      GO_TOP_ALT: Zum Angang der Seite springen
+    PAGINATION:
+      NEWER: Neuer
+      OLDER: Älter
+    BLOG:
+      CONTINUE_READING: Weiterlesen →
+      POST_NAV: Beitragsnavigation
+      NEXT_POST: Nächster Beitrag
+      PREV_POST: Vorheriger Beitrag
+      POSTED_IN: Abgelegt in
+      CATEGORIES: Kategorien
+      TAGS: Schlagworte
+      ARCHIVE_OF: Archiv für

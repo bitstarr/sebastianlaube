@@ -18,7 +18,7 @@
     {% if pagination.hasPrev %}
         {% set url =  (base_url ~ pagination.params ~ pagination.prevUrl)|replace({'//':'/'}) %}
         <li class="pager__item pager__item--prev">
-            <a class="pager__link" rel="prev" href="{{ url }}">Neuer</a>
+            <a class="pager__link" rel="prev" href="{{ url }}">{{ 'THEME_C.PAGINATION.NEWER'|t|e }}</a>
         </li>
     {% endif %}
 
@@ -43,7 +43,7 @@
     {% if pagination.hasNext %}
         {% set url = (base_url ~ pagination.params ~ pagination.nextUrl)|replace({'//':'/'}) %}
         <li class="pager__item pager__item--next">
-            <a class="pager__link" rel="next" href="{{ url }}">Älter</a>
+            <a class="pager__link" rel="next" href="{{ url }}">{{ 'THEME_C.PAGINATION.OLDER'|t|e }}</a>
         </li>
     {% endif %}
 </ul>

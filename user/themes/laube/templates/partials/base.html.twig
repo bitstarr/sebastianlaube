@@ -90,7 +90,7 @@
 {% block footer %}
     <footer class="footer wrapping">
         <div class="wrapped">
-            <a href="#top" class="elevator" title="Zum Angang der Seite springen">nach oben</a>
+            <a href="#top" class="elevator" title="{{ 'THEME_C.NAV.GO_TOP_ALT'|t|e }}">{{ 'THEME_C.NAV.GO_TOP'|t|e }}</a>
             {% if site.footer.menu %}
                 <nav class="footer__nav">
                     <ul class="menu">

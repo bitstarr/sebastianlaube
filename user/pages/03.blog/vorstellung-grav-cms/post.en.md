@@ -1,5 +1,5 @@
 ---
-title: 'Warum grav besser ist als [dein lieblings CMS]'
+title: 'Why grav is better than [your favourite CMS]'
 date: 04-03-2021 21:00
 taxonomy:
   category:
@@ -10,15 +10,15 @@ taxonomy:
     - Content Management System
     - Frontend
 ---
-Als ich 2020 bei [Zebra](https://zebra.de) anfing, war die Aufgabe klar: Wir brauchen einen Tech Stack, der viel flexibler und schneller ist als das was bisher in der Agentur genutzt wurde. Mein neuer (alter) Vorgesetzter Danilo hatte da auch schon was ausgemacht: [grav](https://getgrav.org).
+As I started working at [Zebra](https://zebra.de) in 2020, the mission was clear: We needed a tech stack that is much more flexible as the current setup in the agency. My (kindof) new team lead Danilo had something in mind already: [grav](https://getgrav.org).
 
 ===
 
-* Es ist dateibasiert und darum sehr schnell.
-* Unter der Haube verwendet es das PHP Framework Symfony, was es gut erweiterbar macht.
-* Es verwendet Twig als Templating-Engine.
-* Inhalte werden mit Markdown erfasst.
-* Es gib ein Admin Interface (als Plugin), aber das System funktioniert auch ohne.
+* It's file based which makes it very fast.
+* It uses the PHP Framework Symfony under the hood, so it can be extended comfortably.
+* It uses Twig as templating engine.
+* Content is stored in Mardown files.
+* There is an admin interface (as plugin), but it will also work without.
 
 Ich hatte schon seit 10 Jahren ein gestörtes Verhältnis zu dem CMS, das in der Agentur genutzt wurde. Es ist dieses System, das hauptsächlich im deutschsprachigen Raum wie ein Fetisch verehrt wird. Ich war schon eher (irgendwo kurz vor Version 1.5) auf den WordPress Zug gesprungen weil es schnell lief, ein intuitives Admin-Interface bot und Themes mit einfachen PHP Kenntnissen schnell zu realisieren waren. Damit habe ich über die Jahre auch eine Menge Projekte umgesetzt, aber im Verlauf der 4er Version wurde es immer überladener. Mit Version 5 und dem Klicki-Bunti-Editor-Krempel (a.k.a. Gutenberg) war der Spaß dann aber vorbei. Ein ehemaliger Kollege hat das später sehr gut zusammen gefasst:
 

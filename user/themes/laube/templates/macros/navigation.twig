@@ -32,16 +32,7 @@
                     {% if p.header.menu_icon is defined %}
                         {{ svg( p.header.menu_icon, 'icon menu__icon' ) }}
                     {% endif %}
-                    {# a11y freindly custom formated names #}
-                    {% if p.header.menu is defined %}
-                        <span aria-label="{{ p.title }}">
-                            <span aria-hidden="true">
-                                {{ p.menu }}
-                            </span>
-                        </span>
-                    {% else %}
-                        {{ p.menu }}
-                    {% endif %}
+                    {{ p.menu }}
                 </a>
             </li>
         {% endif %}
