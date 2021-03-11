@@ -17,7 +17,7 @@ Als ich 2020 bei [Zebra](https://zebra.de) anfing, war die Aufgabe klar: Wir bra
 * Es ist dateibasiert und darum sehr schnell.
 * Unter der Haube verwendet es das PHP Framework Symfony, was es gut erweiterbar macht.
 * Es verwendet Twig als Templating-Engine.
-* Inhalte werden mit Markdown erfasst und das Templating erfolgt mit Twig.
+* Inhalte werden mit Markdown erfasst.
 * Es gib ein Admin Interface (als Plugin), aber das System funktioniert auch ohne.
 
 Ich hatte schon seit 10 Jahren ein gestörtes Verhältnis zu dem CMS, das in der Agentur genutzt wurde. Es ist dieses System, das hauptsächlich im deutschsprachigen Raum wie ein Fetisch verehrt wird. Ich war schon eher (irgendwo kurz vor Version 1.5) auf den WordPress Zug gesprungen weil es schnell lief, ein intuitives Admin-Interface bot und Themes mit einfachen PHP Kenntnissen schnell zu realisieren waren. Damit habe ich über die Jahre auch eine Menge Projekte umgesetzt, aber im Verlauf der 4er Version wurde es immer überladener. Mit Version 5 und dem Klicki-Bunti-Editor-Krempel (a.k.a. Gutenberg) war der Spaß dann aber vorbei. Ein ehemaliger Kollege hat das später sehr gut zusammen gefasst:

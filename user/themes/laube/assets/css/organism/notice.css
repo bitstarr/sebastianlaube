@@ -1,5 +1,5 @@
 .notice {
-    --comp-bg: var( --color-ui );
+    --comp-bg: #fff;
     --comp-brd: #777;
     --comp-txt: var( --text-default );
 
@@ -16,17 +16,14 @@
     }
 
     &--success {
-        --comp-bg: #e5f3ef;
-        --comp-brd: #008566;
+        --comp-brd: #859900;
     }
 
     &--warning {
-        --comp-bg: #fcf8f2;
-        --comp-brd: #ffb820;
+        --comp-brd: #b58900;
     }
 
     &--error {
-        --comp-bg: #fdf7f7;
-        --comp-brd: #d0103a;
+        --comp-brd: #dc322f;
     }
 }

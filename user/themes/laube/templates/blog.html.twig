@@ -37,7 +37,7 @@
             {{ post.summary|raw }}
             {% if post.content|length > post.summary|length %}
             <p>
-                <a href="{{ post.url }}#continue" class="continue">Weiterlesen →</a>
+                <a href="{{ post.url }}#continue" class="continue">{{ 'THEME_C.BLOG.CONTINUE_READING'|t|e }}</a>
             </p>
             {% endif %}
         </div>
