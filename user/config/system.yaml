@@ -10,6 +10,7 @@ pages:
     twig: true
   frontmatter:
     process_twig: true
+  redirect_default_route: true
 
 session:
   initialize: false

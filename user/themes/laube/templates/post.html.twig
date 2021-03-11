@@ -2,7 +2,8 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-    <article class="article wrapping">
+    {% set lang = page.language ? page.language : grav.language.default %}
+    <article class="article wrapping" lang="{{ lang }}">
         <header class="article__header">
             <h1 class="article__title">
                 {{ page.title }}
@@ -16,6 +17,7 @@
         </header>
         {% include 'partials/blog/image.html.twig' with { post: page } %}
         <div class="textflow">
+            {% include 'partials/blog/translation-hint.html.twig' %}
             {% if page.rawMarkdown matches '/' ~ config.site.summary.delimiter ~ '/' %}
                 {% if page.header.hide_summary != true %}
                     {{ page.summary|raw }}
@@ -39,5 +41,4 @@
     </article>
 
     {% include 'partials/blog/postnav.html.twig' with { post: page } %}
-    {{dump(page)}}
 {% endblock %}

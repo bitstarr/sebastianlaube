@@ -26,6 +26,8 @@ en:
       CATEGORIES: Categories
       TAGS: Tags
       ARCHIVE_OF: Achive of
+      TRANSLATED: This text is also available in English.
+      NOT_TRANSLATED: Sorry, this text is not translated yet.
 
 de:
   THEME_C:
@@ -55,3 +57,5 @@ de:
       CATEGORIES: Kategorien
       TAGS: Schlagworte
       ARCHIVE_OF: Archiv für
+      TRANSLATED: Dieser Text ist auch auf Deutsch verfügbar.
+      NOT_TRANSLATED: Dieser Text ist leider noch nicht übersetzt.

@@ -1,0 +1,11 @@
+.language {
+    display: grid;
+    grid-template-columns: 3em auto;
+    align-items: center;
+
+    .icon {
+        width: 2em;
+        height: 1em;
+    }
+
+}

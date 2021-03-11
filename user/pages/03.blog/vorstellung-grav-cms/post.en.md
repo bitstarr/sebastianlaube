@@ -9,6 +9,7 @@ taxonomy:
     - grav
     - Content Management System
     - Frontend
+slug: introducing-grav-cms
 ---
 As I started working at [Zebra](https://zebra.de) in 2020, the mission was clear: We needed a tech stack that is much more flexible as the current setup in the agency. My (kindof) new team lead Danilo had something in mind already: [grav](https://getgrav.org).
 
@@ -20,24 +21,23 @@ As I started working at [Zebra](https://zebra.de) in 2020, the mission was clear
 * Content is stored in Mardown files.
 * There is an admin interface (as plugin), but it will also work without.
 
-Ich hatte schon seit 10 Jahren ein gestörtes Verhältnis zu dem CMS, das in der Agentur genutzt wurde. Es ist dieses System, das hauptsächlich im deutschsprachigen Raum wie ein Fetisch verehrt wird. Ich war schon eher (irgendwo kurz vor Version 1.5) auf den WordPress Zug gesprungen weil es schnell lief, ein intuitives Admin-Interface bot und Themes mit einfachen PHP Kenntnissen schnell zu realisieren waren. Damit habe ich über die Jahre auch eine Menge Projekte umgesetzt, aber im Verlauf der 4er Version wurde es immer überladener. Mit Version 5 und dem Klicki-Bunti-Editor-Krempel (a.k.a. Gutenberg) war der Spaß dann aber vorbei. Ein ehemaliger Kollege hat das später sehr gut zusammen gefasst:
+I had already had a troubled relationship with the CMS used in the agency for 10 years. It's this system that is worshipped like a fetish mainly in the German-speaking world. I had jumped on the WordPress bandwagon earlier (somewhere just before version 1.5) because it ran fast, offered an intuitive admin interface and themes were quick to implement with simple PHP knowledge. I did a lot of projects with it over the years, but in the course of the 4 version it became more and more cluttered. But with version 5 and the angry fruit salad (a.k.a. Gutenberg) the fun was over. A former colleague summed it up very well later:
 
->In #WordPress landet auch in jeder Version mehr Rotz, den man erst mühsam wieder ausbauen muss :(
->
+>In each version of #WordPress lands more snot, which you need to laboriously remove again :(
 >
 > — [@mirksch](https://twitter.com/mirksch/status/1287376452892217345)
 
-Dieses glänzende, neue Spielzeug kam also gerade recht. Ich arbeite sehr gern damit, aber der Einstieg war manchmal holprig, weil nicht alle Features gut dokumentiert sind. Wenn es aber mal nicht weiterging, war der [discord Chat von grav](https://chat.getgrav.org/) immer eine große Hilfe.
+So this shiny new toy came just in time. I love working with it, but getting started was sometimes bumpy because not all features are well documented. When I got stuck, the [discord Chat of grav](https://chat.getgrav.org/) was always a great help.
 
-Wie schon geschrieben, arbeite ich sehr gern mit grav und möchte hier mal einen "kleinen" Überblick geben.
+As already written, I like to work with grav very much and would like to give a "small" overview here.
 
-## Simples Setup
+## Simple Setup
 
-Um loszulegen, das .zip (mit oder ohne Admin-Interface) [herunterladen](https://getgrav.org/downloads), entpacken und über einen PHP-fähigen Webserver (LAMP, XAMPP, MAMP, docker, ddev, etc.) aufrufen. Es gibt auch die Möglichkeit einen PHP eigenen [Webserver im Terminal zu starten](https://learn.getgrav.org/17/basics/installation#running-grav-with-the-built-in-php-webserver-using-router-php).
+To get started, [download the .zip](https://getgrav.org/downloads) (with or without admin interface), unzip it and run it from a PHP-enabled web server (LAMP, XAMPP, MAMP, docker, ddev, etc.). There is also the possibility to start a PHP own [webserver in the terminal](https://learn.getgrav.org/17/basics/installation#running-grav-with-the-built-in-php-webserver-using-router-php).
 
-## Ordner und Seitenbaum
+## Directories and Page Tree
 
-Nach der Installation von grav finden sich ein paar [Ordner auf dem Server](https://learn.getgrav.org/17/basics/folder-structure), der Wichtigste ist `user`.
+After the installation of grav there are some [directories on the server](https://learn.getgrav.org/17/basics/folder-structure), the most important one is `user`.
 
 ```
 ├── /user
@@ -74,49 +74,52 @@ Nach der Installation von grav finden sich ein paar [Ordner auf dem Server](http
 
 |Pfad|Funktion|
 |---|---|
-|accounts/|Alle User des Admins wird hier als Datei angelegt|
-|config/|Konfigurationsdateien für System, Seiten, Plugins, Themes|
-|data/|Hier legen Plugins Daten ab|
-|pages/|Hier ist der Seitenbaum, der auch alle Inhalte enthält|
-|plugins/|Plugins werden hier hin installiert|
-|themes/|Themes werden hier hin installiert|
+|accounts/|All users of the admin are created here as a file|
+|config/|Configuration files for system, pages, plugins, themes|
+|data/|Plugins store data here|
+|pages/|Here is the page tree, which also contains all content|
+|plugins/|Plugins are installed here|
+|themes/|Themes are installed here|
 
-Die [Ordnerstruktur in `pages`](https://learn.getgrav.org/17/content/content-pages) bildet exakt den Seitenbaum ab, der auch von der Navigation oder vom Sitemap-Plugin ausgeben werden kann. Die einzelnen Seiten können Eigenschaften enthalten, die sie aus dieses Auflistungen raushalten, Inhalte anderer Seiten anzeigen (Routing) oder auch auf andere Seiten weiterleiten.
+The [folder structure in `pages`](https://learn.getgrav.org/17/content/content-pages) exactly maps the page tree that can also be output by the navigation or the sitemap plugin. The individual pages can contain properties that keep them out of this listing, display content from other pages (routing), or even redirect to other pages.
 
-Im Beispiel oben haben wir vier Seiten auf der ersten Ebene, die durch die Nummern vor dem Punkt im Namen ihre Sortierung erhalten. Die Namen der darin enthaltenen Dateien sind gleich bedeutend mit dem Namen des Template, durch dass sie ausgegeben werden sollen. Also die Seite "About" nutzt das Template namens "default".
+In the example above we have four pages on the first level, which get their sorting by the numbers in front of the dot in their names. The names of the files contained in them have the same meaning as the name of the template through which they are to be output. So the page "About" uses the template named "default".
 
-Keine Angst wegen der seltsamen Ordnerbenennung, grav kümmert sich drum. So wird `02.about` unter `/about` zur Verfügung stehen. Ein Eintrag im Blog z.B. unter `/blog/new-website-live`.
+Don't worry about the weird folder naming, grav will take care of it. So `02.about` will be available under `/about`. An entry in the blog, for example, under `/blog/new-website-live`.
 
-In `03.service` sehen wir noch eine Besonderheit von grav: Modulars. Modulars werden durch den Unterstrich (_) am Beginn des Ordnernamen definiert. Sie werden von grav nicht wie Unterseiten behandelt und können so zur Strukturierung einer einzelnen Seite genutzt werden. Dazu mehr beim Thema Templates.
+In `03.service` we see another special feature of grav: Modulars. Modulars are defined by the underscore (_) at the beginning of the folder name. They are not treated like subpages by grav and can be used to structure a single page. More about this in the topic Templates.
 
-## Inhalte
-grav hat keine Datenbank, sondern speichert alle Inhalte in einfachen Textdateien - genauer gesagt [Markdown](https://de.wikipedia.org/wiki/Markdown). Zusätzliche Informationen zu einer Seite wird im sogenannten Frontmatter gespeichert, was der Syntax von [YAML](https://de.wikipedia.org/wiki/YAML) folgt.
+
+## Content
+grav has no database, but stores all content in simple text files - more precisely [Markdown](https://de.wikipedia.org/wiki/Markdown). Additional information about a page is stored in the so-called Frontmatter, which uses the syntax of [YAML](https://de.wikipedia.org/wiki/YAML).
+
 
 ```md
 ---
-title: 'Titel der Seite'
-menu: 'Abweichende Bezeichnung in der Navigation'
+title: 'Title of the Page'
+menu: 'Different name in the navigation'
 hero_image: 'foobar.jpg'
 ---
-Inhalt der Seite als Markdown
+Page content, Markdown fomatted
 
-## Überschrift zweiter Ordnung
+## Second Level Headline
 
-Weiterer Text als **Markdown**.
+More Text as **Markdown**.
 
-![](grafik-im-selben-ordner.jpg)
+![](image-in-the-same-folder.jpg)
 ```
 
-Was mich an diesem Vorgehen am meisten begeistert hat, war dass man im Frontmatter unbeschränkt eigene Informationen einstreuen kann. Für ein Interface im Admin-Interface braucht es hier etwas YAML (dazu später mehr), während bei WordPress mindestens ein Plugin und eine Hand voll (ziemlich redundante) PHP-Funktionen nötig sind.
+What excited me most about this approach was that you can sprinkle in unlimited custom information in the Frontmatter. For an admin interface, you need some YAML here (more on that later), while WordPress requires at least one plugin and a handful of (fairly redundant) PHP functions.
 
-So können Metainformationen und Eigenschaften notiert werden (nicht nur Strings, sondern auch Arrays/Objekte) und stehen dann im Template in dem Twig-Objekt ``page.header`` bereit. Es gibt einen kleinen Stapel von [reservierten Eigenschaften im Frontmatter](https://learn.getgrav.org/17/content/headers), mit denen grav arbeitet, z.B. um den Slug, das Routing oder das Template zu beeinflussen.
+Meta information and properties can be noted this way (not only strings, but also arrays/objects) and are then available in the template in the Twig object `page.header`. There is a small stack of [reserved properties in the frontmatter](https://learn.getgrav.org/17/content/headers) that grav works with, e.g. to affect the slug, routing or template.
 
-Seit Version 1.7 gibt es auch die sogenannten [Flex Objects](https://learn.getgrav.org/17/advanced/flex). Das ist eine Art Datenbank, die auf Basis von JSON Dateien funktioniert. Dabei können die Informationen unabhängig vom Seitenbaum gespeichert werden.
+Since version 1.7 there are also the so called [Flex Objects](https://learn.getgrav.org/17/advanced/flex). This is a kind of database that works on the basis of JSON files. Thereby the information can be stored independently from the page tree.
 
-## Admin und Konfiguration
-Bei meinen bisherigen Projekten spielte das Admin-Interface keine so große Rolle, da sich alle Einstellungen am System direkt in YAML Dateien machen lassen. Außerdem schreibt der Admin immer die Vollständige Config neu, sodass man nicht mehr nur die Abweichungen vom Standard in der Datei hat, was ich persönlich eher unpraktisch finde.
+## Admin and Configuration
 
-Aber natürlich ist der Admin-Bereich für Redakteure und Admins ziemlich brauchbar. So einfach wie wir in den Markdown-Dateien eigene Zusatzinfos unterbekommen, so leicht lassen sich dafür eigene Felder im Admin anlegen. Dazu braucht es die sogenannten blueprints. Das sind YAML Dateien, die über den Dateinamen wie auch die Markdown-Datei dem entsprechenden Template zugeordnet werden.
+In my previous projects, the admin interface did not play such a big role, because all settings on the system can be made directly in YAML files. Also, the admin always rewrites the full config, so you no longer have only the deviations from the default in the file, which I personally find rather impractical.
+
+But of course the admin area is quite usable for editors and admins. As easy as we can add our own additional information to the Markdown files, so easy it is to create our own fields in the admin. For this we need the so-called blueprints. These are YAML files, which are assigned to the corresponding template via the file name as well as the Markdown file.
 
 ```yaml
 title: Page Content
@@ -136,7 +139,7 @@ form:
           fields:
             header.hero_image:
               type: filepicker
-              label: Titelbild
+              label: Hero Image
               preview_images: true
               folder: '@self'
               accept:
@@ -144,13 +147,13 @@ form:
 
             header.headline:
               type: text
-              label: Überschrift auf dem Titelbild
+              label: Headline on top of Hero Image
               toggleable: true
 ```
 
-Am Beispiel des Ausschnitts aus der `/user/themes/customtheme/blueprints/default.yaml` können wir sehen wie zwei Felder auf dem "Inhalt" Tab der Standard-Text-Seite erzeugt werden. Zum einen eine Bildauswahl für ein Titelbild und ein Textfeld, das im Template z. B. einen Text über dieses Bild legt.
+Using the example of the section from the `/user/themes/customtheme/blueprints/default.yaml` we can see how two fields are created on the "Content" tab of the default text page. One is an image selection for a title image and the other is a text field that places a text over this image in the template, for example.
 
-## Themes und Blueprints
+## Themes and Blueprints
 
 ```
 /user/themes/customtheme
@@ -173,40 +176,42 @@ Am Beispiel des Ausschnitts aus der `/user/themes/customtheme/blueprints/default
 └── /customtheme.yaml
 ```
 
-Essentiell für ein Theme ist die `blueprints.yaml`. Darin stehen die wichtigsten Sachen über das Theme. Außerdem können darin Felder für den Admin vorgesehen werden um dann ein grafisches Interface für die Theme-Einstellungen bereit zu stellen. Voreinstellungen können dann in einer eigenen YAML Datei hinterlegt werden.
+Essential for a theme is the `blueprints.yaml`. It contains the most important things about the theme. In addition, fields can be provided for the admin to provide a graphical interface for the theme settings. Preferences can then be stored in a separate YAML file.
 
-Beim Templating kommt Twig zum Einsatz. Die Aufteilung oder Zerstückelung der Templates ist im Grunde genommen egal. Wichtig ist, dass im Ornder `templates` immer ein Template zu finden ist, dessen Namen mit dem der Markdown-Datei übereistimmt, die gerade geladen werden soll.
+Twig is used for templating. The division or fragmentation of the templates is basically irrelevant. The important thing is that there is always a template in the `templates` folder with the same name as the Markdown file that is being loaded.
 
-Wie oben schon erwähnt, können wir in den Seiten soviel Infos in den Frontmatter packen, wie wir wollen. Im Ornder `blueprints` können wir zu jedem Template eine YAML Datei anlegen und das Admin-Interface dazu bestimmen, so dass es zu jeder Information auch nutzerfreundliche Eingabemöglichkeiten gibt.
+As mentioned above, we can put as much info as we want in the frontmatter of the pages. In the `blueprints` folder, we can create a YAML file for each template and define the admin interface for it, so that there are user-friendly input options for each piece of information.
 
-Im Templates können wir auch auf alle Konfigurationen zugreifen, also `system`, `site` und `theme`. So wird es möglich an einer dieser Stellen ein Array für eine Footer-Navigation oder globale Infos wie Adresse, Telefonnummern o.Ä. unter zu bringen.
+In the templates we can also access all configurations, i.e. `system`, `site` and `theme`. So it will be possible to place an array for a footer navigation or global info like address, phone numbers etc. in one of these places.
 
 ## Plugins
 
-Das Plugin Ökosystem bei grav ist noch überschaubar aber viele wichtige Dinge sind schon da: Breadcrumb, Sitemap, SEO, Formulare, Embeds,…
+The plugin ecosystem at grav is still manageable but many important things are already there: breadcrumb, sitemap, SEO, forms, embeds,…
 
-## Versionierung und Entwicklung
+## versioning and Development
 
-Zur Versionierung von Themes, Inhalten oder ganzen grav-Instanzen gibt es unterschiedliche Ansätze. Ein praktischer Weg sind grav's sogenannte `Skeletons`. Dabei wird der `user` Ordner in einem git Repository verwaltet. Darin befindet sich neben dem Seitenbaum auch eine `.dependencies` Datei die Informationen über Themes und Plugins bereithält und mit der dann alles nötige nachinstalliert werden kann. Diesen Weg werde ich einem weiteren Beitrag noch näher beschreiben, aber in den unten verlinkten Projekten lässt sich das ganze schon bestaunen.
+There are different approaches to versioning themes, content or whole grav instances. A practical way are grav's so-called `skeletons`. The `user` folder is managed in a git repository. In addition to the page tree, there is also a `.dependencies` file that contains information about themes and plugins with which everything necessary can be installed. I will describe this way in more detail in another post, but you can already see this approach in the projects linked below.
 
-Es gibt auch noch ein git-sync Plugin, dass explizite Teile des user Ordners unabhängig vom eigentlich Projekt in einem git-Repository verwalten kann (und auch automatisch syncronisiert).
+There is also a git-sync plugin that can manage explicit parts of the user folder independently of the actual project in a git repository (and also syncronizes automatically).
 
-Außerdem bietet grav auch [<abbr title="command line interface" lang="en">CLI</abbr>-Schnittstellen](https://learn.getgrav.org/17/cli-console/command-line-intro) an. Darüber lassen sich Plugins und Themes verwalten, Updates durchführen, Backups erstellen, oder mit den Schnittstellen von Plugins interagieren.
+In addition, grav also offers [<abbr title="command line interface">CLI</abbr> interfaces](https://learn.getgrav.org/17/cli-console/). This can be used to manage plugins and themes, perform updates, create backups, or interact with plugin interfaces.
 
-Übrigens: Ein Serverumzug ist nichts weiter als Wurzelverzeichnis des Projekt auf den neuen Server zu kopieren.
+By the way: A server move is nothing more than copying the root directory of the project to the new server.
 
-## Abschließende Worte
+## Closing Words
 
-Verglichen mit WordPress ist grav ein Leichtgewicht - auch bei der Verbreitung. Aber es bietet mir die Freiheiten und die Performance, dich ich früher bei WordPress hatte. Neben undokumentierten Funktionen oder einer Lernkurve für Symfony überwiegen für mich die Vorteile.
+Compared to WordPress, grav is a lightweight - also in terms of distribution. But it offers me the freedom and performance I used to have with WordPress. Besides undocumented features or a learning curve for Symfony, the advantages outweigh the disadvantages for me.
 
-Ich habe zu grav noch ein Paar Blog Beiträge in der Schublade und will noch einige technische Aspekte und einige meiner Lösungen genauer vorstellen.
+I have to grav still a pair of blog posts in the drawer and still want to present some technical aspects and some of my solutions in more detail.
 
-## Ressourcen
-Ein neues System lerne ich immer durch konkrete Beispiele am besten kennen. So kann ich Ursache und Wirkung sehen und damit herum spielen. Aus diesem Grund habe ich hier ein paar meiner Projekte zum sezieren:
+## Resources
+I always learn a new system best through concrete examples. So I can see cause and effect and play around with it. For this reason, here are a few of my projects to dissect:
 
-|Projekt|Anmerkung|
+|Project|note|
 |---|---|
-|[kitchen](https://github.com/bitstarr/kitchen)|Meine persönliche Rezepte Sammlung und erstes Side Projekt auf grav Basis|
-|[grav-ddev-kickstart](https://github.com/bitstarr/grav-ddev-kickstart)|Um schnell die Basis für ein neues Projekt zu schaffen habe ich einiges automatisiert. Nach der Initialisierung kann losgearbeitet werden und das neue Projekt ist auch auf Versionierung vorbereitet. [ddev](https://ddev.com) stellt mir dabei eine docker basierte lokale Umgebung bereit.|
-|[sebastianlaube](https://github.com/bitstarr/sebastianlaube)|Das git Repo zu  dieser Website|
-|[chassis](https://github.com/bitstarr/grav-theme-chassis)|Meine Theme Boilerplate. Auf dieser Basis entwickle ich die Frontends meiner Projekte.|
+|[kitchen](https://github.com/bitstarr/kitchen)|My personal recipe collection and first side projectbased on grav|
+|[grav-ddev-kickstart](https://github.com/bitstarr/grav-ddev-kickstart)|To quickly create the basis for a new project I have automated some things. After initialization I can start working and the new project is also prepared for versioning. [ddev](https://ddev.com) provides me with a docker based local environment.|
+|[sebastianlaube](https://github.com/bitstarr/sebastianlaube)|The git repo for this website|
+|[chassis](https://github.com/bitstarr/grav-theme-chassis)|My theme boilerplate. On this basis I develop the frontends of my projects.|
+
+! To translate this text i used the comfort of [DeepL](https://www.deepl.com/). I was very stunned by the quality of the translations. I would have used this all the time for my english courses as a student. So don't tell your kids about it ;)
