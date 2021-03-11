@@ -5,8 +5,9 @@
         </a>
     </h3>
     <p class="date">
+        {% set lang = page.language ? page.language : grav.language.default %}
         <time class="datetime dt-published" datetime="{{ post.date|date("c") }}">
-            {{ post.date|localizeddate( 'long', 'none', site.default_lang ) }}
+            {{ post.date|localizeddate( 'long', 'none', lang ) }}
         </time>
     </p>
 </article>
