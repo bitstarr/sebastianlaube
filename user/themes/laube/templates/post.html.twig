@@ -11,7 +11,7 @@
             {% include 'partials/blog/categories.html.twig' with { post: page } %}
             <p class="article__date">
                 <time class="article__datetime dt-published" datetime="{{ page.date|date("c") }}">
-                    {{ page.date|localizeddate( 'long', 'none', site.default_lang ) }}
+                    {{ page.date|localizeddate( 'long', 'none', lang ) }}
                 </time>
             </p>
         </header>

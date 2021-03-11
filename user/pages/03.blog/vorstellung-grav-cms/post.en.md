@@ -214,4 +214,4 @@ I always learn a new system best through concrete examples. So I can see cause a
 |[sebastianlaube](https://github.com/bitstarr/sebastianlaube)|The git repo for this website|
 |[chassis](https://github.com/bitstarr/grav-theme-chassis)|My theme boilerplate. On this basis I develop the frontends of my projects.|
 
-! To translate this text i used the comfort of [DeepL](https://www.deepl.com/). I was very stunned by the quality of the translations. I would have used this all the time for my english courses as a student. So don't tell your kids about it ;)
+! To translate this text I used the comfort of [DeepL](https://www.deepl.com/). I was very stunned by the quality of the translations. I would have used this all the time for my english courses as a student. So don't tell your kids about it ;)
