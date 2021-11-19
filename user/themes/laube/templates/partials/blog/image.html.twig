@@ -7,7 +7,7 @@
     {% else %}
         {% set image = post.media[post.header.post_image] %}
         {# <img class="article__image" src="{{ image.url }}" alt="" /> #}
-        {{ image.derivatives(640,960,1920).html( null, null, 'article__image' ) }}
+        {{ image.derivatives(640,960,1920).html( null, null, 'article__image' )|raw }}
     {% endif %}
     {% if link %}
         </a>
