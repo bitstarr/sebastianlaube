@@ -9,6 +9,8 @@
 
     &--twitter:focus,
     &--twitter:hover { color: #55acee; }
+    &--mastodon:focus,
+    &--mastodon:hover { color: #563acc; }
     &--deviantart:focus,
     &--deviantart:hover { color: #00e59b; }
     &--bookmark:focus,

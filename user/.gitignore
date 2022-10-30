@@ -17,6 +17,7 @@ config/security.yaml
 ehthumbs.db
 Thumbs.db
 *.swp
+*Zone.Identifier
 
 # phpstorm
 .idea/*

@@ -33,6 +33,9 @@ footer:
     - title: Twitter
       icon: twitter
       url: https://twitter.com/sebastianlaube
+    - title: Mastodon
+      icon: mastodon
+      url: https://layer8.space/@sebastianlaube
     - title: Github
       icon: github
       url: https://github.com/bitstarr

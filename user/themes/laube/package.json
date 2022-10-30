@@ -7,7 +7,7 @@
     "dependencies": {},
     "devDependencies": {
         "gulp": "*",
-        "gulp-imagemin": "*",
+        "gulp-imagemin": "7.1.0",
         "gulp-plumber": "*",
         "gulp-postcss": "*",
         "gulp-sourcemaps": "*",
@@ -25,7 +25,7 @@
         "postcss-media-variables": "*",
         "imagemin": "*",
         "imagemin-giflossy": "*",
-        "imagemin-mozjpeg": "*",
+        "imagemin-mozjpeg": "9.0.0",
         "imagemin-pngquant": "*",
         "imagemin-zopfli": "*",
         "imagemin-svgo": "*",
@@ -34,7 +34,7 @@
         "browser-sync": "*",
         "npm-run-all": "*",
         "glob": "*",
-        "del": "*",
+        "del": "6.1.1",
         "ruleemall": "https://github.com/bitstarr/ruleemall/"
     },
     "optionalDependencies": {
