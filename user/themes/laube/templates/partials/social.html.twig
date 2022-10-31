@@ -2,7 +2,7 @@
     <ul class="social">
     {% for item in site.footer.social %}
         <li class="social__item">
-            <a href="{{ item.url }}" class="social__link icon--{{ item.icon }}">
+            <a href="{{ item.url }}" rel="me" class="social__link icon--{{ item.icon }}">
                 {{ svg(item.icon, 'icon', { 'title': item.title })|raw }}
                 <span class="vh">{{ item.title }}</span>
             </a>
