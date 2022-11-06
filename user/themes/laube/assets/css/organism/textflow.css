@@ -122,6 +122,7 @@
         padding: .1rem .3rem .2rem;
         word-break: break-word;
         color: #002b36;
+        background: #fefefe;
         border-radius: .2rem;
     }
     code[class^='language-'] {
@@ -147,7 +148,7 @@
     }
     pre code {
         display: block;
-        overflow-x: scroll;
+        overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         padding: var( --gap );
         line-height: 1.3;
