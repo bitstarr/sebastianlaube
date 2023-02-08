@@ -28,6 +28,7 @@ en:
       ARCHIVE_OF: Achive of
       TRANSLATED: This text is also available in English.
       NOT_TRANSLATED: Sorry, this text is not translated yet.
+      DEPRICATED_WARNING: Due to the age of this post, code examples and procedures may be outdated. Please also check other sources.
 
 de:
   THEME_C:
@@ -59,3 +60,4 @@ de:
       ARCHIVE_OF: Archiv für
       TRANSLATED: Dieser Text ist auch auf Deutsch verfügbar.
       NOT_TRANSLATED: Dieser Text ist leider noch nicht übersetzt.
+      DEPRICATED_WARNING: Aufgrund des Alters dises Beitrags, könnten Code Beispiele und Vorgehensweisen veraltet sein. Bitte prüfe auch andere Quellen.

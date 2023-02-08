@@ -27,7 +27,6 @@
 @import 'organism/tabs.css';
 /* specific */
 @import 'organism/article.css';
-@import 'organism/language.css';
 @import 'organism/postnav.css';
 @import 'organism/pager.css';
 @import 'organism/archive.css';

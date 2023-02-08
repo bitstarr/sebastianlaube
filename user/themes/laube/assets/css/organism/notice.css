@@ -26,4 +26,22 @@
     &--error {
         --comp-brd: #dc322f;
     }
+
+    &--extended {
+        display: grid;
+        grid-template-columns: 3em auto;
+        align-items: center;
+        gap: 1em;
+
+        .icon {
+            justify-self: center;
+            font-size: 1.5em;
+        }
+
+        .icon--language {
+            width: 2em;
+            height: 1em;
+            font-size: 1em;
+        }
+    }
 }

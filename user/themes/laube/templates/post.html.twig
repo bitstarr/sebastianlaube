@@ -1,6 +1,17 @@
 {% set tpl_body_classes = 't-post post' %}
 {% extends 'partials/base.html.twig' %}
 
+{% if 'Code' in post.taxonomy.category %}
+    {% block javascripts %}
+        {{ parent() }}
+        {% do assets.addJs('theme://dist/js/prism.js', { group:'bottom' }) %}
+    {% endblock %}
+    {% block stylesheets %}
+        {{ parent() }}
+        {% do assets.addCss('theme://dist/css/prism.css') %}
+    {% endblock %}
+{% endif %}
+
 {% block content %}
     {% set lang = page.language ? page.language : grav.language.default %}
     <article class="article wrapping" lang="{{ lang }}">
@@ -18,6 +29,7 @@
         {% include 'partials/blog/image.html.twig' with { post: page } %}
         <div class="textflow">
             {% include 'partials/blog/translation-hint.html.twig' %}
+            {% include 'partials/blog/deprication-hint.html.twig' with { post: page } %}
             {% if page.rawMarkdown matches '/' ~ config.site.summary.delimiter ~ '/' %}
                 {% if page.header.hide_summary != true %}
                     {{ page.summary|raw }}

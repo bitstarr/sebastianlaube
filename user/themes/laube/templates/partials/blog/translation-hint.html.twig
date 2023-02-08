@@ -3,37 +3,28 @@
 {% set availableLang = page.translatedLanguages(true) %}
 
 {% if availableLang|length > 1 %}
-    <div class="notice notice--success">
-        <div class="language">
-            {{ svg('language')|raw }}
-            <div class="language__options">
-                {% for lang in availableLang|keys %}
-                    {% if lang != activeLang %}
-                        {% set url = grav.language.getLanguageURLPrefix(lang) ~ page.rawRoute() %}
-                        <p lang="{{ lang }}">
-                            <a href="{{ url }}">
-                            {{ 'THEME_C.BLOG.TRANSLATED'|tl( [ lang ] )|e }}
-                            </a>
-                        </p>
-                    {% endif %}
-                {% endfor %}
-            </div>
+    <div class="notice notice--extended notice--success">
+        {{ svg('language', 'icon icon--language')|raw }}
+        <div class="language__options">
+            {% for lang in availableLang|keys %}
+                {% if lang != activeLang %}
+                    {% set url = grav.language.getLanguageURLPrefix(lang) ~ page.rawRoute() %}
+                    <p lang="{{ lang }}">
+                        <a href="{{ url }}">
+                        {{ 'THEME_C.BLOG.TRANSLATED'|tl( [ lang ] )|e }}
+                        </a>
+                    </p>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 {% elseif pageLang != activeLang %}
     <div class="notice notice--error" lang="{{ activeLang }}">
         <div class="language">
-            {{ svg('language')|raw }}
+            {{ svg('language', 'icon icon--language')|raw }}
             <div class="language__options">
                 {{ 'THEME_C.BLOG.NOT_TRANSLATED'|t|e }}
             </div>
         </div>
     </div>
 {% endif %}
-{{dump(activeLang)}}
-{{dump(availableLang)}}
-
-
-{{dump(uri)}}
-{{dump(page)}}
-{{dump(grav.language.default)}}

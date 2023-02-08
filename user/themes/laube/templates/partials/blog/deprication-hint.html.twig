@@ -1,0 +1,7 @@
+{# Code older than 10 months should be mared as potentially depricated #}
+{% if 'Code' in post.taxonomy.category and post.date|date("U") < "-10 months"|date("U") %}
+    <div class="notice notice--extended notice--warning">
+        {{ svg('retro', 'icon icon-foo')|raw }}
+        <p>{{ 'THEME_C.BLOG.DEPRICATED_WARNING'|t|e }}</p>
+    </div>
+{% endif %}
