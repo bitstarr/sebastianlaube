@@ -124,6 +124,9 @@
         color: #002b36;
         background: #fefefe;
         border-radius: .2rem;
+
+        ::-moz-selection{ background: #93a1a1; color: #fefefe; text-shadow: none; }
+        ::selection { background: #93a1a1; color: #fefefe; text-shadow: none; }
     }
     pre[class^='language-'],
     code[class^='language-'] {
