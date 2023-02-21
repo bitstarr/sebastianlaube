@@ -1,5 +1,5 @@
 ---
-title: 'Mein neuer Ansatz zum Erzeugen von Frontend Assets'
+title: 'Mein neuer Ansatz zum Erzeugen von Frontend Assets: node scripts'
 date: 2023-02-21 13:37
 taxonomy:
   category:

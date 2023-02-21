@@ -1,5 +1,5 @@
 ---
-title: 'My new approach to build my frontend assets'
+title: 'My new approach to build my frontend assets: node scripts'
 date: 2023-02-21 13:37
 taxonomy:
   category:
