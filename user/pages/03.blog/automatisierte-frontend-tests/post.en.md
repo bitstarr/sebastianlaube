@@ -1,5 +1,5 @@
 ---
-title: 'Automated Frontend Testing im a Real Life Scenario'
+title: 'Automated Frontend Testing in a Real Life Scenario'
 date: 2023-02-08 13:37
 taxonomy:
   category:
