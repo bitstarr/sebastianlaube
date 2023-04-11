@@ -6,7 +6,6 @@ taxonomy:
     - Code
   tag:
     - VS Code
-slug: vs-code-extend-emmet
 ---
 Gelegentlich liefern Browserupdates auch neue Features für CSS. Vor nicht all zu langer Zeit wurden wir z. B. mit [„logical properties“ beschenkt](https://www.youtube.com/watch?v=cV9JhEV4Ll0). Während die meisten Shortcuts von emmet inzwischen Muscle Memory sind, gibt es für diese neuen Eigenschaften noch keine emmet Abkürzungen. Darum will ich hier mal kurz erklären, wie wir sie in Visual Studio Code nachliefern können. 
 
