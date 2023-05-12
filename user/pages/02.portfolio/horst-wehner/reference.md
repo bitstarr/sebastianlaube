@@ -11,4 +11,4 @@ disconnected: true
 ---
 Seit 2009 habe ich die Website meines guten Freunds Horst Wehner betreut. Während seiner letzten Legislaturperiode hat er sich noch mal eine neue Website gewünscht. Bei der Umsetzung war neben einem modernen Design auch ein hohes Maß an Barrierefreiheit gefragt.
 
-Mit seinem Abschied aus dem Landtag ging die Webiste vom Netz.
+Mit seinem Abschied aus dem Landtag ging die Website vom Netz.
