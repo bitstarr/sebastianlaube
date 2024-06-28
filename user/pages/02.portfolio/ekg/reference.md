@@ -1,5 +1,6 @@
 ---
 title: Europäische Kunstgemeinschaft
+published: false
 date: 19-02-2014
 url: http://europaeische-kunst-gemeinschaft.de/
 image: ekg.jpg
