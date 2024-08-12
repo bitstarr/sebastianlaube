@@ -18,7 +18,7 @@ One point from [Alvaro Montoro's CSS One-Liners post](https://alvaromontoro.com/
 > 
 > Let's face reality: *browsers' default 16px font size is small*. Although that may be a personal opinion based on me getting old 😅
 
-When I stumbled into web design in 1998, we had 13 or 15 inch CRT monitors and a resolution of 1024×768 was already a lot. A font size of 10 pixels slapped hard onto the 'body' and everything looked classy.
+When I stumbled into web design in 1998, we had 13 or 15 inch CRT monitors and a resolution of 1024×768 was already a lot. A font size of 10 pixels slapped hard onto the `<body>` and everything looked classy.
 
 10 years later, accessibility was an important (albeit still undervalued) part of the work and people got carried away with 12px after all - we now had 19 inch flat screens!
 
@@ -36,7 +36,7 @@ I also notice that I still have to zoom in on many websites on my 27-inch screen
 
 I wouldn't adopt Alvaro's suggestion without further ado, as I would waste so much space on a smartphone, for example, and many users would probably be irritated by the large font.
 
-I set a font size of 1.2rem from a certain viewport size. But this also has to be done carefully, because then grey areas arise in which media queries suddenly fall back into another area...
+I set a font size of `1.2rem` from a certain viewport size. But this also has to be done carefully, because then grey areas arise in which media queries suddenly fall back into another area...
 
 Should browsers perhaps use a larger font size on large screens from the outset if the user does not specify otherwise? Or do we need an information campaign to make them aware that they should check their system settings or set a different default font size in the browser?
 

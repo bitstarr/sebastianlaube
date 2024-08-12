@@ -18,7 +18,7 @@ Ein Punkt aus [Alvaro Montoro's CSS One-Liners Post](https://alvaromontoro.com/b
 > 
 > Let's face reality: *browsers' default 16px font size is small*. Although that may be a personal opinion based on me getting old 😅
 
-Als ich 1998 ins Webdesign gestolpert bin, hatten wir 13 oder 15 Zoll große Röhrenmonitore und eine Auflösung von 1024×768 war schon viel. Eine Schriftgröße von 10 Pixel hart in auf den `body` geknallt und alles sah edel aus.
+Als ich 1998 ins Webdesign gestolpert bin, hatten wir 13 oder 15 Zoll große Röhrenmonitore und eine Auflösung von 1024×768 war schon viel. Eine Schriftgröße von 10 Pixel hart in auf den `<body>` geknallt und alles sah edel aus.
 
 10 Jahre später war Barrierefreiheit ein wichtiger (wenn auch immernoch unterbewerter) Teil der Arbeit und man hat sich dann doch zu 12px hinreißen lassen – wir hatten jetzt ja 19 Zoll Flachbildschirme!
 
@@ -36,7 +36,7 @@ Ich merke auch dass ich an meinem 27 Zoll Bildschirm bei vielen Websites trotzde
 
 Den Vorschlag von Alvaro würde ich nicht ohne weiteres übernehmen, da ich z. B. auf einem Smartphone so viel Platz verschwenden würde und viele Nutzer/innen wahrscheinlich von der großen Schrift irritiert wären.
 
-Ich setze ab einer betimmten Viewport Größe eine Schriftgröße von 1.2rem. Aber das muss auch mit Bedacht gemacht werden, weil dann Graubereiche entstehen in denen Media Queries auf einmal wider in einen anderen Bereich fallen…
+Ich setze ab einer betimmten Viewport Größe eine Schriftgröße von `1.2rem`. Aber das muss auch mit Bedacht gemacht werden, weil dann Graubereiche entstehen in denen Media Queries auf einmal wider in einen anderen Bereich fallen…
 
 Sollten Browser vielleicht auf großen Bildschirmen von vorn herein eine höhere Schriftgröße nutzen, wenn der Nutzer/innen nichts anderes festglegen. Oder braucht es eine Informationskampagne um sie darauf aufmerksam zu machen, dass sie ihre Systemeinstellungen prüfen oder doch eine andere Standard-Schriftgröße im Browser festlegen?
 
