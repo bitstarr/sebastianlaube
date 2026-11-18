@@ -1,21 +1,23 @@
 .header {
-    margin-bottom: var( --gap-mars );
-
     .wrapped {
         display: flex;
         align-items: center;
         padding: var( --gap ) 0;
     }
 
-    @media ( max-width: 44.99em ) {
+    .logo {
+        line-height: 1.2;
+    }
+
+    @media ( width < 45em)  {
         .wrapped {
             flex-direction: column;
         }
         .navigation {
-            margin-top: var( --gap );
+            margin-block: var( --gap );
         }
     }
-    @media ( min-width: 45em ) {
+    @media ( width >= 45em ) {
         .wrapped {
             justify-content: space-between;
         }

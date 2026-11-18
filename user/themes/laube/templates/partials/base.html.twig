@@ -1,49 +1,52 @@
-{% set body_classes = [
+{%- set body_classes = [
     body_classes|default( '' ),
     tpl_body_classes|default(''),
     header.body_classes,
-]|join( ' ' )|trim %}
-{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
-{% set blog = page.find(site.blog.route|defined(theme_var('blog-page'))) %}
-{% set doc_title = '' %}
+]|join( ' ' )|trim -%}
+{%- set theme_config = attribute(config.themes, config.system.pages.theme) -%}
+
+{%- set doc_title = '' -%}
 {% if header.title and page.slug != 'home' %}
-    {% set doc_title = header.title|e('html') ~ ' - ' %}
+    {%- set doc_title = header.title|e('html') ~ ' - ' -%}
 {% endif %}
 {% if title_overwrite != null %}
-    {% set doc_title = title_overwrite ~ ' - ' %}
+    {%- set doc_title = title_overwrite ~ ' - ' -%}
 {% endif %}
-{% set doc_title = doc_title ~ site.title|e('html') %}
+{%- set doc_title = doc_title ~ site.title|e('html') -%}
 <!DOCTYPE html>
-<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
+<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}" class="no-js">
 <head>
 {% block head %}
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ doc_title }}</title>
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     {% include 'partials/metadata.html.twig' %}
-
-    <link rel="canonical" href="{{ page.url(true, true) }}" />
+    <link rel="canonical" href="{{ page.url(true, true) }}">
 {% endblock head %}
 
-{% block stylesheets %}
+<script type="module">
+    document.documentElement.classList.remove('no-js');
+    document.documentElement.classList.add('js');
+</script>
+
+{% block stylesheets -%}
     {% do assets.addCss('theme://dist/css/main.css', 100) %}
-    {% if page.header.page_css %}
+    {%- if page.header.page_css %}
         {% do assets.addCss('theme://dist/css/' ~ page.header.page_css ~ '.css', 99) %}
-    {% endif %}
-{% endblock %}
+    {% endif -%}
+{% endblock -%}
+
 <link rel="stylesheet"
     href="{{ url( 'theme://dist/css/fonts.css' )}}"
-    media="print" onload="this.media='all'" />
-
+    media="print" onload="this.media='all'">
 <noscript>
-    <link rel="stylesheet" href="{{ url( 'theme://dist/css/fonts.css' )}}" />
+    <link rel="stylesheet" href="{{ url( 'theme://dist/css/fonts.css' )}}">
 </noscript>
 
 {% block javascripts %}
     {% do assets.addJs('theme://dist/js/main.js', { group:'bottom', priority: 101 }) %}
-    {% if config.system.dev_mode %}
+    {% if config.site.env.state == 'dev' %}
         {% do assets.addJs('theme://dist/js/dev.js', { group:'bottom' }) %}
     {% endif %}
 {% endblock %}
@@ -52,58 +55,71 @@
     {{ assets.css()|raw }}
     {{ assets.js()|raw }}
 {% endblock %}
+
+{%- if config.site.env.state == 'production' %}
+    {# {% include 'partials/matomo.html.twig' %} #}
+{% else %}
+    <link rel="icon" href="{{ url('theme://assets/favicons/favicon.php') }}?letter={{ site.title|first }}&env={{ config.site.env.state }}">
+    <meta name="robots" content="noindex,nofollow">
+{% endif -%}
+
 </head>
-<body id="top" class="{{ body_classes }}">
+<body id="top" class="{{ body_classes }}" data-syntax-theme="solarized-light">
 
 {% block header %}
     <header class="header wrapping">
+        <a href="#content" class="skiplink visually-hidden">{{ 'THEME_C.A11Y.SKIP2CONTENT'|t|e }}</a>
+
         <div class="wrapped">
             <a class="logo" href="{{ home_url }}">
-                {{ svg('logo', 'logo__img icon', { preserveAspectRatio: 'xMidYMid'})|raw }}
-                Sebastian Laube
+                {{ svg('logo', 'logo__img icon', { 'title': site.title })|raw }}
+                {{ site.title }}
             </a>
+
             {% block header_navigation %}
                 {% include 'partials/navigation.html.twig' %}
             {% endblock %}
+            {% include 'partials/langswitcher.html.twig' %}
         </div>
     </header>
 {% endblock %}
 
-{% block hero %}
-    {% if page.header.hero_image %}
-        {% include 'partials/hero.html.twig' %}
-    {% endif %}
-{% endblock %}
+<main class="main" id="content">
+    {# {% block hero %}
+        {% if page.header.hero.image %}
+            {% include 'partials/hero.html.twig' %}
+        {% endif %}
+    {% endblock %} #}
 
-{% block breadcrumbs %}
-    {% if config.plugins.breadcrumbs.enabled and page.header.hide_breadcrumbs == false %}
-        {% include 'partials/breadcrumbs.html.twig' %}
-    {% endif %}
-{% endblock %}
+    {% block breadcrumbs %}
+        {% if config.plugins.breadcrumbs.enabled and page.header.hide_breadcrumbs == false %}
+            {% include 'partials/breadcrumbs.html.twig' %}
+        {% endif %}
+    {% endblock %}
 
-{% block body %}
-    <main class="main">
+    {% block body %}
         {% block content %}{% endblock %}
-    </main>
-{% endblock %}
+    {% endblock %}
+</main>
 
 {% block footer %}
-    <footer class="footer wrapping">
+    <footer class="footer wrapping" id="footer">
         <div class="wrapped">
-            <a href="#top" class="elevator" title="{{ 'THEME_C.NAV.GO_TOP_ALT'|t|e }}">{{ 'THEME_C.NAV.GO_TOP'|t|e }}</a>
-            {% if site.footer.menu %}
-                <nav class="footer__nav">
-                    <ul class="menu">
-                    {% for item in site.footer.menu %}
-                        <li class="menu__item">
-                            <a href="{{ item.url }}" class="menu__link">{{ item.title }}</a>
-                        </li>
-                    {% endfor %}
-                    </ul>
-                </nav>
-            {% endif %}
+            <a href="#top" class="elevator" title="{{ 'THEME_C.A11Y.SKIP2TOP'|t|e }}">
+                {{ 'THEME_C.A11Y.SKIP2TOP'|t|e }}
+            </a>
 
-            <aside class="quote" lang="en">{{ laube.qotm() }}</aside>
+            <nav class="footer__nav" aria-label="{{ 'THEME_C.NAV.FOOTER'|t|e }}">
+                <ul class="menu">
+                {% for item in site.footer.menu %}
+                    <li class="item">
+                        <a href="{{ item.url }}" class="link">{{ item.title }}</a>
+                    </li>
+                {% endfor %}
+                </ul>
+            </nav>
+
+            <aside class="quote" lang="en" aria-hidden="true">{{ laube.qotm() }}</aside>
 
             {% include 'partials/social.html.twig' %}
         </div>
@@ -113,5 +129,6 @@
 {% block bottom %}
     {{ assets.js('bottom')|raw }}
 {% endblock %}
+
 </body>
 </html>

@@ -1,0 +1,67 @@
+title: Carousel
+extends@: modular/default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+
+            content:
+              unset@: true
+
+            _carousel:
+              type: section
+              title: THEME_C.MODULE.CAROUSEL.CONFIGURE
+              underline: true
+              fields:
+                header.carousel:
+                  type: list
+                  style: vertical
+                  controls: both
+                  fields:
+                    .image:
+                      type: filepicker
+                      label: THEME_C.MODULE.THUMBNAIL
+                      size: medium
+                      folder: '@self'
+                      preview_images: true
+                      accept:
+                        - .png
+                        - .jpg
+                        - .jpeg
+                      validate:
+                        required: true
+                    # .content:
+                    #   type: editor
+                    #   label: THEME_C.MODULE.CONTENT
+                    #   rows: 3
+
+                header.carouselWidth:
+                  type: text
+                  label: THEME_C.MODULE.CAROUSEL.IMGWIDTH
+                  help: THEME_C.MODULE.CAROUSEL.IMGWIDTH_HELP
+                  size: small
+                  default: 350
+                  validate:
+                    required: true
+                    type: int
+                    min: 0
+                    max: 2000
+                header.carouselHeight:
+                  type: text
+                  label: THEME_C.MODULE.CAROUSEL.IMGHEIGHT
+                  size: small
+                  default: 500
+                  validate:
+                    required: true
+                    type: int
+                    min: 100
+                    max: 2000
+
+            _publish:
+              type: section
+              import@:
+                type: partials/publish
+                context: blueprints://

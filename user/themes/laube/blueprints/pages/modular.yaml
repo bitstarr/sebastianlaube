@@ -1,0 +1,11 @@
+title: Modular Page
+extends@:
+  type: default
+  context: blueprints://pages
+
+# form:
+#   fields:
+#     tabs:
+#       fields:
+#         content:
+#           fields:

@@ -1,0 +1,49 @@
+.babel {
+
+
+    .list {
+        display: flex;
+        gap: .2em;
+        padding: .2em;
+        border-radius: .5rem;
+        border: max( 1px, .07em ) solid var( --global-borderColor );
+    }
+
+    .link {
+        display: inline-block;
+        padding: .5em;
+        line-height: 1;
+        border-radius: .3rem;
+        border: max( 1px, .07em ) solid transparent;
+    }
+
+    .active {
+        /* --link-color: var( --sun ); */
+        font-weight: 700;
+    }
+
+    .link:hover,
+    .list:not( :hover, :focus-within ) .active {
+        border-color: currentcolor;
+        background-color: #fff;
+    }
+
+    @media ( width > 40em ) {
+        position: absolute;
+        z-index: 5;
+        inset-block-start: var( --_offset, 6rem );
+        inset-inline-end: 1rem;
+        height: 90vh;
+        mask-image: linear-gradient(
+            to top,
+            #0000 6rem,
+            #000 12rem
+        );
+
+        .list {
+            position: sticky;
+            inset-block-start: var( --gap-m );
+            flex-direction: column;
+        }
+    }
+}

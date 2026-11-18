@@ -8,6 +8,16 @@ plugins/*
 config/versions.yaml
 config/security.yaml
 
+themes/laube-old
+
+# grav 2.0
+accounts/.htaccess
+config/.htaccess
+data/.htaccess
+env/.htaccess
+api-private.php
+security-private.php
+
 # OS Generated
 .DS_Store*
 .DS_Store?

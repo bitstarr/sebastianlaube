@@ -1,9 +1,9 @@
 {% if site.footer.social %}
-    <ul class="social">
+    <ul class="social" aria-label="{{ 'THEME_C.NAV.SOCIAL'|t|e }}">
     {% for item in site.footer.social %}
-        <li class="social__item">
-            <a href="{{ item.url }}" rel="me" class="social__link icon--{{ item.icon }}">
-                {{ svg(item.icon, 'icon', { 'title': item.title })|raw }}
+        <li class="item">
+            <a href="{{ item.url }}" rel="me" class="link" style="--brand: var( --brand-{{ item.icon }} )">
+                {{ svg( item.icon )|raw }}
                 <span class="vh">{{ item.title }}</span>
             </a>
         </li>

@@ -7,5 +7,6 @@
 !/.ddev/*.sh
 !/user/
 !/user/**
+!/.htaccess
 !/Makefile
 !/readme.md

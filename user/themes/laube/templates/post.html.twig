@@ -1,40 +1,29 @@
 {% set tpl_body_classes = 't-post post' %}
 {% extends 'partials/base.html.twig' %}
-
-{% if 'Code' in post.taxonomy.category %}
-    {% block javascripts %}
-        {{ parent() }}
-        {% do assets.addJs('theme://dist/js/prism.js', { group:'bottom' }) %}
-    {% endblock %}
-    {% block stylesheets %}
-        {{ parent() }}
-        {% do assets.addCss('theme://dist/css/prism.css') %}
-    {% endblock %}
-{% endif %}
+{% do assets.addCss('theme://dist/css/blog.css', 99) %}
+{% do assets.addJs('theme://dist/js/ml/microlighter.min.js', { group:'bottom' }) %}
+{% do assets.addCss('theme://dist/js/ml/themes/solarized-light.css', 99) %}
 
 {% block content %}
-    {% set lang = page.language ? page.language : grav.language.default %}
-    <article class="article wrapping" lang="{{ lang }}">
+    <article class="article wrapping">
         <header class="article__header">
-            <h1 class="article__title">
+            <h1 class="article__title headline">
                 {{ page.title }}
             </h1>
             {% include 'partials/blog/categories.html.twig' with { post: page } %}
             <p class="article__date">
                 <time class="article__datetime dt-published" datetime="{{ page.date|date("c") }}">
-                    {{ page.date|localizeddate( 'long', 'none', lang ) }}
+                    {{ page.date|localizeddate( 'long', 'none', site.default_lang ) }}
                 </time>
             </p>
         </header>
-        {% include 'partials/blog/image.html.twig' with { post: page } %}
+        {% include 'partials/blog/item-image.html.twig' with { post: page } %}
         <div class="textflow">
-            {% include 'partials/blog/translation-hint.html.twig' %}
-            {% include 'partials/blog/deprication-hint.html.twig' with { post: page } %}
             {% if page.rawMarkdown matches '/' ~ config.site.summary.delimiter ~ '/' %}
                 {% if page.header.hide_summary != true %}
                     {{ page.summary|raw }}
                 {% endif %}
-                <a name="continue vh"></a>
+                <a name="continue"></a>
                 {{ page.content|slice(page.summary|length)|raw }}
             {% else %}
                 {{ page.content|raw }}

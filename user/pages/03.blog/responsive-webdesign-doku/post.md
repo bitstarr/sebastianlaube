@@ -1,7 +1,8 @@
 ---
 title: Responsive Webdesign Doku
 date: 01-06-2014 15:25
-post_image: rwd-doku.jpg
+hero:
+  image: rwd-doku.jpg
 routes:
   aliases:
     - '/2014/06/responsive-webdesign-doku'

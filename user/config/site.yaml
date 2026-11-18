@@ -30,9 +30,6 @@ footer:
     - title: About
       url: /about
   social:
-    - title: Twitter
-      icon: twitter
-      url: https://twitter.com/sebastianlaube
     - title: Mastodon
       icon: mastodon
       url: https://layer8.space/@sebastianlaube
@@ -51,6 +48,9 @@ footer:
     - title: Untappd
       icon: untappd
       url: https://untappd.com/user/bitstarr
+    - title: E-MAil
+      icon: mail
+      url: 'mailto:hello@sebastianlaube.de'
     - title: RSS Feed
       icon: rss
       url: /blog.rss

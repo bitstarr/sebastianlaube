@@ -3,7 +3,7 @@ title: Muss Chemnitz sterben, damit wir leben können?
 date: 27-08-2013 21:13
 routes:
   aliases:
-    - '/2013/10/muss-chemnitz-sterben-damit-wir-leben-koennen'
+    - '/2013/08/muss-chemnitz-sterben-damit-wir-leben-koennen'
 taxonomy:
   category:
     - Chemnitz

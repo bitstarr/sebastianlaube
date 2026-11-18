@@ -1,13 +1,11 @@
 .modular {
     & + & {
-        margin-top: var( --gap-mars );
+        margin-top: var( --gap-l );
     }
 
     &__title {
-        margin-bottom: 1rem;
-        font-size: 1.4em;
-        font-size: clamp( 1.4em, 4vw, 1.6em );
+        margin-bottom: var( --gap-m );
+        font-size: var( --size-3 );
         font-weight: 700;
-        line-height: 1.1;
     }
 }

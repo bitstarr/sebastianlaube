@@ -1,7 +1,8 @@
 ---
 title: Love what you do
 date: 27-10-2009 17:08
-post_image: rwd-doku.jpg
+hero:
+  image: love_what.jpg
 routes:
   aliases:
     - '/2009/10/love-what-you-do'

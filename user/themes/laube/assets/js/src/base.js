@@ -13,30 +13,11 @@
         init: function()
         {
             let self = this;
-
-            self.overlayToggles = doc.querySelectorAll( '#navigation__state' );
-            self.overlayToggles.forEach( function( toggle )
-            {
-                toggle.addEventListener( 'change', function()
-                {
-                    win.project.toggleBodyScroll();
-                });
-            });
         },
 
-        toggleBodyScroll: function()
+        toggleBodyScroll: function( scrolling = true )
         {
-            let self = this,
-                scrolling = true;
-
-            self.overlayToggles.forEach( function( toggle )
-            {
-                if ( toggle.checked )
-                {
-                    scrolling = false;
-                    return;
-                }
-            });
+            let self = this;
 
             if ( scrolling )
             {

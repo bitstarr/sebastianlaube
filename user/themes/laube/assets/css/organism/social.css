@@ -1,9 +1,14 @@
 .social {
     display: flex;
-    font-size: 1.3em;
+    font-size: 1.2em;
 
-    &__link {
-        --link-color: currentColor;
-        padding: var( --gap-moon );
+    .link {
+        padding: .5em;
+        transition: color .2s;
+
+        &:focus,
+        &:hover {
+            color: var( --brand );
+        }
     }
 }

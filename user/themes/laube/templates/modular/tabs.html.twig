@@ -1,9 +1,25 @@
-<section class="modular wrapping tabs tabs--default">
+{% spaceless %}
+{% set modular_classes = [
+    'modular',
+    'modular--tabs',
+    'wrapping',
+    'tabs',
+    'tabs--default',
+] %}
+
+{% if header.layout_alt %}
+    {% set modular_classes = modular_classes|merge( ['modular--alt'] ) %}
+{% endif %}
+{% endspaceless %}
+
+<div class="{{ modular_classes|join( ' ' )|trim }}">
+    {% if header.layout.hide_title != true -%}
     <h2 class="modular__title">{{ page.title }}</h2>
+    {% endif -%}
 
     <div class="wrapped">
         <ul class="tabs__head">
-            {% for target in page.collection() %}
+            {% for target in header.tabs %}
             <li class="tabs__tab">
                 <a class="tabs__toggle" href="#tabsection{{ loop.index }}">
                     <span class="label">{{ target.title }}</span>
@@ -11,17 +27,14 @@
             </li>
             {% endfor %}
         </ul>
-    </div>
-
-    <div class="wrapped">
-        {% for target in page.collection() %}
-        <article class="tabs__content" id="tabsection{{ loop.index }}">
+        {% for target in header.tabs %}
+        <div class="tabs__content" id="tabsection{{ loop.index }}">
             <h2 class="tabs__title">{{ target.title }}</h2>
             <div class="textflow">
-                {{ target.content|raw }}
+                {{ target.content|markdown|raw }}
             </div>
-        </article>
+        </div>
         {% endfor %}
     </div>
 
-</section>
+</div>

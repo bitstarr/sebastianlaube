@@ -1,11 +1,5 @@
 {% extends "forms/field.html.twig" %}
 
-{% set originalValue = value %}
-{% set value = (value is null ? field.default : value) %}
-{% if field.use == 'keys' and field.default %}
-    {% set value = field.default|merge(value) %}
-{% endif %}
-
 {% block global_attributes %}
     {{ parent() }}
     data-grav-keys="{{ field.use == 'keys' ? 'true' : 'false' }}"
@@ -13,32 +7,33 @@
 {% endblock %}
 
 {% block input %}
-    {% for key, text in field.options %}
+    {% set value = (value is null ? field.default : value) %}
+    {% if field.use == 'keys' and field.default %}
+        {% set value = field.default|merge(value) %}
+    {% endif %}
 
-        {% set id = field.id|default(field.name) ~ '-' ~ key %}
-        {% set name = field.use == 'keys' ? key : id %}
-        {% set val = field.use == 'keys' ? '1' : key %}
-        {% set checked = (field.use == 'keys' ? value[key] : key in value) %}
-        {% set help = (key in field.help_options|keys ? field.help_options[key] : false) %}
+{% for key, text in field.options %}
 
-        <div class="checkboxes {{ form_field_wrapper_classes }} {{ field.wrapper_classes }}">
-            <label class="{{ form_field_checkbox_classes }}" for="{{ id|e }}">
-            <input type="checkbox"
-                id="{{ id|e }}"
-                value="{{ val|e }}"
-                name="{{ (scope ~ field.name)|fieldName ~ '[' ~ name ~ ']' }}"
-                {% if checked %}checked="checked"{% endif %}
-                {% if field.classes is defined %}class="{{ field.classes }}" {% endif %}
-                {% if field.disabled or isDisabledToggleable %}disabled="disabled"{% endif %}
+    {% set id = field.id|default(field.name)|hyphenize ~ '-' ~ key %}
+    {% set name = field.use == 'keys' ? key : id %}
+    {% set val = field.use == 'keys' ? '1' : key %}
+    {% set checked = (field.use == 'keys' ? value[key] : key in value) %}
+    {% set help = (key in field.help_options|keys ? field.help_options[key] : false) %}
 
-            >
-                <i class="form-icon"></i>
-                {% if help %}
-                    <span class="hint--bottom" data-hint="{{ help|t|e('html_attr') }}">{{ text|t|e }}</span>
-                {% else %}
-                    {{ text|t|e }}
-                {% endif %}
-            </label>
-        </div>
-    {% endfor %}
+    <p class="{{ form_field_wrapper_classes ?: 'bool__wrap' }} {{ field.size }} {{ field.wrapper_classes }}">
+        <input type="checkbox"
+            id="{{ id|e }}"
+            value="{{ val|e }}"
+            name="{{ (scope ~ field.name)|fieldName ~ '[' ~ name ~ ']' }}"
+            class="bool{% if field.classes is defined %} {{ field.classes }}{% endif %}"
+            {% if checked %}checked="checked"{% endif %}
+            {% if field.disabled or isDisabledToggleable %}disabled="disabled"{% endif %}
+
+        >
+        <label class="bool__label {{ form_field_checkbox_classes }}" for="{{ id|e }}">
+            {{ text|t|e }}
+        </label>
+
+    </p>
+{% endfor %}
 {% endblock %}

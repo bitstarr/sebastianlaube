@@ -1,7 +1,8 @@
 ---
 title: Aus den Augen, aus dem Sinn.
 date: 02-06-2014 10:00
-post_image: prohibition.jpg
+hero:
+  image: prohibition.jpg
 routes:
   aliases:
     - '/2014/06/aus-den-augen-aus-dem-sinn'
