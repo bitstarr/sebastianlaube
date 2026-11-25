@@ -22,7 +22,7 @@ redirects:
 #  '/old/(.*)': '/new/$1
 
 env:
-  state: live
+  state: production
 
 footer:
   menu:
