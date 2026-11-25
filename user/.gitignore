@@ -3,6 +3,7 @@ accounts/*
 !accounts/.*
 data/*
 !data/.*
+!data/flex-objects
 plugins/*
 !plugins/.*
 config/versions.yaml

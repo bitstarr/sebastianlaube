@@ -37,7 +37,20 @@ html {
     --brand-untappd: #fc0;
     --brand-bitbucket: #205081;
     --brand-github: #171515;
+    --brand-mail: var( --orange );
     --brand-rss: var( --orange );
+
+    /* https://smoothshadows.com/#djEsMSwzLDAuMDQsOCw1LDAsIzAzMDcxMiwjZjNmNGY2LCNmZmZmZmYsMg%3D%3D */
+    --shadow-1:
+        0 1px 1px rgb( 3 7 18 / .01 ),
+        0 2px 4px rgb( 3 7 18 / .03 ),
+        0 5px 8px rgb( 3 7 18 / .04 );
+
+    /* https://smoothshadows.com/#djEsMSwzLDAuMDYsMTIsOCwwLCMwMzA3MTIsI2YzZjRmNiwjZmZmZmZmLDI%3D */
+    --shadow-2:
+        0 1px 1px rgb( 3 7 18 / .02 ),
+        0 4px 5px rgb( 3 7 18 / .04 ),
+        0 8px 12px rgb( 3 7 18 / .06 );
 
     /*
         Functional Colors
@@ -47,6 +60,7 @@ html {
     --global-muted: #707070;
     --global-ui: #f4f4f4;
     --global-borderColor: #93a1a1;
+    --global-borderColor: oklch(from var( --global-fill ) calc(l * .9) c h);
     --global-link: var( --orange );
     --global-hover: var( --blue );
 

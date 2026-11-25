@@ -1,0 +1,18 @@
+published: true
+private: false
+title: 'Ab nach Hause 2.0'
+description: 'Frisches Design, besserer Code und als Firefox-OS-App – jetzt auch <a href="/blog/dickes-update-fuer-ab-nach-hause-de">Open Source</a>.'
+date: '2013-10-10'
+url: 'http://ab-nach-hause.de/'
+image:
+  nach-hause-2.jpg:
+    name: nach-hause-2.jpg
+    type: image/jpeg
+    size: 62539
+    path: user/data/flex-objects/portfolio/ab-nach-hause-2/nach-hause-2.jpg
+services:
+  - 'Web Design'
+  - Entwicklung
+  - 'App Entwicklung'
+outdated: false
+offline: false

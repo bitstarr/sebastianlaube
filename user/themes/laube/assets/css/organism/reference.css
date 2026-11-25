@@ -1,0 +1,53 @@
+.reference {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var( --gap-xs );
+    padding-block-end: var( --gap-xs );
+    background: var( --global-ui );
+    box-shadow: var( --shadow-1 );
+    border-radius: var( --global-radius );
+    overflow: hidden;
+    width: min( 100%, 25rem );
+
+    .image {
+        width: 100%;
+    }
+
+    .title {
+        padding-inline: var( --gap-xs );
+        font-weight: 600;
+    }
+
+    .services {
+        padding-inline: var( --gap-xs );
+        font-size: var( --size--1 );
+    }
+
+    .more {
+        align-self: flex-start;
+        display: block;
+        /* margin: auto var( --gap-xs ) var( --gap-xs ); */
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+        }
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    &:focus-within {
+        outline: var( --outline-size ) var( --outline-style ) var( --outline-color );
+        outline-offset: var( --outline-offset, var( --outline-size ) );
+    }
+
+    /* visual affordance for the missing button */
+    transition: box-shadow .2s;
+
+    &:has( .more:hover, .more:focus-visible ) {
+        box-shadow: var( --shadow-2 );
+    }
+}

@@ -123,7 +123,8 @@
             font-family: sans-serif;
             font-size: .6rem;
             font-weight: 700;
-            opacity: .7;
+            /* opacity: .7; */
+            color: var( --global-primary );
         }
     }
     .language {
@@ -133,7 +134,9 @@
         &-js::before { content: 'JS'; }
         &-yaml::before { content: 'YAML'; }
         &-php::before { content: 'PHP'; }
+        &-json::before { content: 'JSON'; }
     }
+
     pre code {
         display: block;
         overflow-x: auto;
@@ -141,8 +144,8 @@
         padding: var( --gap );
         line-height: 1.3;
         white-space: pre;
-        color: #fdf6e3;
-        background: #002b36;
+        color: var( --syntax-foreground, #002b36 );
+        background-color: var( --syntax-background, #fff );
         scrollbar-color: #666 #002b36;
     }
 }

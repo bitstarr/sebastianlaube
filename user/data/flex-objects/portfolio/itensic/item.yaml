@@ -1,0 +1,18 @@
+published: true
+private: false
+title: itensic
+description: 'Wie zeigt man die Besonderheiten von innovativen Sport- und Trainingsgeräten? Mit starken Bildern und Videos (deton), knackigen Texten (Sebastian Steger) und klarem Design! Doch der umtriebige Erfinder wird nicht stillstehen, genauso wie die Website.'
+date: '2024-04-25'
+url: 'https://itensic.com/'
+image:
+  itensic.jpg:
+    name: itensic.jpg
+    type: image/jpeg
+    size: 89171
+    path: user/data/flex-objects/portfolio/itensic/itensic.jpg
+services:
+  - 'Web Design'
+  - Entwicklung
+  - 'grav CMS'
+outdated: false
+offline: false

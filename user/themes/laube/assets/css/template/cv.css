@@ -1,0 +1,53 @@
+.t-cv {
+    .pageHeadline {
+        font-weight: 700;
+    }
+
+    .jobtitle {
+        font-weight: 300;
+        text-align: center;
+    }
+
+    .columns {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var( --gap-xl ) var( --gap-l );
+        max-width: 110rem;
+        margin-inline: auto;
+        margin-block-start: var( --gap-xl );
+        padding-inline: 1em;
+
+        & > .item {
+            flex: 1 1 min(100%, 30rem);
+            min-width: 0;
+        }
+        .references {
+            flex-basis: min(100%, 25rem);
+        }
+    }
+
+    .aboutme .textflow {
+        max-width: 35rem;
+    }
+
+    .cv {
+        .date {
+            font-weight: 600;
+        }
+    }
+
+    .references {
+        .list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var( --gap-m );
+        }
+
+        .callout {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}

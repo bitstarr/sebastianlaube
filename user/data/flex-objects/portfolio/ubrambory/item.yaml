@@ -1,0 +1,19 @@
+published: true
+private: false
+title: 'U Brambory'
+date: '2024-10-28'
+services:
+  - 'Web Design'
+  - Entwicklung
+  - 'grav CMS'
+  - Mehrsprachigkeit
+outdated: false
+offline: false
+image:
+  ubrambory.jpg:
+    name: ubrambory.jpg
+    type: image/jpeg
+    size: 120932
+    path: ubrambory.jpg
+url: 'https://ubrambory.space/'
+description: 'Für die beste Craft-Beer-Kneipe der Stadt bestand der Wunsch nach etwas bewusst Reduziertem. Im Kontrast zur Einrichtung der Bar ist die Website sehr minimalistisch und fokussiert sich auf die Inhalte, wie z. B. die anstehenden Termine. Dabei wird die Seite in drei Sprachen angeboten, denn es gibt nicht nur Bier aus Tschechien, auch der Wirt stammt von dort.'

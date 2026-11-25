@@ -1,8 +1,12 @@
 {% if site.footer.social %}
     <ul class="social" aria-label="{{ 'THEME_C.NAV.SOCIAL'|t|e }}">
     {% for item in site.footer.social %}
+        {% set url = item.url -%}
+        {% if 'mailto' in url -%}
+            {% set url = url|safe_email -%}
+        {% endif -%}
         <li class="item">
-            <a href="{{ item.url }}" rel="me" class="link" style="--brand: var( --brand-{{ item.icon }} )">
+            <a href="{{ url }}" rel="me" class="link" style="--brand: var( --brand-{{ item.icon }} )">
                 {{ svg( item.icon )|raw }}
                 <span class="vh">{{ item.title }}</span>
             </a>

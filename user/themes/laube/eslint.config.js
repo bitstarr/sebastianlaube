@@ -1,34 +1,34 @@
+const globals = require( 'globals' );
 
 module.exports = [{
+    files: [ 'assets/js/**/*.js' ],
     languageOptions: {
         ecmaVersion: 2022,
-        "globals": {
-            "Grav": true,
-            "project": true,
-            "Parvus": true
+        sourceType: 'module',
+        globals: {
+            ...globals.browser,
         },
     },
-    'ignores': [ '**/vendor/*'],
-    "rules": {
-        "indent": [
-            "error",
+    rules: {
+        'indent': [
+            'error',
             4
         ],
-        "linebreak-style": [
-            "error",
-            "unix"
+        'linebreak-style': [
+            'error',
+            'unix'
         ],
-        "quotes": [
-            "error",
-            "single"
+        'quotes': [
+            'error',
+            'single'
         ],
-        "semi": [
-            "error",
-            "always"
+        'semi': [
+            'error',
+            'always'
         ],
-        "no-unused-vars": [
+        'no-unused-vars': [
             1,
-            { "vars": "all", "args": "after-used" }
+            { 'vars': 'all', 'args': 'after-used' }
         ]
     }
 }];

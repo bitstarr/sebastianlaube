@@ -1,0 +1,7 @@
+{% set active_lang = grav.language.getLanguage %}
+{% if grav.language.enabled and page.translatedLanguages[active_lang] == null %}
+    <div class="notice notice--error" lang="{{ active_lang }}">
+        {{ svg('language', 'icon icon--language')|raw }}
+        <p>{{ 'THEME_C.BLOG.NOT_TRANSLATED'|t|e }}</p>
+    </div>
+{% endif %}

@@ -129,6 +129,8 @@ THEME_C:
     POSTED_IN: Posted in
     TAGS: Tags
     ARCHIVE_OF: Achive of
+    NOT_TRANSLATED: Sorry, this text is not translated yet.
+    DEPRICATED_WARNING: Due to the age of this post, code examples and procedures may be outdated. Please also check other sources.
   VIDEO:
     EMBEDDED_VIDEO: Embedded Video
     PRIVACY: Here you will find embedded external content. If you load this content, personal data will be transferred to this platform and possibly to other third parties.
@@ -167,3 +169,20 @@ THEME_C:
     OPTIONAL: optional
     GENERAL: 'General Request'
     THANKS: Thanks for your message.
+  PORTFOLIO:
+    TITLE: References
+    NEXT: Next reference
+    PREV: Previous reference
+    CLOSE: Close
+    VIEW: View
+    MOCKUP: Screenshot of %s
+    COUNTER: Reference %s of %s
+    VISIT: Visit website
+    SCREENSHOT: View screenshot
+    FILE: View file
+  HOME:
+    MADE_BY_ME: That's what I made
+    MORE_ABOUT: More about me
+    MORE_PROJECTS: More projects
+    WRITTEN_BY_ME: What I have to tell
+    MORE_BLOG: The Blog

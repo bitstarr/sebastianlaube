@@ -1,12 +1,18 @@
 .babel {
-
+    padding-right: max( 1px, .07em );
+    font-size: var( --size--1 );
 
     .list {
         display: flex;
         gap: .2em;
         padding: .2em;
         border-radius: .5rem;
-        border: max( 1px, .07em ) solid var( --global-borderColor );
+        background-color: var( --global-fill );
+        border: max( 1px, .07em ) solid oklch(from var( --global-fill ) calc(l * .9) c h);
+        box-shadow:
+            inset max( 1px, .07em ) 0 0 oklch(from var( --global-fill ) calc(l * 1.1) c h),
+            max( 1px, .07em ) 0 0 oklch(from var( --global-fill ) calc(l * 1.1) c h)
+        ;
     }
 
     .link {

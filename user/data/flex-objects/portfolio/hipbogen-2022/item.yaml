@@ -1,0 +1,18 @@
+published: false
+private: false
+title: Hipbogen
+description: 'Für die Präsentation seiner außergewöhnlichen Interpretationen des Schwibbogens brauchte Rico Langer eine frische Website. Es wurde wieder ein One-Pager nach seinem Design auf Basis von grav. So kann er jetzt ganz bequem seine neuesten Ideen in seinem Online-Showroom präsentieren.'
+date: '2022-06-10'
+url: 'https://hipbogen.de'
+image:
+  hipbogen-2022.jpg:
+    name: hipbogen-2022.jpg
+    type: image/jpeg
+    size: 131426
+    path: user/data/flex-objects/portfolio/hipbogen-2022/hipbogen-2022.jpg
+services:
+  - Entwicklung
+  - 'One Pager'
+  - 'grav CMS'
+outdated: false
+offline: false

@@ -42,11 +42,10 @@ Chassis provides templates, styles or functionality for the following plugins (i
 │   ├── /img                static images
 │   │   ├── marker.svg          map marker template
 │   │   └── social.jpg          default open graph image
-│   └── /js                 JS files
-│       ├── /src                JS (bundle) source files
-│       ├── dev.json            JS helper bundle for local enviroment
-│       ├── main.json           JS base bundle.
-│       └── summary.js          JS standalone component
+│   └── /js                 JS files (ES modules)
+│       ├── /modules            feature modules, loaded on demand by main.js
+│       ├── dev.js              entry point for helpers in the local enviroment
+│       └── main.js             main entry point
 ├── /blueprints         grav blueprints for page types
 ├── /classes            custom PHP Classes
 │   └── Utils.php           utilty class with helper functions
@@ -55,7 +54,8 @@ Chassis provides templates, styles or functionality for the following plugins (i
 │   ├── /fonts              duplicates of assets/fonts
 │   ├── /icons              optimized and minified icons
 │   ├── /img                optimized images
-│   └── /js                 minified JS files and bundles
+│   └── /js                 entry points (minified on build)
+│       └── /chunks             on demand modules, libraries and grammars
 ├── /langages           translation files
 ├── /shortcodes         custom shortcodes
 ├── /templates          grav templates
@@ -65,7 +65,7 @@ Chassis provides templates, styles or functionality for the following plugins (i
 │   ├── /modular            templates for modular page elements
 │   ├── /partials           template parts
 │   └── *.html.twig         page templates
-├── .eslintrc           eslint config
+├── eslint.config.js    eslint config
 ├── .styleintrc         styleint config
 ├── chassis.php         theme functions
 ├── chassis.yaml        theme config file
@@ -82,21 +82,25 @@ Additionally this will also happen to CSS files in `/assets/css/page`. So you ca
 
 ## JS Files und Bundles
 
-In ``/assets/js`` you will find .js and .json files, as well as a `src` folder. In this setup (no webpack or other advanced magic) the JS files are independent functional components. JSON files are the base for bundles. With these, you can concatenate multiple components from the `src` folder as well as libraries from `/node_modules` which you installed via npm (see example below). In bundles, the order is important. The libs will appear before the code from `src`.
+JavaScript is written as ES modules and bundled with [esbuild](https://esbuild.github.io/). Every `.js` file directly in `/assets/js` is an entry point and ends up in `/dist/js` with the same name. Libraries are installed via npm and imported by name (`import Parvus from 'parvus'`); esbuild copies everything needed into `/dist`, so `node_modules` is not needed on the live system.
 
-Every JS file in ``/assets/js`` will be copied in ``/dist/js``. Bundles will run through a combination of their parts and the result will be saved as js in ``/dist/js``. Please be aware that there will be conflicts if the filenames of a bundle and a standalone component are the same (foobar.js and foobar.json for example).
+`main.js` maps selectors to modules in `/assets/js/modules`. A module is only downloaded when its selector matches something on the current page. Each module default-exports an init function that receives the matched elements:
 
-````json
-{
-    "lib": [
-        "choices.js/public/assets/scripts/choices.min.js"
-    ],
-    "src": [
-        "address.js",
-        "userprofile.js"
-    ]
-}
+````js
+// assets/js/main.js
+const modules = {
+    '.tabs': () => import( './modules/tabs.js' ),
+};
+
+// assets/js/modules/tabs.js
+export default function init( containers ) { /* … */ }
 ````
+
+Every dynamic `import()` becomes its own file in `/dist/js/chunks` (with a hash in its name, so `/dist/js` is cleared on every build). This also applies inside libraries: MicroLighter's grammars are split into one chunk per language and only loaded for languages used on the page. Deploy the whole `/dist/js` folder.
+
+Entry points are included in templates with `assets.addJsModule()`. Never enable the pipeline for them, as chunks are loaded relative to the entry file.
+
+To load a stylesheet from a module, resolve its path against the module itself, not the page: `new URL( '../../css/foo.css', import.meta.url )` (chunks live in `/dist/js/chunks`).
 
 ## Images
 
@@ -132,8 +136,8 @@ Wir use node scripts as a task runner.
 |---|---|
 | npm run css | processes the CSS files and saves them with source maps to `/dist/css` |
 | npm run cssmin | same as `css` but with minifying |
-| npm run js | creates JS bundles and copies JS files to `/dist/js` |
-| npm run jsmin | same as `js` but with minifying |
+| npm run js | bundles the JS entry points with source maps to `/dist/js` |
+| npm run jsmin | same as `js` but minified and without source maps |
 | npm run lint | checks CSS and JS assets for bad coding styles and errors |
 | npm run fonts | copies font files to `/dist/fonts` |
 | npm run img | simply copies images from `/assets/img` to `/dist/img` |

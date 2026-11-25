@@ -91,7 +91,7 @@ body {
     border-collapse: collapse;
     border-color: currentcolor;
     text-indent: 0;
-    font-variant-numeric: lining-nums tabular-nums diagonal-fractions;
+    font-variant-numeric: lining-nums tabular-nums;
 }
 
 :where( td, td img ) { vertical-align: top; }

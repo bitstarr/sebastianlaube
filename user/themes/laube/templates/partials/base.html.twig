@@ -1,3 +1,4 @@
+{% spaceless %}
 {%- set body_classes = [
     body_classes|default( '' ),
     tpl_body_classes|default(''),
@@ -13,6 +14,7 @@
     {%- set doc_title = title_overwrite ~ ' - ' -%}
 {% endif %}
 {%- set doc_title = doc_title ~ site.title|e('html') -%}
+{% endspaceless %}
 <!DOCTYPE html>
 <html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}" class="no-js">
 <head>
@@ -45,9 +47,10 @@
 </noscript>
 
 {% block javascripts %}
-    {% do assets.addJs('theme://dist/js/main.js', { group:'bottom', priority: 101 }) %}
+    {# ES modules are deferred by default. Never pipeline them: chunks are loaded relative to main.js #}
+    {% do assets.addJsModule('theme://dist/js/main.js', { priority: 101, pipeline: false }) %}
     {% if config.site.env.state == 'dev' %}
-        {% do assets.addJs('theme://dist/js/dev.js', { group:'bottom' }) %}
+        {% do assets.addJsModule('theme://dist/js/dev.js', { pipeline: false }) %}
     {% endif %}
 {% endblock %}
 
@@ -64,7 +67,7 @@
 {% endif -%}
 
 </head>
-<body id="top" class="{{ body_classes }}" data-syntax-theme="solarized-light">
+<body id="top" class="{{ body_classes }}">
 
 {% block header %}
     <header class="header wrapping">
@@ -72,14 +75,16 @@
 
         <div class="wrapped">
             <a class="logo" href="{{ home_url }}">
-                {{ svg('logo', 'logo__img icon', { 'title': site.title })|raw }}
+                {{ svg('theme://dist/img/logo-multi.svg', 'logo__img icon')|raw }}
                 {{ site.title }}
             </a>
 
             {% block header_navigation %}
                 {% include 'partials/navigation.html.twig' %}
             {% endblock %}
-            {% include 'partials/langswitcher.html.twig' %}
+            {% block langswitcher %}
+                {% include 'partials/langswitcher.html.twig' %}
+            {% endblock %}
         </div>
     </header>
 {% endblock %}

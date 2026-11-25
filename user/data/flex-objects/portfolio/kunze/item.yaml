@@ -1,0 +1,18 @@
+published: false
+private: false
+title: 'Kunze Haus/Zimmerei Kunze'
+description: 'Diese Website(s) entstanden im Rahmen meiner Beschäftigung bei der Agentur [Punkt 191](https://punkt191.de). Jörg Kunze und sein Team sind sympathische Handwerker, deren Arbeit die Präzision und Liebe zum Detail anzusehen ist. Regional verwurzelt und international gefragt. Die Herausforderung bei dem Projekt war, die Verwebung der beiden Geschäftsbereiche darzustellen und sie doch unterscheidbar zu machen.'
+date: '2017-04-02'
+url: 'https://kunzehaus.de'
+image:
+  kunzehaus.jpg:
+    name: kunzehaus.jpg
+    type: image/jpeg
+    size: 228505
+    path: user/data/flex-objects/portfolio/kunze/kunzehaus.jpg
+services:
+  - 'Web Design'
+  - Entwicklung
+  - WordPress
+outdated: true
+offline: false

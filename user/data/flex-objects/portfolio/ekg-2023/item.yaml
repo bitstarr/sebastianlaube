@@ -1,0 +1,19 @@
+published: true
+private: false
+title: 'Europäische Kunstgemeinschaft'
+description: 'Der Verein, der Menschen an die Vielfältigkeit von Kunst heranführen will, hat über die Jahre viel bewegt. Das simple Design der neuen Website bietet eine große Bühne für die Ziele und Projekte des Vereins.'
+date: '2023-09-01'
+url: 'https://europaeische-kunst-gemeinschaft.de/'
+image:
+  ekg-2023.jpg:
+    name: ekg-2023.jpg
+    type: image/jpeg
+    size: 197714
+    path: user/data/flex-objects/portfolio/ekg-2023/ekg-2023.jpg
+services:
+  - 'Web Design'
+  - Entwicklung
+  - 'grav CMS'
+  - Mehrsprachigkeit
+outdated: false
+offline: false

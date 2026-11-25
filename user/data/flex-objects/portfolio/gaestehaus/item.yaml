@@ -1,0 +1,18 @@
+published: true
+private: false
+title: 'Gäste- und Tagungshäusern im Bethlehemstift'
+date: '2025-01-20'
+services:
+  - 'Web Design'
+  - Entwicklung
+  - 'grav CMS'
+outdated: false
+offline: false
+image:
+  gaestehaus.jpg:
+    name: gaestehaus.jpg
+    type: image/jpeg
+    size: 253942
+    path: gaestehaus.jpg
+url: 'https://www.urlaub-freizeit-seminar.de/'
+description: 'Das Gästehaus liegt wunderbar im Grünen und ist trotzdem gut zu erreichen. Der ideale Ort für Tagungen, Klausuren, Vereinsausflüge oder einfach eine Reise in die Region um den Sachsenring. Nun zeigen sich Räume und Leistungsumfang in einem stilvollen Gewand, das sich an den Farben der Diakonie orientiert, zu der das Gästehaus gehört.'

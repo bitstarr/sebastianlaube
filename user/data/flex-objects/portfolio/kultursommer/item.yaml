@@ -1,0 +1,20 @@
+published: true
+private: false
+title: 'Chemnitzer Kultursommer'
+description: 'Der Chemnitzer Brühl lag lange brach, aber das wollen wir ändern! Und so ein großes Kulturfest braucht natürlich auch eine Website. Mit dem Key Visual von Peachbeach und meinem Minimalismus transportiert sie unsere große Menge an Inhalten. Das Ganze natürlich mit aktuellen Technologien: Responsive Web Design.'
+date: '2013-04-16'
+url: 'http://kultursommer.cc'
+image:
+  kultursommer.jpg:
+    name: kultursommer.jpg
+    type: image/jpeg
+    size: 153808
+    path: user/data/flex-objects/portfolio/kultursommer/kultursommer.jpg
+services:
+  - 'Logo Design'
+  - 'Corporate Design'
+  - 'Web Design'
+  - Entwicklung
+  - WordPress
+outdated: false
+offline: false

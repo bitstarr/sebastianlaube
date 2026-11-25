@@ -1,0 +1,207 @@
+title: Portfolio
+description: Portfolio-Referenzen
+type: flex-objects
+
+# Flex configuration
+config:
+  # Administration configuration
+  admin:
+    router:
+      path: '/portfolio'
+
+    menu:
+      list:
+        route: '/portfolio'
+        title: Portfolio
+        icon: fa-briefcase
+        authorize: ['admin.portfolio.list', 'admin.super']
+        priority: 2
+
+    permissions:
+      admin.portfolio:
+        type: crudpl
+        label: Portfolio
+
+    template: default
+
+    list:
+      title: title
+      fields:
+        published:
+          field:
+            type: toggle
+            label: Publ.
+          width: 8
+        title:
+          link: edit
+          search: true
+        date:
+          width: 20
+        offline:
+          width: 10
+      options:
+        per_page: 50
+        order:
+          by: date
+          dir: desc
+
+    edit:
+      title:
+        template: "{{ object.title ?? 'Neue Referenz' }}"
+
+  # Site configuration
+  site:
+    templates:
+      collection:
+        paths:
+          - 'flex/{TYPE}/collection/{LAYOUT}{EXT}'
+      object:
+        paths:
+          - 'flex/{TYPE}/object/{LAYOUT}{EXT}'
+      defaults:
+        type: portfolio
+        layout: default
+
+  # Data configuration
+  data:
+    object: 'Grav\Common\Flex\Types\Generic\GenericObject'
+    collection: 'Grav\Common\Flex\Types\Generic\GenericCollection'
+    index: 'Grav\Common\Flex\Types\Generic\GenericIndex'
+    storage:
+      class: 'Grav\Framework\Flex\Storage\FolderStorage'
+      options:
+        formatter:
+          class: 'Grav\Framework\File\Formatter\YamlFormatter'
+        folder: 'user-data://flex-objects/portfolio'
+    search:
+      options:
+        contains: 1
+      fields:
+        - title
+        - description
+
+form:
+  validation: loose
+
+  fields:
+    published:
+      type: toggle
+      label: Veröffentlicht
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.YES
+        0: PLUGIN_ADMIN.NO
+      validate:
+        type: bool
+        required: true
+
+    private:
+      label: Privat
+      type: toggle
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.YES
+        0: PLUGIN_ADMIN.NO
+      validate:
+        type: bool
+        required: true
+
+    title:
+      type: text
+      label: Bezeichnung
+      validate:
+        required: true
+
+    description:
+      type: editor
+      label: Beschreibung
+
+    date:
+      type: date
+      label: Datum
+      validate:
+        required: true
+
+    url:
+      type: url
+      label: URL
+
+    image:
+      type: file
+      label: Bild
+      multiple: false
+      destination: self@
+      accept:
+        - image/*
+
+    services:
+      type: selectize
+      label: Leistungen
+      selectize:
+        create: true
+        options:
+          - { text: 'Entwicklung', value: 'Entwicklung' }
+          - { text: 'Web Design', value: 'Web Design' }
+          - { text: 'WordPress', value: 'WordPress' }
+          - { text: 'One Pager', value: 'One Pager' }
+          - { text: 'grav CMS', value: 'grav CMS' }
+          - { text: 'Responsive Web Design', value: 'Responsive Web Design' }
+          - { text: 'Logo Design', value: 'Logo Design' }
+          - { text: 'Print Design', value: 'Print Design' }
+          - { text: 'Corporate Design', value: 'Corporate Design' }
+          - { text: 'Pure Unterhaltung', value: 'Pure Unterhaltung' }
+          - { text: 'Design', value: 'Design' }
+          - { text: 'WordPress Plugins', value: 'WordPress Plugins' }
+          - { text: 'Web-Visitenkarte', value: 'Web-Visitenkarte' }
+          - { text: 'Mehrsprachigkeit', value: 'Mehrsprachigkeit' }
+          - { text: 'Dokumentation', value: 'Dokumentation' }
+          - { text: 'Barrierefreiheit', value: 'Barrierefreiheit' }
+          - { text: 'App Entwicklung', value: 'App Entwicklung' }
+      validate:
+        type: commalist
+
+    outdated:
+      label: Wurde durch andere Seite abgelöst.
+      type: toggle
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.YES
+        0: PLUGIN_ADMIN.NO
+      validate:
+        type: bool
+
+    offline:
+      label: Offline
+      type: toggle
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.YES
+        0: PLUGIN_ADMIN.NO
+      validate:
+        type: bool
+
+    placeholder:
+      type: file
+      label: Platzhalter
+      toggleable: true
+      multiple: false
+      destination: self@
+      accept:
+        - image/*
+        - application/pdf
+
+    fileOnly:
+      label: Datei als Ziel
+      type: toggle
+      toggleable: true
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.YES
+        0: PLUGIN_ADMIN.NO
+      validate:
+        type: bool

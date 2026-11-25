@@ -1,0 +1,18 @@
+published: true
+private: false
+title: 'Präventiv- und Rehabilitations­zentrum Letow'
+description: 'Das Besondere dieser Praxis für Physiotherapie ist der Trainingsraum mit den speziellen, selbstentwickelten Geräten. Dank des Texters Sebastian Steger konnten wir dieses besondere Konzept optisch und inhaltlich spannend darstellen.'
+date: '2024-03-01'
+url: 'https://prz-letow.de/'
+image:
+  prz-letow.jpg:
+    name: prz-letow.jpg
+    type: image/jpeg
+    size: 144162
+    path: user/data/flex-objects/portfolio/prz-letow/prz-letow.jpg
+services:
+  - 'Web Design'
+  - Entwicklung
+  - 'grav CMS'
+outdated: false
+offline: false

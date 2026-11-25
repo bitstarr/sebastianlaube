@@ -1,0 +1,1 @@
+import"./chunk-ARR6HII7.js";function t(d){d.forEach(a=>{let e=document.querySelector('audio[data-audioid="'+a.dataset.audioid+'"]');if(!e)return;let s=i=>{a.classList.toggle("is-playing",i),a.classList.toggle("is-paused",!i)};a.addEventListener("click",()=>{e.paused?(e.play(),s(!0)):(e.pause(),s(!1))}),e.addEventListener("ended",()=>s(!1))})}export{t as default};

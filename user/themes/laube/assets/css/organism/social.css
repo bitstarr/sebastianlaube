@@ -3,6 +3,7 @@
     font-size: 1.2em;
 
     .link {
+        display: block;
         padding: .5em;
         transition: color .2s;
 

@@ -1,0 +1,48 @@
+.timeline {
+    padding-inline-start: 3rem;
+
+    .item {
+        position: relative;
+        padding-block-end: var( --gap-m );
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            inset-block: 0;
+            inset-inline-start: -2rem;
+            width: max( 2px, .12rem );
+            translate: -50% 1rem;
+            border-left: max( 1px, .07em ) solid oklch(from var( --global-fill ) calc(l * .9) c h);
+            border-right: max( 1px, .07em ) solid oklch(from var( --global-fill ) calc(l * 1.1) c h);
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: 2;
+            inset-block-start: .4em;
+            inset-inline-start: -2rem;
+            transform: translate( -50%, 0 );
+            display: block;
+            width: .8rem;
+            height: .8rem;
+            background-color: var( --global-primary );
+            border-radius: 50%;
+            box-shadow:
+                inset -2px -1px 3px rgb( 0 0 0 /.32),
+                inset 2px 1px 3px hsl( 0 0% 100% / .3 )
+            ;
+        }
+    }
+    .item:last-child {
+        padding-block-end: 0;
+
+        &::before {
+            mask-image: linear-gradient(
+                to top,
+                #0000 20%,
+                #000
+            );
+        }
+    }
+}

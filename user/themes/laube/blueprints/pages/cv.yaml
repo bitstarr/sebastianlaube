@@ -1,0 +1,39 @@
+title: CV Page
+extends@:
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            claim:
+              type: text
+              label: Claim
+            _cv:
+              type: section
+              title: Lebenslauf
+              underline: true
+              fields:
+                header.cv:
+                  type: list
+                  style: vertical
+                  controls: both
+                  fields:
+                    .date:
+                      type: text
+                      label: Zeitraum
+                      validate:
+                        required: true
+                    .job:
+                      type: text
+                      label: Job
+                    .company:
+                      type: text
+                      label: Firma
+                    .description:
+                      type: editor
+                      rows: 3
+                      label: Freitext

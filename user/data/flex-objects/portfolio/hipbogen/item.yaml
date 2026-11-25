@@ -1,0 +1,18 @@
+published: false
+private: false
+title: Hipbogen
+description: 'Kreativer Umgang mit Traditionen ist immer interessant. Für die Präsentation seiner außergewöhnlichen Interpretation des Schwibbogens habe ich zusammen mit Rico Langer (hipbogen) eine stilvolle Website gezimmert.'
+date: '2013-03-10'
+url: 'http://hipbogen.de'
+image:
+  hipbogen.jpg:
+    name: hipbogen.jpg
+    type: image/jpeg
+    size: 110802
+    path: user/data/flex-objects/portfolio/hipbogen/hipbogen.jpg
+services:
+  - Entwicklung
+  - 'One Pager'
+  - 'Responsive Web Design'
+outdated: false
+offline: false

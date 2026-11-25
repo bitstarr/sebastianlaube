@@ -1,11 +1,10 @@
 {% set tpl_body_classes = 't-post post' %}
 {% extends 'partials/base.html.twig' %}
 {% do assets.addCss('theme://dist/css/blog.css', 99) %}
-{% do assets.addJs('theme://dist/js/ml/microlighter.min.js', { group:'bottom' }) %}
-{% do assets.addCss('theme://dist/js/ml/themes/solarized-light.css', 99) %}
+{% set lang = page.language ? page.language : grav.language.default %}
 
 {% block content %}
-    <article class="article wrapping">
+    <article class="article wrapping" lang="{{ lang }}">
         <header class="article__header">
             <h1 class="article__title headline">
                 {{ page.title }}
@@ -19,6 +18,8 @@
         </header>
         {% include 'partials/blog/item-image.html.twig' with { post: page } %}
         <div class="textflow">
+            {% include 'partials/blog/translation-hint.html.twig' %}
+            {% include 'partials/blog/deprication-hint.html.twig' with { post: page } %}
             {% if page.rawMarkdown matches '/' ~ config.site.summary.delimiter ~ '/' %}
                 {% if page.header.hide_summary != true %}
                     {{ page.summary|raw }}

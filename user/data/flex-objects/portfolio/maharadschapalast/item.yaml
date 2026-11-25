@@ -1,0 +1,19 @@
+published: false
+private: false
+title: 'Maharadscha Palast'
+description: 'Die Anmutung eines indischen Restaurants in eine Website zu übertragen, war schwieriger als ich gedacht hatte – aber es hat sich gelohnt. Schlicht, mit orientalischen Ornamenten und natürlich responsive.'
+date: '2014-05-01'
+url: 'http://maharadschapalast.de/'
+image:
+  maharadschapalast.jpg:
+    name: maharadschapalast.jpg
+    type: image/jpeg
+    size: 168377
+    path: user/data/flex-objects/portfolio/maharadschapalast/maharadschapalast.jpg
+services:
+  - Design
+  - Entwicklung
+  - 'One Pager'
+  - 'Responsive Web Design'
+outdated: false
+offline: false

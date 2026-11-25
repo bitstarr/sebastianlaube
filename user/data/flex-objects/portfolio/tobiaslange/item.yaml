@@ -1,0 +1,19 @@
+published: true
+private: false
+title: 'Tobias Lange'
+date: '2024-12-18'
+services:
+  - 'Web Design'
+  - Entwicklung
+  - 'grav CMS'
+  - 'One Pager'
+outdated: false
+offline: false
+image:
+  tobiaslange.jpg:
+    name: tobiaslange.jpg
+    type: image/jpeg
+    size: 164062
+    path: tobiaslange.jpg
+url: 'https://staerken-erleben.de/'
+description: 'Tobias bietet Teambuilding und Workshops an. Mit der eleganten Website hat er nun ein festes Zuhause im Netz, zu dem er Interessierte schicken kann.'

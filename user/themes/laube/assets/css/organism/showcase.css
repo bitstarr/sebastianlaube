@@ -1,0 +1,29 @@
+.showcase {
+    .list {
+        --link-color: currentcolor;
+        --link-hover: var( --global-primary );
+
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: var( --gap-m );
+    }
+
+    .item {
+        flex: 1 1 min( 100%, 11em );
+        min-width: 0;
+    }
+
+    .title {
+        font-size: var( --size--1 );
+    }
+
+    .callout {
+        margin-block-start: var( --gap-m );
+        text-align: center;
+
+        .link {
+            text-decoration: underline;
+        }
+    }
+}

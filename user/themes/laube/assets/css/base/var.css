@@ -19,7 +19,7 @@ html {
     --wrapper: 50rem;
     --wrapper-offset: .5fr;
     @media ( min-width: 40rem ) {
-        --wrapper-offset: 4rem;
+        --wrapper-offset: 8rem;
     }
 
     /*

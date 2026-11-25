@@ -1,0 +1,12 @@
+{% set image = item.media[ item.image|first.name ] -%}
+<article class="item reference">
+    <img class="image"
+        src="{{ image.resize( 400, null ).url }}"
+        alt=""
+        loading="lazy">
+    <p class="title">
+        <a class="more" href="/portfolio#{{ item.key }}">
+        {{ item.title }}
+        </a>
+    </p>
+</article>

@@ -1,0 +1,22 @@
+published: true
+private: false
+title: 'Flyer zur Workshopwoche'
+description: 'Die Jugendinitiative Klick hat 2011 zusammen mit jungen Leuten aus Mittelsachsen die regionale Geschichte erkundet (siehe unten). Um auch außerhalb der digitalen Welt Interessenten anzusprechen, benötigte die Initiative Flyer. 4-seitiger Folder auf 150g/qm Recyclingpapier.'
+date: '2011-06-20'
+image:
+  selbstausloeser-flyer.jpg:
+    name: selbstausloeser-flyer.jpg
+    type: image/jpeg
+    size: 376749
+    path: selbstausloeser-flyer.jpg
+services:
+  - 'Print Design'
+outdated: false
+offline: false
+placeholder:
+  selbstausloeser.pdf:
+    name: selbstausloeser.pdf
+    type: application/pdf
+    size: 819052
+    path: selbstausloeser.pdf
+fileOnly: true

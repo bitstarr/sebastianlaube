@@ -1,0 +1,18 @@
+published: true
+private: false
+title: Holzkombinat
+description: 'Zur Gründung 2015 habe ich bereits eine Website beigesteuert, nun war es an der Zeit, den Fortschritten des Holzkombinats Rechnung zu tragen. Mit einem frischen Design und vielen Funktionen, um die Möglichkeiten der Mietwerkstatt optimal zu präsentieren.'
+date: '2019-05-07'
+url: 'https://holzkombinat.com'
+image:
+  holzkombinat.jpg:
+    name: holzkombinat.jpg
+    type: image/jpeg
+    size: 130340
+    path: user/data/flex-objects/portfolio/holzkombinat/holzkombinat.jpg
+services:
+  - 'Web Design'
+  - Entwicklung
+  - WordPress
+outdated: false
+offline: false

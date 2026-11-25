@@ -1,6 +1,15 @@
 cache:
   enabled: false
 
+flex:
+  cache:
+    index:
+      enabled: false
+    object:
+      enabled: false
+    render:
+      enabled: false
+
 debugger:
   enabled: true
   twig: true

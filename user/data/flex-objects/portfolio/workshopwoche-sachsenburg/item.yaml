@@ -1,0 +1,18 @@
+published: true
+private: false
+title: 'Workshopwoche Sachsenburg'
+description: 'Den dunkelsten Teil der deutschen Geschichte kennt man aus Büchern und den Medien. Oft etwas distanziert. Die Jugendinitiative Klick wollte zusammen mit jungen Leuten aus Mittelsachsen diese Geschichte in der eigenen Region selbst erforschen. Interessenten konnten sich direkt dort anmelden. Außerdem reagiert die Seite mittels Media Queries auf die Bildschirmauflösung des Nutzers und ist somit auch auf Tablets und Smartphones gut zu benutzen.'
+date: '2011-06-01'
+url: 'http://selbstausloeser.eu/'
+image:
+  selbstausloeser.jpg:
+    name: selbstausloeser.jpg
+    type: image/jpeg
+    size: 339545
+    path: user/data/flex-objects/portfolio/workshopwoche-sachsenburg/selbstausloeser.jpg
+services:
+  - 'Logo Design'
+  - 'Responsive Web Design'
+  - WordPress
+outdated: false
+offline: false

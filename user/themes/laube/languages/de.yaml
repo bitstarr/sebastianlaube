@@ -129,6 +129,8 @@ THEME_C:
     POSTED_IN: Abgelegt in
     TAGS: Schlagworte
     ARCHIVE_OF: Archiv für
+    NOT_TRANSLATED: Dieser Text ist leider noch nicht übersetzt.
+    DEPRICATED_WARNING: Aufgrund des Alters dises Beitrags, könnten Code Beispiele und Vorgehensweisen veraltet sein. Bitte prüfe auch andere Quellen.
   VIDEO:
     EMBEDDED_VIDEO: Eingebettetes Video
     PRIVACY: Hier befindet sich ein eingebetteter externer Inhalt. Wenn Sie diesen Inhalt laden, werden personenbezogene Daten an diese Plattform und eventuell weitere Dritte übertragen.
@@ -167,3 +169,20 @@ THEME_C:
     OPTIONAL: optional
     GENERAL: Allgemeine Anfrage
     THANKS: Danke für Ihre Nachricht
+  PORTFOLIO:
+    TITLE: Referenzen
+    NEXT: Nächste Referenz
+    PREV: Vorherige Referenz
+    CLOSE: Schließen
+    VIEW: Ansehen
+    MOCKUP: Screenshot von %s
+    COUNTER: Referenz %s von %s
+    VISIT: Website besuchen
+    SCREENSHOT: Screenshot ansehen
+    FILE: Datei ansehen
+  HOME:
+    MADE_BY_ME: Das hab ich gemacht
+    MORE_ABOUT: Mehr über mich
+    MORE_PROJECTS: Mehr Projekte
+    WRITTEN_BY_ME: Das hab' ich zu erzählen
+    MORE_BLOG: Zum Blog

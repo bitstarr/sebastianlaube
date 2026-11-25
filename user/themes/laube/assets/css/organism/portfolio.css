@@ -1,0 +1,73 @@
+.portfolio {
+    --grid-gap: var( --gap-l );
+    --size: 25em;
+    --space: var( --gap );
+
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax( var( --size ), 1fr ) );
+    gap: var( --grid-gap );
+    width: 90vw;
+    max-width: 100rem;
+    margin: var( --gap-m ) auto;
+
+    @media ( width < 30rem ) {
+        --size: 90vw;
+    }
+    @media ( width > 80rem ) {
+        --space: var( --gap-m );
+    }
+    @media ( width > 90rem ) {
+        --grid-gap: var( --gap-xl );
+    }
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        background: var( --global-ui );
+        box-shadow: var( --shadow-1 );
+        border-radius: var( --global-radius );
+        overflow: hidden;
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: var( --gap );
+        height: 100%;
+        padding: var( --space );
+    }
+
+    .image {
+        width: 100%;
+    }
+
+    .headline {
+        font-size: var( --size-2 );
+        font-weight: 700;
+
+        small {
+            font-weight: 400;
+            opacity: .7;
+        }
+    }
+
+    .meta {
+        display: flex;
+        gap: var( --gap );
+        /* font-size: .9em; */
+        font-weight: 300;
+        /* line-height: 1.3; */
+
+        font-size: var( --size--1 );
+        color: var( --global-muted );
+    }
+
+    .date {
+        white-space: nowrap;
+    }
+
+    .callout {
+        margin-block-start: auto;
+        padding-block-start: var( --gap );
+    }
+
+}

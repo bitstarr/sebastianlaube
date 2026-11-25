@@ -1,0 +1,37 @@
+{% set tpl_body_classes = 't-about' %}
+{% set page_title = page.header.headline|default( page.title ) %}
+{% extends 'partials/base.html.twig' %}
+
+{# no need to notice a page collection all the time with this template #}
+{% set options = {
+    items: {'@self.modules': ''},
+    'order': {'by': 'folder', 'dir': 'asc'}
+} %}
+{% set modules = page.collection(options) %}
+{% set image = page.media.images|first %}
+
+{% block content %}
+    <div class="modular wrapping">
+        <div class="about">
+            <h1 class="pageHeadline">
+                {{ page_title }}
+            </h1>
+            {% if image %}
+            <figure class="photo">
+                {{ image.derivatives([320,640,800]).html( null, image.alt, 'image' )|raw }}
+                <figcaption class="caption">
+                    Sebastian beim aktiven Problemlösen
+                </figcaption>
+            </figure>
+            {% endif %}
+            <div class="textflow">
+                {{ page.content|raw }}
+            </div>
+        </div>
+    </div>
+
+    {% for module in modules %}
+        {# <a id="{{ module.menu|hyphenize }}"></a> #}
+        {{ module.content|raw }}
+    {% endfor %}
+{% endblock %}

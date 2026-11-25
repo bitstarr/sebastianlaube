@@ -40,12 +40,20 @@
 @import 'organism/carousel.css';
 @import 'organism/quote.css';
 @import 'organism/downloads.css';
+@import 'organism/timeline.css';
+@import 'organism/reference.css';
+@import 'organism/ref-dialog.css';
+@import 'organism/portfolio.css';
+@import 'organism/showcase.css';
 
 
 /* layouts define the relations between modules on a specific page type */
 @import 'template/global.css';
 @import 'template/page.css';
+@import 'template/home.css';
+@import 'template/about.css';
 @import 'template/error.css';
+@import 'template/cv.css';
 
 /* vendor (third-party) sprecific */
 @import 'organism/sc-embedvideo.css';

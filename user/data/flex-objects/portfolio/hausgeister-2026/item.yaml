@@ -1,0 +1,18 @@
+published: true
+private: false
+title: Hausgeister
+description: 'Professionalität und Verlässlichkeit sind die wichtigsten Eigenschaften der Hausgeister. Das wollten sie auch mit der Website ihren Kunden und Interessenten vermitteln. Aber auch Perfektionismus treibt sie um, weshalb wir lange an der Seite gefeilt haben. Herausgekommen ist eine übersichtliche, einfach zu pflegende Website.'
+date: '2026-08-18'
+url: 'https://hausgeister-chemnitz.de/'
+image:
+  hausgeister-2026.jpg:
+    name: hausgeister-2026.jpg
+    type: image/jpeg
+    size: 258719
+    path: hausgeister-2026.jpg
+services:
+  - 'Web Design'
+  - Entwicklung
+  - 'grav CMS'
+outdated: false
+offline: false

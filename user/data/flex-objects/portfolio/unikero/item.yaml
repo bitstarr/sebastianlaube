@@ -1,0 +1,19 @@
+published: false
+private: false
+title: unikero
+description: 'Der Verein unikero unterstützt lokale Projekte für Kinder und Jugendliche durch Spendensammlungen. Unter anderem werden Devotionalien von regionalen und überregionalen Sportlern versteigert. Zusammen mit dem Designer Rico Langer haben wir eine Website mit Auktionsplattform auf Basis von WordPress geschaffen. Die Plattform war eine Eigenentwicklung als WordPress-Plugin.'
+date: '2015-06-15'
+url: 'https://unikero.de'
+image:
+  unikero.jpg:
+    name: unikero.jpg
+    type: image/jpeg
+    size: 175060
+    path: user/data/flex-objects/portfolio/unikero/unikero.jpg
+services:
+  - 'Web Design'
+  - Entwicklung
+  - WordPress
+  - 'WordPress Plugins'
+outdated: true
+offline: false

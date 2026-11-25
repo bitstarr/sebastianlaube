@@ -4,17 +4,21 @@
     "engines": {
         "node": ">=20.9.0"
     },
+        "dependencies": {
+        "microlighter": "^2.2.0",
+        "parvus": "^3.2.0"
+    },
     "devDependencies": {
         "@stylistic/stylelint-plugin": "^4.0.1",
         "autoprefixer": "^10.5.4",
         "browser-sync": "^3.0.4",
         "chalk": "^6.0.0",
-        "concat": "^1.0.3",
         "cssnano": "^8.0.2",
         "cssnano-preset-advanced": "^8.0.2",
+        "esbuild": "^0.25.12",
         "eslint": "^10.8.0",
         "glob": "^13.0.6",
-        "microlighter": "^2.2.0",
+        "globals": "^17.14.0",
         "mkdirp": "^3.0.1",
         "npm-run-all2": "^8.0.4",
         "onchange": "^7.1.0",
@@ -26,11 +30,7 @@
         "sharp": "^0.35.3",
         "stylelint": "^16.26.1",
         "svgo": "^4.1.0",
-        "terser": "^5.49.0",
         "vinyl": "^3.0.1"
-    },
-    "optionalDeps": {
-        "parvus": "3.0.0"
     },
     "resourceDeps": {
         "a11y-test": "https://github.com/matuzo/a11y-tests.css",
@@ -46,7 +46,6 @@
         "css": "assets/css/",
         "cssDist": "dist/css/",
         "js": "assets/js/",
-        "jsSrc": "assets/js/src/",
         "jsDist": "dist/js/",
         "img": "assets/img/",
         "imgDist": "dist/img/",
@@ -75,8 +74,8 @@
         "not operamobile > 0"
     ],
     "scripts": {
-        "js": "node .tasks/javascript-dev.mjs",
-        "jsmin": "node .tasks/javascript-build.mjs",
+        "js": "node .tasks/javascript.mjs",
+        "jsmin": "node .tasks/javascript.mjs --prod",
         "css": "node .tasks/postcss-dev.mjs",
         "cssmin": "node .tasks/postcss-build.mjs",
         "fonts": "node .tasks/fonts.mjs",
@@ -90,7 +89,7 @@
         "favicons": "sh .tasks/favicons.sh $npm_package_config_favicons $npm_package_config_faviconsDist",
         "faviconsmin": "node .tasks/faviconsmin.mjs",
         "watch:css": "onchange $npm_package_config_css/*.css $npm_package_config_css/**/*.css -- npm run css",
-        "watch:js": "onchange $npm_package_config_js/*.{js,json} $npm_package_config_js/**/*.{js,json} -- npm run js",
+        "watch:js": "node .tasks/javascript.mjs --watch",
         "watch:img": "onchange $npm_package_config_img/**/*.{jpg,gif,png,svg} -- npm run imgmin",
         "watch:icons": "onchange $npm_package_config_icons/**/*.svg -- npm run icons",
         "watch": "run-p watch:*",

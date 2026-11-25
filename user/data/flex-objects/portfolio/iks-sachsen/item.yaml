@@ -1,0 +1,19 @@
+published: true
+private: false
+title: 'IKS Sachsen'
+description: 'Die Informations- und Koordinierungsstelle Kindertagespflege in Sachsen bietet Unmengen von verschiedenen Informationen. Damit sie stetig erweitert und aktualisiert werden können, brauchte es einfach pflegbare Strukturen und maßgeschneiderte Lösungen. Das frische Design erleichtert die Orientierung und ist bestmöglich von Barrieren befreit.'
+date: '2024-04-22'
+url: 'https://www.iks-sachsen.de/'
+image:
+  iks-sachsen.jpg:
+    name: iks-sachsen.jpg
+    type: image/jpeg
+    size: 143496
+    path: user/data/flex-objects/portfolio/iks-sachsen/iks-sachsen.jpg
+services:
+  - 'Web Design'
+  - Entwicklung
+  - 'grav CMS'
+  - Barrierefreiheit
+outdated: false
+offline: false

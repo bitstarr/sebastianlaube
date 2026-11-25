@@ -2,31 +2,18 @@
     /*
         API:
         --notice-backgroundColor
-        --notice-text
-        --notice-borderColor
-        --notice-success-backgroundColor
-        --notice-success-text
-        --notice-success-borderColor
-        --notice-warning-backgroundColor
-        --notice-warning-text
-        --notice-warning-borderColor
-        --notice-error-backgroundColor
-        --notice-error-text
-        --notice-error-borderColor
+        --notice-accent
+        --notice-success-accent
+        --notice-warning-accent
+        --notice-error-accent
     */
     --_bg: var( --notice-backgroundColor, #fff );
-    --_txt: var( --notice-text, var( --global-text ) );
-    --_brd: var( --notice-borderColor, var( --global-primary ) );
+    --_accent: var( --notice-accent, var( --global-primary ) );
 
     padding: var( --gap-s );
-    color: var( --_txt );
     text-wrap: pretty;
     background: var( --_bg );
-    border: max( 1px, .08em ) solid var( --_brd );
-
-    &:not( :has( .visualizer ) ) {
-        border-bottom: .4em solid var( --_brd );
-    }
+    border-inline-start: .4em solid var( --_accent );
 
     &:empty { display: none; }
 
@@ -40,58 +27,45 @@
     }
 
     &--success {
-        --_bg: var( --notice-success-backgroundColor, #e5f3ef );
-        --_txt: var( --notice-success-text );
-        --_brd: var( --notice-success-borderColor, #008566 );
+        --_accent: var( --notice-success-accent, #859900 );
     }
 
     &--warning {
-        --_bg: var( --notice-warning-backgroundColor, #fcf8f2 );
-        --_txt: var( --notice-warning-text );
-        --_brd: var( --notice-warning-borderColor, #ffb820 );
+        --_accent: var( --notice-warning-accent, #b58900 );
     }
 
     &--error {
-        --_bg: var( --notice-error-backgroundColor, #fdf7f7 );
-        --_txt: var( --notice-error-text );
-        --_brd: var( --notice-error-borderColor, #d0103a );
+        --_accent: var( --notice-error-accent, #dc322f );
     }
 
-    &:has( .visualizer ) {
+    &:has( .icon ) {
         display: grid;
-        grid-template-areas: 'icon title' 'icon text';
-        grid-template-columns: auto 1fr;
-        grid-template-rows: auto 1fr;
-        padding: 0;
-        border-left: 0;
+        grid-template-columns: 3em auto;
+        align-items: center;
+        gap: var( --gap-xs ) var( --gap-s );
 
-        .title {
-            padding-block-start: var( --gap-s );
-            padding-inline: var( --gap-s );
+        .icon {
+            justify-self: center;
+            font-size: 1.5em;
         }
-        .textflow {
-            padding: var( --gap-s );
-            padding-top: 0;
+
+        .title + .textflow {
+            grid-area: 2/2;
+        }
+
+        .icon--language {
+            width: 2em;
+            height: 1em;
+            font-size: 1em;
         }
     }
 
     .title {
         font-weight: 700;
-        margin-bottom: var( --gap-xs );
-    }
-
-    .visualizer {
-        grid-area: icon;
-        display: flex;
-        align-items: center;
-        padding: var( --gap-xs );
-        font-size: 1.2em;
-        color: var( --_bg );
-        background-color: var( --_brd );
     }
 
     & > * + * {
         /* flow-space https://piccalil.li/quick-tip/flow-utility/ */
-        margin-block-start: var( --flow-space, var( --font-line ) );
+        margin-block-start: var( --flow-space, var( --global-lineHeight: ) );
     }
 }

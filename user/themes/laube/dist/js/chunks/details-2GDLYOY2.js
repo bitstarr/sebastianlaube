@@ -1,0 +1,1 @@
+import"./chunk-ARR6HII7.js";function n(d){d.forEach(t=>{let e=t.querySelector("button");t.dataset.expanded=!1,e.setAttribute("aria-expanded",!1),e.addEventListener("click",()=>{let a=e.getAttribute("aria-expanded")==="true";e.setAttribute("aria-expanded",!a),t.dataset.expanded=!a})})}export{n as default};

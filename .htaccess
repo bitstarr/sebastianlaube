@@ -93,21 +93,40 @@ RewriteRule .* index.php [L]
 
 ## Begin - Security
 # Block all direct access for these folders
-RewriteRule ^(\.git|cache|bin|logs|backup|webserver-configs|tests)/(.*) error [F]
+RewriteRule ^(\.git|cache|bin|logs|backup|tmp|webserver-configs|tests)/(.*) error [F,NC]
+# Block all direct access to these sensitive user folders, whatever the file type
+RewriteRule ^(user)/(env/[^/]+/)?config/(.*) error [F,NC]
+# Block user/accounts too, but allow avatar images (account://avatars) to be
+# served directly. Account data (.yaml password hashes) stays blocked; SVG is
+# excluded as a stored-XSS vector.
+RewriteCond %{REQUEST_URI} !/user/(env/[^/]+/)?accounts/[^/]+/[^/]+\.(jpe?g|png|gif|webp|avif|bmp|ico)$ [NC]
+RewriteRule ^(user)/(env/[^/]+/)?accounts/(.*) error [F,NC]
+# Block user/data too, but allow public media uploads (e.g. Flex Object images)
+# to be served directly. SVG is intentionally excluded as a stored-XSS vector.
+RewriteCond %{REQUEST_URI} !\.(jpe?g|png|gif|webp|avif|bmp|ico|mp4|webm|ogg|ogv|mov|mp3|wav|m4a|flac|pdf|woff2|woff|ttf|otf|eot|css|js)$ [NC]
+RewriteRule ^(user)/(env/[^/]+/)?data/(.*) error [F,NC]
+# Block running scripts in the public cache folders (image derivatives and combined assets)
+RewriteRule ^(images|assets)/(.*)\.(php|php2|php3|php4|php5|php7|php8|phar|phtml|pht|phtm|phps|pl|py|cgi|sh|bat)$ error [F,NC]
 # Block access to specific file types for these system folders
-RewriteRule ^(system|vendor)/(.*)\.(txt|xml|md|html|json|yaml|yml|php|pl|py|cgi|twig|sh|bat)$ error [F]
+RewriteRule ^(system|vendor)/(.*)\.(txt|xml|md|html|json|yaml|yml|php|pl|py|cgi|twig|sh|bat)$ error [F,NC]
 # Block access to specific file types for these user folders
 # Except out dynamic dev favicon
 RewriteCond %{REQUEST_URI} !favicon.php$
-RewriteRule ^(user)/(.*)\.(txt|md|json|yaml|yml|php|pl|py|cgi|twig|sh|bat)$ error [F]
-# Block all direct access to .md files:
+RewriteRule ^(user)/(.*)\.(txt|md|json|yaml|yml|php|pl|py|cgi|twig|sh|bat)$ error [F,NC]
+# A script followed by a path (`file.php/x`) still runs as `file.php`, so refuse any
+# request in these folders that maps to a file with a path after it
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteCond %{PATH_INFO} ^/
+RewriteRule ^(images|assets|system|vendor|user)/ error [F,NC]
+# Block all direct access to .md files (a page route ending in .md is not a file, so Grav's Markdown output still works):
 # Except for our docs
 RewriteCond %{REQUEST_URI} !^/docs/
-RewriteRule \.md$ error [F]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule \.md$ error [F,NC]
 # Block all direct access to files and folders beginning with a dot
-RewriteRule (^|/)\.(?!well-known) - [F]
+RewriteRule (^|/)\.(?!well-known(?:/|$)) - [F]
 # Block access to specific files in the root folder
-RewriteRule ^(LICENSE\.txt|composer\.lock|composer\.json|\.htaccess)$ error [F]
+RewriteRule ^(LICENSE\.txt|composer\.lock|composer\.json|\.htaccess)$ error [F,NC]
 ## End - Security
 
 </IfModule>

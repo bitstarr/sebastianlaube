@@ -1,0 +1,21 @@
+published: true
+private: false
+title: 'Kultursommer Programmfolder'
+description: 'Um den Kultursommer zu bewerben, mussten natürlich auch Drucksachen her. Es war schon eine Herausforderung, die enorme Menge an Veranstaltungen des Kultursommers auf ein Stück A3-Papier zu bekommen. Auf der Rückseite war das Hauptmotiv zu sehen, was den Folder auch zum Poster machte.'
+date: '2013-07-01'
+image:
+  kultursommer-folder.jpg:
+    name: kultursommer-folder.jpg
+    type: image/jpeg
+    size: 525131
+    path: user/data/flex-objects/portfolio/kultursommer-folder/kultursommer-folder.jpg
+services:
+  - 'Print Design'
+outdated: false
+offline: false
+placeholder:
+  Kultursommer2013.pdf:
+    name: Kultursommer2013.pdf
+    type: application/pdf
+    path: Kultursommer2013.pdf
+fileOnly: true

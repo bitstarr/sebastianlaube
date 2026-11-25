@@ -148,5 +148,3 @@ But overall, we can see there are no huge differences in the file size of the op
 
 
 !! I made the code public in a [GitHub reopository](https://github.com/bitstarr/new-build-process). Feel free to take a look around the files and I'm looking forward to hearing from you if you can provide any further improvements.
-
-! Since I was allowed to deal extensively with the topic during my working hours, I would like to thank [mindbox](https://mindbox.de/) at this point. By the way, we are currently looking for reinforcement in the development area ;)
