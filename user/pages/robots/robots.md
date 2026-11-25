@@ -21,7 +21,6 @@ Disallow: /tests/
 Disallow: /tmp/
 Disallow: /user/
 Disallow: /vendor/
-Disallow: /webserver-configs/
 Allow: /user/pages/
 Allow: /user/themes/
 Allow: /user/images/

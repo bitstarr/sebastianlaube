@@ -21,6 +21,9 @@ redirects:
   '/feed': 'blog.rss'
 #  '/old/(.*)': '/new/$1
 
+env:
+  state: live
+
 footer:
   menu:
     - title: Blog
