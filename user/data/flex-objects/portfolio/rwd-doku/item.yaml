@@ -1,0 +1,18 @@
+published: true
+private: false
+title: 'Responsive Webdesign Doku'
+description: 'Ich habe relativ schnell viel Wissen zum Thema Responsive Web Design und Websites für mobile Endgeräte ansammeln und praktisch anwenden können. Vor allem den Kolleg:innen, die im Tagesgeschäft feststeckten, wollte ich dieses Wissen weitergeben. Während des Einsatzes in verschiedenen Projektteams wurde mir klar, dass es dazu auch einen Schnappschuss dieses Wissens brauchte, und so schrieb ich über ein paar Wochen so viel wie möglich zusammen.'
+date: '2014-04-30'
+url: 'http://rwd.sebastianlaube.de/'
+image:
+  responsive-doku.jpg:
+    name: responsive-doku.jpg
+    type: image/jpeg
+    size: 112489
+    path: user/data/flex-objects/portfolio/rwd-doku/responsive-doku.jpg
+services:
+  - Design
+  - Entwicklung
+  - Dokumentation
+outdated: false
+offline: false

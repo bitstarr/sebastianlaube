@@ -1,0 +1,53 @@
+title: Gallery
+extends@: modular/default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            content:
+              unset@: true
+            # header.media_order:
+            #   ordering@: 99
+
+            _hint:
+              type: display
+              style: vertical
+              outerclasses: user-notice
+              content: THEME_C.MODULE.GALLERY.NOTICE
+
+            _layout:
+              type: fieldset
+              title: THEME_C.MODULE.LAYOUT.OPTIONS
+              icon: th-large
+              import@2:
+                type: partials/layout-spread
+                context: blueprints://
+              fields:
+                header.layout.columns:
+                  type: radio
+                  label: THEME_C.MODULE.LAYOUT.COLUMNS
+                  options:
+                    1: 1
+                    2: 2
+                    3: 3
+                    4: 4
+                    5: 5
+                  default: 3
+                header.layout.format:
+                  type: radio
+                  label: THEME_C.MODULE.GALLERY.FORMAT
+                  options:
+                    square: THEME_C.MODULE.GALLERY.SQUARE
+                    portrait: THEME_C.MODULE.GALLERY.PORTRAIT
+                    landscape: THEME_C.MODULE.GALLERY.LANDSCAPE
+                    masonry: THEME_C.MODULE.GALLERY.MASONRY
+                  default: square
+
+            _publish:
+              type: section
+              import@:
+                type: partials/publish
+                context: blueprints://

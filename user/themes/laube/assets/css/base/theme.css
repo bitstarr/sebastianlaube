@@ -1,0 +1,138 @@
+html {
+    /*
+        Specific Colors, only raw HSL
+        https://reasonable.work/colors/
+    */
+
+    --raspberry-1: #fff8f8;
+    --raspberry-2: #ffdddf;
+    --raspberry-3: #ff426c;
+    --raspberry-4: #de0051;
+    --raspberry-5: #82002c;
+    --raspberry-6: #510018;
+
+    --cerulean-1: #e8f6ff;
+    --cerulean-2: #b9e3ff;
+    --cerulean-3: #0092c5;
+    --cerulean-4: #00749d;
+    --cerulean-5: #003c54;
+    --cerulean-6: #001d2a;
+
+    --gray-1: #f6f6f6;
+    --gray-2: #e2e2e2;
+    --gray-3: #8b8b8b;
+    --gray-4: #6f6f6f;
+    --gray-5: #3e3e3e;
+    --gray-6: #222;
+
+    --orange: #d40;
+    --blue: #37a;
+    --yellow: #eccb60;
+
+    --brand-twitter: #55acee;
+    --brand-mastodon: #563acc;
+    --brand-deviantart: #00e59b;
+    --brand-bookmark: #4283fb;
+    --brand-codepen: #ffdd40;
+    --brand-untappd: #fc0;
+    --brand-bitbucket: #205081;
+    --brand-github: #171515;
+    --brand-mail: var( --orange );
+    --brand-rss: var( --orange );
+
+    /* https://smoothshadows.com/#djEsMSwzLDAuMDQsOCw1LDAsIzAzMDcxMiwjZjNmNGY2LCNmZmZmZmYsMg%3D%3D */
+    --shadow-1:
+        0 1px 1px rgb( 3 7 18 / .01 ),
+        0 2px 4px rgb( 3 7 18 / .03 ),
+        0 5px 8px rgb( 3 7 18 / .04 );
+
+    /* https://smoothshadows.com/#djEsMSwzLDAuMDYsMTIsOCwwLCMwMzA3MTIsI2YzZjRmNiwjZmZmZmZmLDI%3D */
+    --shadow-2:
+        0 1px 1px rgb( 3 7 18 / .02 ),
+        0 4px 5px rgb( 3 7 18 / .04 ),
+        0 8px 12px rgb( 3 7 18 / .06 );
+
+    /*
+        Functional Colors
+    */
+    --global-text: #444;
+    --global-fill: #eeebe3;
+    --global-muted: #707070;
+    --global-ui: #f4f4f4;
+    --global-borderColor: #93a1a1;
+    --global-borderColor: oklch(from var( --global-fill ) calc(l * .9) c h);
+    --global-link: var( --orange );
+    --global-hover: var( --blue );
+
+    /*
+        Brand Colors
+    */
+    --global-primary: var( --orange );
+    --global-onPrimary: #fff;
+    /* --global-primary-dark: color-mix( in oklab, var( --global-primary ), #000 15% ); */
+    /* --global-primary-light: color-mix( in oklab, var( --global-primary ), #fff 15% ); */
+    --global-primary-dark: oklch(from var( --global-primary ) calc(l * .85) c h);
+    --global-primary-light: oklch(from var( --global-primary ) calc(l * 1.15) c h);
+    --global-secondary: var( --blue );
+    --global-secondary-dark: oklch(from var( --global-secondary ) calc(l * .85) c h);
+    --global-secondary-light: oklch(from var( --global-secondary ) calc(l * 1.15) c h);
+    --global-onSecondary: #fff;
+
+    --global-radius: .2em;
+
+
+    --selection-text: #111;
+    --selection-fill: var( --yellow );
+
+    --scrollbar-track: hsl( 0 0% 100% / .2 );
+    --scrollbar-thumb: var( --global-primary );
+
+    --outline-size: max( 2px, .08em );
+    --outline-style: solid;
+    --outline-color: var( --orange );
+    /* --outline-offset: .2em; */
+
+    /*
+        Component (form) Specific
+        values equaling defaults are commented
+    */
+    --f-form-label-ink: #555;
+    /* --f-form-placeholder: #777; */
+    /* --f-form-outline-ink: var( --cerulean-4 ); */
+    /* --f-form-error-ink: #a80000; */
+    /* --f-form-error-surface: #ffe6e6; */
+
+    /* --f-input-ink: var( --global-text ) */
+    /* --f-input-surface: #fff; */
+    /* --f-input-border: var( --global-borderColor ); */
+    /* --f-input-padding: .7rem; */
+    --f-input-border-hover: var( --cerulean-4 );
+    --f-input-halo-hover: color-mix( in oklab, var( --cerulean-3 ), transparent 20% );
+    /* --f-input-halo-hover: rgb(from var( --cerulean-3 ) r g b / 20%); */
+    /* --f-input-ink-disabled: var( --gray-4 ); */
+    /* --f-input-surface-disabled: var( --gray-1 ); */
+    /* --f-input-border-disabled: var( --gray-2 ); */
+
+    /* --f-bool-ink-checked: #fff; */
+    /* --f-bool-surface-checked: var( --cerulean-4 ); */
+    /* --f-bool-ink-disabled: var( --gray-4 ); */
+    /* --f-bool-surface-disabled: var( --gray-1 ); */
+
+    /* --f-dropdown-surface: #fff;  */
+
+    /*
+        Component (organism) Specific
+    */
+    /* --o-footer-surface: var( --cerulean-6 ); */
+
+    --headline-color: var( --cerulean-6 );
+
+}
+
+/*
+dark mode
+
+--global-fill: #25221c;
+--o-footer-surface: #000;
+--global-text: #ededed;
+*/

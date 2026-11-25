@@ -1,15 +1,15 @@
 .postnav {
     &__link {
-        --link-color: var( --color-primary );
+        /*
+        --link-color: var( --global-primary);
+        --link-hover: var( --global-secondary );
+        */
+
         position: relative;
         display: block;
         width: 100%;
         padding: var( --gap ) 0;
 
-        &:focus,
-        &:hover {
-            --link-color: var( --color-secondary );
-        }
 
         &::after {
             content: '';
@@ -19,7 +19,7 @@
             transform: translateY( -50% ) rotate( 135deg );
             width: 1.3em;
             height: 1.3em;
-            color: var( --color-secondary );
+            color: var( --_hover ); /* uses default link behaviour (typograhphy.css) */
             border-top: .3em solid;
             border-left: .3em solid;
             opacity: 0;
@@ -37,13 +37,13 @@
         font-size: .8em;
         line-height: 2;
         text-transform: uppercase;
-        color: #777;
+        color: var( --global-muted );
     }
 
     @media (max-width: 39.99em) {
         &__link:nth-child(2) {
-            border-top: 1px solid #d5cfc4;
-            box-shadow: 0 1px 0 #f1f1f1 inset;
+            border-top: max( 1px, .07em ) solid oklch(from var( --global-fill ) calc(l * .9) c h);
+            box-shadow: inset 0 max( 1px, .07em ) 0 oklch(from var( --global-fill ) calc(l * 1.1) c h);
         }
     }
     @media (min-width: 40em) {
@@ -52,6 +52,7 @@
         }
         &__link {
             width: 50%;
+            padding-inline: var( --gap );
 
             &[rel='next'] {
                 padding-right: var( --gap );
@@ -70,8 +71,8 @@
             }
             &:nth-child(2) {
                 padding-left: var( --gap );
-                border-left: 1px solid #d5cfc4;
-                box-shadow: 1px 0 0 #f1f1f1 inset;
+                border-left: max( 1px, .07em ) solid oklch(from var( --global-fill ) calc(l * .9) c h);
+                box-shadow: inset max( 1px, .07em ) 0 0 oklch(from var( --global-fill ) calc(l * 1.1) c h);
             }
         }
     }

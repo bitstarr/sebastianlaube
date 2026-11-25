@@ -1,0 +1,27 @@
+cache:
+  enabled: false
+
+flex:
+  cache:
+    index:
+      enabled: false
+    object:
+      enabled: false
+    render:
+      enabled: false
+
+debugger:
+  enabled: true
+  twig: true
+  token: 'dev'
+  shutdown:
+    close_connection: true
+
+errors:
+  display: true
+  log: true
+
+dev_mode: true
+
+# let's use 3 character passwords on dev
+pwd_regex: '^[ -~]{3,}$'

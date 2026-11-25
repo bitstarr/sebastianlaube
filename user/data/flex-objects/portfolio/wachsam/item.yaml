@@ -1,0 +1,19 @@
+published: false
+private: false
+title: 'Rechts sind doch die Anderen!?'
+description: 'Chemnitz hat ein Problem: Nazis. Diese Website ist eine Situationsanalyse der rechten Strukturen in Chemnitz und beleuchtet auch den versteckten Rassismus in uns.'
+date: '2012-03-01'
+url: 'https://wachsam-in-chemnitz.de/'
+image:
+  wachsam.jpg:
+    name: wachsam.jpg
+    type: image/jpeg
+    size: 475526
+    path: user/data/flex-objects/portfolio/wachsam/wachsam.jpg
+services:
+  - 'Web Design'
+  - Entwicklung
+  - WordPress
+  - 'Print Design'
+outdated: false
+offline: false

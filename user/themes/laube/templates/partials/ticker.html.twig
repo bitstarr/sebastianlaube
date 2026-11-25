@@ -1,0 +1,31 @@
+{% do assets.addCss('theme://dist/css/ticker.css', 99) %}
+
+<div class="ticker ticker--{{ config.site.env.state }}">
+    <marquee behavior="" direction="">
+        {% if config.site.env.state == 'preview' %}
+            {{ 'THEME_C.TICKER.PREVIEW'|t|e }}
+        {% elseif config.site.env.state == 'stage' %}
+            {{ 'THEME_C.TICKER.STAGE'|t|e }}
+        {% elseif config.site.env.state == 'dev' %}
+            {{ 'THEME_C.TICKER.DEV'|t|e }}
+        {% else %}
+            {{ 'THEME_C.TICKER.FALLBACK'|t|e }}
+        {% endif %}
+    </marquee>
+    {#}
+    <div class="ticker__control">
+        <a href="/cmd/sync-flexobjects" target="_blank" title="Sync Flexobjects">F</a>
+        <a href="/cmd/update" target="_blank" title="Run Collector">C</a>
+    </div>
+    {#}
+</div>
+
+<script>
+document.addEventListener( 'keydown', function( e )
+{
+    if( e.shiftKey === true && e.code === 'KeyT' )
+    {
+        document.querySelector( '.ticker' ).classList.toggle( 'hidden' );
+    }
+});
+</script>

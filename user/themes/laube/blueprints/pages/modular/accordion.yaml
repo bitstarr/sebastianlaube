@@ -1,0 +1,52 @@
+title: Accordion
+extends@: modular/default
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+
+          fields:
+            content:
+              unset@: true
+            header.media_order:
+              unset@: true
+
+
+            _accordion:
+              type: section
+              title: THEME_C.MODULE.ACCORDION
+              underline: true
+              fields:
+                header.items:
+                  type: list
+                  # label: THEME_C.MODULE.TABS
+                  style: vertical
+                  controls: both
+                  fields:
+                    .title:
+                      type: text
+                      label: THEME_C.MODULE.TITLE
+                      style: vertical
+                    .content:
+                      type: editor
+                      label: THEME_C.MODULE.CONTENT
+                      rows: 3
+
+            _layout:
+              type: section
+              title: THEME_C.MODULE.LAYOUT.OPTIONS
+              underline: true
+              import@:
+                type: partials/layout-title
+                context: blueprints://
+
+            _publish:
+              type: section
+              import@:
+                type: partials/publish
+                context: blueprints://

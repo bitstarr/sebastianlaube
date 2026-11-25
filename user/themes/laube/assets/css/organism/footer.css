@@ -1,54 +1,74 @@
 .footer {
-    --comp-txt: #fff;
+    /*
+        API:
+        --o-footer-ink          text color
+        --o-footer-surface      background color
+        --o-footer-link         link text color
+        --o-footer-hover        hover link text color
+    */
+    --_bg: var( --o-footer-surface, #444 );
+    --_txt: var( --o-footer-ink, #fff );
+    --link-color: var( --o-footer-link, currentcolor );
+    --link-hover: var( --o-footer-hover, currentcolor );
 
-    margin-top: var( --gap-jupiter );
-    color: #fff;
-    background: #444;
-    border-bottom: 3px solid var( --orange );
-    box-shadow: 0 2px 2px rgba( 0, 0, 0, .3 ) inset;
+    color: var( --_txt );
+    background-color: var( --_bg );
+    border-bottom: .2rem solid var( --orange );
+    box-shadow: 0 .12rem .12rem rgba( 0, 0, 0, .6 ) inset;
 
     .wrapped {
         position: relative;
-        padding: var( --gap-mars ) 0;
+        padding-block: var( --gap-m );
+        padding-block-start: var( --gap-l );
     }
 
     &__nav {
-        --link-color: currentColor;
-        margin-bottom: 1ex;
-        font-size: .9em;
-        line-height: 1.5;
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var( --gap-s );
+            font-size: .9em;
+            margin-block-end: 1ex;
+        }
 
-        .menu__item {
+        .link {
             display: block;
+
+            &:focus,
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 
     .social {
-        margin-left: calc( var( --gap-moon ) * -1 );
+        flex-wrap: wrap;
+        gap: var( --gap-xs ) 0;
+        margin-inline-start: calc( var( --gap-s ) * -1);
     }
 
     .quote {
-        --link-color: currentColor;
         display: block;
         max-width: 40ch;
         padding-top: 1ex;
         font-size: .8em;
         font-style: italic;
         line-height: 1.2;
-        color: #aaa;
-        border-top: 1px solid hsl( 0 0% 100% / .2 );
+        color: oklch( from currentcolor l c h / .5 );
+        border-top: max( 1px, .07em ) solid hsl( 0 0% 100% / .2 );
     }
 
     .elevator {
         position: absolute;
-        top: 0;
-        right: 0;
+        inset-block-start: 0;
+        inset-inline-end: 0;
         position: absolute;
 
         padding: 1ex 2ex 1ex 3ex;
         font-size: .8em;
         line-height: 1;
-        background: var( --body-bg );
+        color: var( --global-primary );
+        background: var( --global-fill );
         border-radius: 0 0 5px 5px;
         box-shadow: 0 2px 2px  rgb( 0 0 0 / .3 );
         background-clip: padding-box;
@@ -67,39 +87,26 @@
 
         &:focus,
         &:hover {
-            color: var( --text-default );
+            color: var( --global-text );
             box-shadow: 0 5px 5px  rgb( 0 0 0 / .3 );
         }
     }
 
-    @media( min-width: 28em ) {
-        &__nav {
-            .menu {
-                display: flex;
-            }
-
-            .menu__item + .menu__item {
-                margin-left: var(--gap-moon);
-            }
-        }
-    }
-
-    @media( max-width: 40em ) {
+    @media( width <= 40em ) {
         .social {
-            margin-top: var( --gap );
+            margin-block-start: var( --gap );
         }
     }
 
-    @media( min-width: 40em ) {
+    @media( width > 40em ) {
         .wrapped {
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
-            gap: 0 var( --gap-moon );
+            gap: 0 var( --gap-s );
             grid-template-areas:
                 'nav icons'
                 'random icons';
-            padding-top: var( --gap-jupiter );
         }
 
         &__nav {
@@ -110,8 +117,8 @@
             grid-area: icons;
             justify-self: end;
             align-self: center;
-            margin-left: 0;
-            margin-right: calc( var( --gap-moon ) * -1 );
+            margin-inline-start: 0;
+            margin-inline-end: calc( var( --gap-s ) * -1);
         }
         .quote { grid-area: random; }
     }

@@ -1,0 +1,117 @@
+html:has( .ref-dialog[open] ) {
+    overflow: hidden;
+}
+
+.ref-dialog {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: min( 100% - 2rem, 50rem );
+    max-width: none;
+    height: fit-content;
+    max-height: calc( 100dvh - 2rem );
+    padding: 0;
+    overflow: auto;
+    overscroll-behavior: contain;
+
+    color: var( --global-text );
+    background: var( --global-ui );
+    border: 0;
+    border-radius: var( --global-radius );
+    box-shadow: var( --shadow-2 );
+
+    opacity: 0;
+    translate: 0 1rem;
+    transition:
+        opacity .25s,
+        translate .25s,
+        overlay .25s allow-discrete,
+        display .25s allow-discrete;
+
+    &[open] {
+        opacity: 1;
+        translate: 0;
+
+        @starting-style {
+            opacity: 0;
+            translate: 0 1rem;
+        }
+    }
+
+    &::backdrop {
+        background: rgb( 0 0 0 / .6 );
+        opacity: 0;
+        transition:
+            opacity .25s,
+            overlay .25s allow-discrete,
+            display .25s allow-discrete;
+    }
+
+    &[open]::backdrop {
+        opacity: 1;
+
+        @starting-style {
+            opacity: 0;
+        }
+    }
+
+    .inner {
+        display: grid;
+        gap: var( --gap-s );
+        padding: var( --gap );
+    }
+
+    .close,
+    .image {
+        grid-area: 1 / 1;
+    }
+
+    .close {
+        position: sticky;
+        z-index: 1;
+        inset-block-start: var( --gap-xs );
+        justify-self: end;
+        align-self: start;
+        display: flex;
+        margin: var( --gap-xs );
+        padding: var( --gap-xs );
+        border-radius: 50%;
+        font-size: .9em;
+        color: #fff;
+        background-color: #000;
+    }
+
+    .image {
+        width: 100%;
+    }
+
+    .headline {
+        font-size: var( --size-2 );
+        font-weight: 700;
+    }
+
+    .services {
+        font-size: var( --size--1 );
+        color: var( --global-muted );
+    }
+
+    .textflow {
+        max-width: 45rem;
+    }
+
+    .nav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: var( --gap-xs );
+        padding-block-start: var( --gap-s );
+        border-block-start: 1px solid var( --global-borderColor );
+    }
+
+    .counter {
+        font-size: var( --size--1 );
+        font-variant-numeric: tabular-nums;
+        color: var( --global-muted );
+    }
+}

@@ -1,0 +1,121 @@
+/*
+    MicroLighter theme: Solarized Dark
+    @see https://ethanschoonover.com/solarized/
+    based on microlighter/dist/themes/solarized-light.css
+
+    palette
+    base03  #002b36  background
+    base02  #073642
+    base01  #586e75  comments
+    base0   #839496  body text
+    base1   #93a1a1
+    yellow  #b58900
+    orange  #cb4b16
+    red     #dc322f
+    magenta #d33682
+    violet  #6c71c4
+    blue    #268bd2
+    cyan    #2aa198
+    green   #859900
+*/
+
+html {
+    --syntax-background: #002b36;
+    --syntax-foreground: #839496;
+    --syntax-comment: #586e75;
+    --syntax-keyword: #859900;
+    --syntax-operator: #859900;
+    --syntax-string: #2aa198;
+    --syntax-constant: #d33682;
+    --syntax-function: #268bd2;
+    --syntax-type: #b58900;
+    --syntax-variable: #839496;
+    --syntax-property: #268bd2;
+    --syntax-tag: #268bd2;
+    --syntax-selector: #268bd2;
+    --syntax-inserted: #2aa198;
+    --syntax-deleted: #dc322f;
+}
+
+pre:has( code ) {
+    color-scheme: dark;
+}
+/*
+    background-color: var( --syntax-background );
+    color: var( --syntax-foreground );
+} */
+
+::highlight( comment ),
+::highlight( quote ) {
+    color: var( --syntax-comment );
+}
+
+::highlight( keyword ),
+::highlight( storage ),
+::highlight( at-rule ),
+::highlight( doctype ),
+::highlight( important ),
+::highlight( section ) {
+    color: var( --syntax-keyword );
+}
+
+::highlight( operator ),
+::highlight( punctuation ) {
+    color: var( --syntax-operator );
+}
+
+::highlight( string ),
+::highlight( regexp ),
+::highlight( attribute-value ),
+::highlight( link ),
+::highlight( raw ) {
+    color: var( --syntax-string );
+}
+
+::highlight( numeric ),
+::highlight( boolean ),
+::highlight( constant ),
+::highlight( symbol ),
+::highlight( character-entity ),
+::highlight( anchor ),
+::highlight( entity ) {
+    color: var( --syntax-constant );
+}
+
+::highlight( function ),
+::highlight( decorator ),
+::highlight( animation ) {
+    color: var( --syntax-function );
+}
+
+::highlight( type ),
+::highlight( support ) {
+    color: var( --syntax-type );
+}
+
+::highlight( variable ),
+::highlight( interpolation ) {
+    color: var( --syntax-variable );
+}
+
+::highlight( property ),
+::highlight( key ),
+::highlight( attribute-name ) {
+    color: var( --syntax-property );
+}
+
+::highlight( tag ) {
+    color: var( --syntax-tag );
+}
+
+::highlight( selector ) {
+    color: var( --syntax-selector );
+}
+
+::highlight( inserted ) {
+    color: var( --syntax-inserted );
+}
+
+::highlight( deleted ) {
+    color: var( --syntax-deleted );
+}

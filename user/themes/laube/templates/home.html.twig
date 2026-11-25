@@ -2,63 +2,67 @@
 {% set page_title = page.header.headline|default( page.title ) %}
 {% extends 'partials/base.html.twig' %}
 
+{% set portfolio = grav.get('flex')
+    .collection( 'portfolio' )
+    .filterBy( { 'published': true, 'private': false } )
+    .sort( { date: 'DESC' } )
+    .limit( 0, 6 )
+%}
+
 {% block content %}
-<div class="home wrapping">
-    <h1 class="headline">
-        {{ page_title }}
-    </h1>
+    <div class="modudlar wrapping">
+        <h1 class="pageHeadline">
+            {{ page_title }}
+        </h1>
 
-    <div class="home__intro">
-        <div class="about">
-            {{ page.content|raw }}
-        </div>
-        <div class="connect">
-            {% include 'partials/social.html.twig' %}
-            <a href="/about" class="more">{{ 'THEME_C.HOME.MORE_ABOUT'|t|e }}</a>
+        <div class="intro">
+            <div class="aboutme">
+                {{ page.content|raw }}
+            </div>
+            <div class="connect">
+                {% include 'partials/social.html.twig' %}
+                <a href="/about" class="button is-ghost">{{ 'THEME_C.HOME.MORE_ABOUT'|t|e }}</a>
+            </div>
         </div>
     </div>
 
-    <div class="home__streams">
-        <section class="home__stream references">
-            <h2 class="home__stream__name">
-                {{ 'THEME_C.HOME.MADE_BY_ME'|t|e }}
-            </h2>
-            {% set opt = {
-                items: { '@page.children': '/portfolio' },
-                'limit': 5,
-                'filter': {
-                    'published': true,
-                },
-                'order': {'by': 'date', 'dir': 'desc'},
-            } %}
-            {% set posts = page.collection( opt ) %}
-            {% for post in posts if post.header.hidden != true %}
-                {% include 'partials/home-reference.html.twig' with { post: post } %}
-            {% endfor %}
-            <p class="callout">
-                <a href="/portfolio" class="more">{{ 'THEME_C.HOME.MORE_PROJECTS'|t|e }}</a>
-            </p>
-        </section>
-        <section class="home__stream news">
-            <h2 class="home__stream__name">
-                {{ 'THEME_C.HOME.WRITTEN_BY_ME'|t|e }}
-            </h2>
-            {% set opt = {
-                items: { '@page.children': '/blog' },
-                'limit': 5,
-                'filter': {
-                    'published': true,
-                },
-                'order': {'by': 'date', 'dir': 'desc'},
-            } %}
-            {% set posts = page.collection( opt ) %}
-            {% for post in posts if post.header.hidden != true %}
-                {% include 'partials/home-news.html.twig' with { post: post } %}
-            {% endfor %}
-            <p class="callout">
-                <a href="/blog" class="more">{{ 'THEME_C.HOME.MORE_BLOG'|t|e }}</a>
-            </p>
-        </section>
+    <div class="modular wrapping">
+        <div class="streams">
+            <section class="stream references">
+                <h2 class="headline">
+                    {{ 'THEME_C.HOME.MADE_BY_ME'|t|e }}
+                </h2>
+                <div class="list">
+                    {% for item in portfolio -%}
+                        {% include 'partials/reference.html.twig' with { item: item } %}
+                    {% endfor %}
+                </div>
+                <p class="callout">
+                    <a href="/portfolio" class="link">{{ 'THEME_C.HOME.MORE_PROJECTS'|t|e }}</a>
+                </p>
+            </section>
+            <section class="stream news">
+                <h2 class="headline">
+                    {{ 'THEME_C.HOME.WRITTEN_BY_ME'|t|e }}
+                </h2>
+                <div class="list">
+                    {% set opt = {
+                        items: { '@page.children': '/blog' },
+                        'limit': 5,
+                        'filter': {
+                            'published': true,
+                        },
+                        'order': {'by': 'date', 'dir': 'desc'},
+                    } %}
+                    {% set posts = page.collection( opt ) %}
+                    {% for post in posts if post.header.hidden != true %}
+                        {% include 'partials/home-news.html.twig' with { post: post } %}
+                    {% endfor %}
+                </div>
+                <p class="callout">
+                    <a href="/blog" class="link">{{ 'THEME_C.HOME.MORE_BLOG'|t|e }}</a>
+                </p>
+            </section>
+        </div>
     </div>
-</div>
 {% endblock %}

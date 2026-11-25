@@ -1,19 +1,28 @@
 .tag {
-    --comp-bg: #888;
+    /*
+        API:
+        --tag-backgroundColor           background
+        --tag-text                      text color
+        --tag-backgroundColor-hover     background on hover
+        --tag-text-hover                text color on hover
+    */
+    --_bg: var( --tag-backgroundColor, #888 );
+    --_txt: var( --tag-text, #fff );
+
     position: relative;
     display: inline-block;
     margin: 0 .7em .5em;
     padding: .3em .6em .3em 1em;
     line-height: 1;
     text-transform: uppercase;
-    color: #fff;
-    background-color: var( --comp-bg );
+    color: var( --_txt );
+    background-color: var( --_bg );
     border-radius: 0 2px 2px 0;
 
     &:hover,
     &:focus {
-        --comp-bg: var( --color-primary );
-        color: #fff;
+        --_bg: var( --tag-backgroundColor-hover, var( --global-primary) );
+        --_txt: var( --tag-text-hover, var( --global-onPrimary ) );
     }
     &:before {
         content: '';
@@ -24,7 +33,7 @@
         transform-origin: 0 0;
         height: 1.13em;
         width: 1.13em;
-        background: var( --comp-bg );
+        background: var( --_bg );
         border-radius: 0 0 0 2px;
     }
     &:after {

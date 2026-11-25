@@ -1,0 +1,19 @@
+published: true
+private: false
+title: 'Fajn e. V.'
+date: '2025-05-08'
+services:
+  - 'Web Design'
+  - Entwicklung
+  - 'grav CMS'
+  - Mehrsprachigkeit
+outdated: false
+offline: false
+image:
+  fajn.jpg:
+    name: fajn.jpg
+    type: image/jpeg
+    size: 286281
+    path: fajn.jpg
+url: 'https://fajn-verein.de/'
+description: 'Der tschechisch-deutsche Kulturverein veranstaltet unter anderem Konzerte. Die schlanke Website für die Koordination und Kommunikation kann dreisprachig geführt werden.'

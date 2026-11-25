@@ -1,0 +1,100 @@
+.button {
+    /*
+        API:
+        --button-padding
+        --button-fontWeight
+        --button-color
+        --button-bg
+        --button-colorHover
+        --button-bgHover
+        --button-borderWidth
+        --button-borderColor
+        --button-radius
+        --button-iconSize
+    */
+    --_padding: var( --button-padding, .5em 1em );
+    --_weight: var( --button-fontWeight, 400 );
+    --_base-color: var( --button-color, var( --global-onPrimary ) );
+    --_base-bg: var( --button-bg, var( --global-primary ) );
+    --_color: var( --_base-color );
+    --_bg: var( --_base-bg );
+    --_colorHover: var( --button-colorHover, var( --_base-color ) );
+    /* --_bgHover: var( --button-bgHover, color-mix( in oklab, var( --_base-bg ), #fff 20% ) ); */
+    --_bgHover: var( --button-bgHover, oklch( from var( --_base-bg ) calc( l * 1.2 ) c h ) );
+    --_borderWidth: var( --button-borderWidth, .12em );
+    --_borderColor: var( --button-borderColor, var( --_bg ) );
+    --_radius: var( --button-radius, var( --global-radius ) );
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+    padding: var( --_padding );
+
+    text-decoration: none;
+    font-weight: var( --_weight );
+    letter-spacing: .05ch;
+    /* line-height: 1.1; */
+
+    color: var( --_color );
+    background: var( --_bg );
+
+    border-width: var( --_borderWidth );
+    border-style: solid;
+    border-color: var( --_borderColor );
+    border-radius: var( --_radius );
+
+    cursor: pointer;
+    transition: background-color .2s, border-color .2s, scale .2s;
+
+    a& {
+        text-decoration: none;
+    }
+
+    &:not([disabled]):hover,
+    &:not([disabled]):focus {
+        --_color: var( --_colorHover );
+        --_bg: var( --_bgHover );
+    }
+
+    &:active {
+        transform: scale( 99% );
+    }
+
+
+    &[disabled] {
+        opacity: .3;
+        filter: saturate( 0 );
+        cursor: not-allowed;
+    }
+
+    .icon {
+        height: var( --button-iconSize, 1.2cap );
+        width: auto;
+        flex: none;
+    }
+
+    &.is-small {
+        --_padding: .3em .5em;
+    }
+
+    &.is-alt {
+        --_base-color: var( --global-onSecondary );
+        --_base-bg: var( --global-secondary );
+    }
+
+    &.is-quiet {
+        --_color: inherit;
+        --_colorHover: var( --global-hover );
+        --_bg: transparent;
+        --_bgHover: transparent;
+        --_borderColor: transparent;
+    }
+
+    &.is-ghost {
+        --_color: var( --_base-bg );
+        --_bg: transparent;
+        --_borderColor: var( --_base-bg );
+        --_bgHover: var( --_base-bg );
+    }
+}

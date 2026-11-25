@@ -5,18 +5,18 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
-*.swp\
+*.swp
+*Zone.Identifier
 
 # Development Files
 *.map
 *.log
+dist/*/*.php
 
 # Dependencies       #
 ######################
 node_modules
 node_modules/
-.package-lock.json
-package-lock.json
 yarn.lock
 
 # Editor Settings

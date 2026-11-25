@@ -1,31 +1,26 @@
 .navigation {
-    &__state,
-    &__trigger {
-        display: none;
-    }
 
     .menu {
-        --link-color: var( --text-default );
-        --indicate: var( --color-primary );
+        --link-color: var( --global-text );
+        --link-hover: var( --global-primary );
+
         display: flex;
         gap: 1px;
         font-weight: 300;
 
-        &__link {
+        .link {
             display: block;
             padding: 0 .7em;
             line-height: 1.8;
             white-space: nowrap;
-            border-bottom: 3px solid transparent;
+            border-bottom: .19rem solid transparent;
             transition: border .3s ease-out;
+        }
 
-            .active > &,
-            &:focus,
-            &:hover {
-                border-color: var( --indicate );
-            }
+        .active > .link,
+        .link:focus,
+        .link:hover {
+            border-color: var( --global-primary );
         }
     }
-
-
 }

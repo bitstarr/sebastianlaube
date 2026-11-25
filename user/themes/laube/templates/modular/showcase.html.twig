@@ -1,0 +1,28 @@
+{% spaceless %}
+{% set modular_classes = [
+    'modular',
+    'modular--showcase',
+    'wrapping',
+    'showcase'
+] %}
+
+{% set portfolio = grav.get('flex')
+    .collection( 'portfolio' )
+    .filterBy( { 'published': true, 'private': false } )
+    .sort( { date: 'DESC' } )
+    .limit( 0, 4 )
+%}
+{% endspaceless %}
+
+<div class="{{ modular_classes|join( ' ' )|trim }}">
+    <div class="wrapped breakout--mid">
+        <div class="list">
+            {% for item in portfolio -%}
+                {% include 'partials/reference.html.twig' with { item: item } %}
+            {% endfor %}
+        </div>
+        <p class="callout">
+            <a href="/portfolio" class="link">{{ 'THEME_C.HOME.MORE_PROJECTS'|t|e }}</a>
+        </p>
+    </div>
+</div>

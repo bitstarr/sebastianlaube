@@ -1,0 +1,27 @@
+published: true
+private: false
+title: 'Horst Wehner'
+description: |-
+  Seit 2009 habe ich die Website meines guten Freundes Horst Wehner betreut. Während seiner letzten Legislaturperiode hat er sich noch mal eine neue Website gewünscht. Bei der Umsetzung war neben einem modernen Design auch ein hohes Maß an Barrierefreiheit gefragt.
+
+  Mit seinem Abschied aus dem Landtag ging die Website vom Netz.
+date: '2017-10-27'
+url: ''
+image:
+  horst-wehner.jpg:
+    name: horst-wehner.jpg
+    type: image/jpeg
+    size: 117406
+    path: horst-wehner.jpg
+services:
+  - 'Web Design'
+  - Entwicklung
+  - WordPress
+outdated: false
+offline: true
+placeholder:
+  horst-wehner.png:
+    name: horst-wehner.png
+    type: image/png
+    size: 1366917
+    path: horst-wehner.png

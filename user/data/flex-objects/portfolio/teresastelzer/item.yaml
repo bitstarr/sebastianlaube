@@ -1,0 +1,18 @@
+published: true
+private: false
+title: 'Teresa Stelzer'
+date: '2024-09-12'
+services:
+  - 'Web Design'
+  - Entwicklung
+  - 'grav CMS'
+outdated: false
+offline: false
+image:
+  teresastelzer.jpg:
+    name: teresastelzer.jpg
+    type: image/jpeg
+    size: 480829
+    path: teresastelzer.jpg
+url: 'https://teresa-stelzer.de/'
+description: 'Teresa ist sehr vielseitig. Sie spielt Theater sowie Pantomime und bietet unter anderem Pädagogik und Entspannung an. All das haben wir unter einen Hut bekommen und in ein leicht maritimes Thema für Design und Sprache verpackt.'

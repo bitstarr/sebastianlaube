@@ -1,147 +1,130 @@
 .textflow {
+    /*
+        API:
+        --textflow-list-accent    bullet list points color
+        --textflow-h2-accent      h2 text color
+        --textflow-quote-accent   blockquote accent color
+    */
+
+    text-wrap: pretty;
+
     & > * + * {
-        margin-top: var( --body-lh );
+        /* flow-space https://piccalil.li/quick-tip/flow-utility/ */
+        margin-block-start: var( --flow-space, var( --global-lineHeight ) );
     }
 
     ul,
-    ol { margin-left: 1em; }
+    ol {
+        margin-left: 1em;
+        break-inside: avoid-column;
+    }
     li { break-inside: avoid; }
     ol { list-style: decimal; }
     ul { list-style: disc; }
+    ul li::marker {
+        content: '•  ';
+        color: var( --textflow-list-accent, var( --global-primary) );
+    }
+    ul ul li::marker {
+        color: var( --textflow-list-accentNested, var( --global-muted ) );
+    }
     li ol,
     li ul { margin-bottom: 0; }
-    li ul { list-style-type: circle; }
+    li + li {
+        margin-top: .5ex;
+    }
 
-    h2,
-    h3,
-    h4 {
-        font-weight: 700;
-    }
-    h2 {
-        font-size: 1.75em;
-        line-height: calc( 1ex / .38 );
-        margin-top: calc( 1ex / .38 );
-    }
-    h3,
-    h4 {
-        line-height: calc( 1ex / .37 );
-        margin-top: calc( 1ex / .37 );
-    }
-    h3 {
-        font-size: 1.5em;
-    }
-    h4 {
-        font-size: 1.2em;
-    }
 
     h2 + *,
     h3 + *,
     h4 + * {
-        margin-top: 1ex;
+        --flow-space: calc( var( --global-lineHeight ) / 2 );
     }
 
-    table {
-        width: 100%;
+    h2,
+    h3,
+    h4 { font-weight: 700; }
+    h2 {
+        font-size: var( --size-3 );
+        --flow-space: calc( var( --global-lineHeight ) * 1.2 );
     }
-    th,
-    td {
-        padding: .5em;
-    }
+    h3 { font-size: var( --size-2 ); }
+    h4 { font-size: var( --size-1 ); }
+
+    hr { border: .1em solid; }
+
+    table { width: 100%; }
     th {
         font-weight: 700;
-        border-bottom: 2px solid var( --color-border );
+        border-bottom: 2px solid var( --global-borderColor );
     }
-    th:empty {
-        display: none;
+    th[scope=row] {
+        border-bottom: 0;
+        border-top: 1px solid var( --global-borderColor );
     }
-    tr + tr td {
-        border-top: 1px solid var( --color-border );
-    }
+    th:empty { display: none; }
+    tr + tr td { border-top: 1px solid var( --global-borderColor );  }
 
-    svg:not(.icon),
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    svg.full,
-    img.full {
-        display: block;
-        max-width: 100%;
-        height: auto;
-    }
-
-    @media only screen and (max-width: 29.99em) {
-        .left,
-        .right {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    }
-    @media only screen and (min-width: 30em) {
-        .right {
-            float: right;
-            margin-left: var( --gap );
-        }
-        .left {
-            float: left;
-            margin-right: var( --gap );
-        }
-    }
-
-    a {
-        text-decoration: underline;
-
-        &:focus,
-        &:hover {
-            --link-color: var( --link-color-hover );
-        }
-        &:focus {
-            outline: 2px solid;
-            outline-offset: 3px;
-        }
-    }
-
-    .button {
-        text-decoration: none;
-    }
+    :where( a ) { text-decoration: underline; }
 
     blockquote {
         position: relative;
-        padding-left: 1.5rem;
-        font-size: 1.2em;
-        word-break: break-word;
-        border-left: .3em solid var( --color-border );
+        padding-left: 2rem;
+        font-size: var( --size-1 );
 
         & > * + * {
-            margin-top: var( --body-lh );
+            /* flow-space https://piccalil.li/quick-tip/flow-utility/ */
+            margin-block-start: var( --flow-space, var( --global-lineHeight ) );
         }
+
+        &:after,
+        &:before {
+            content: '';
+            position: absolute;
+        }
+        /* gigantic quote marc
+        &:before {
+            content: '\201C';
+            top: -.3rem;
+            left: .5rem;
+            transform: translateX( -50% );
+            width: .5em;
+            height: .5em;
+            overflow: hidden;
+            font-size: 5rem;
+            text-align: center;
+            line-height: 1;
+            opacity: .6;
+        }
+        /* line on the left */
+        &:after {
+            inset-block: 0;
+            inset-inline-start: 0;
+            border-left: .4em solid var( --global-borderColor );
+        }
+        /**/
     }
+
     code {
         padding: .1rem .3rem .2rem;
         word-break: break-word;
         color: #002b36;
-        background: #fefefe;
+        background: #fff;
         border-radius: .2rem;
-
-        ::-moz-selection{ background: #93a1a1; color: #fefefe; text-shadow: none; }
-        ::selection { background: #93a1a1; color: #fefefe; text-shadow: none; }
     }
-    pre[class^='language-'],
     code[class^='language-'] {
         position: relative;
 
         &::before {
             position: absolute;
-            z-index: 1;
             right: 0;
             top: 0;
             padding: .5em .7em;
             font-family: sans-serif;
             font-size: .6rem;
             font-weight: 700;
-            color: var( --color-primary );
+            /* opacity: .7; */
+            color: var( --global-primary );
         }
     }
     .language {
@@ -149,12 +132,11 @@
         &-css::before { content: 'CSS'; }
         &-html::before { content: 'HTML'; }
         &-js::before { content: 'JS'; }
-        &-json::before { content: 'JSON'; }
         &-yaml::before { content: 'YAML'; }
+        &-php::before { content: 'PHP'; }
+        &-json::before { content: 'JSON'; }
     }
-    pre[class^='language-'] code::before {
-        content: unset;
-    }
+
     pre code {
         display: block;
         overflow-x: auto;
@@ -162,8 +144,8 @@
         padding: var( --gap );
         line-height: 1.3;
         white-space: pre;
-        color: #fdf6e3;
-        background: #002b36;
+        color: var( --syntax-foreground, #002b36 );
+        background-color: var( --syntax-background, #fff );
         scrollbar-color: #666 #002b36;
     }
 }

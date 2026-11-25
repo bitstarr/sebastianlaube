@@ -1,0 +1,18 @@
+published: false
+private: false
+title: 'Freya Klinger'
+description: 'Freya Klinger ist Mitglied des Sächsischen Landtags und setzt sich für Antifaschismus und bessere Bildung ein. Redesign als WordPress-Theme. Als Vorlage diente das Flyerdesign von Joan M. Trinks.'
+date: '2009-08-01'
+url: 'http://freya-klinger.de/'
+image:
+  freya.jpg:
+    name: freya.jpg
+    type: image/jpeg
+    size: 61310
+    path: user/data/flex-objects/portfolio/freya-klinger/freya.jpg
+services:
+  - 'Web Design'
+  - Entwicklung
+  - WordPress
+outdated: false
+offline: true

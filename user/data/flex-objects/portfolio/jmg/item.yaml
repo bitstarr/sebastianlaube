@@ -1,0 +1,20 @@
+published: true
+private: true
+title: 'Jacob Metal Group'
+date: '2021-11-08'
+services:
+  - Entwicklung
+  - 'Responsive Webdesign'
+  - 'grav CMS'
+  - Mehrsprachigkeit
+  - directus
+outdated: false
+offline: false
+url: 'https://jacobmetal.group'
+image:
+  jmg.jpg:
+    name: jmg.jpg
+    type: image/jpeg
+    size: 152205
+    path: jmg.jpg
+description: 'Bei diesem Kundenprojekt für Zebra haben wir das headless CMS directus mit vier Frontends verbunden. Neben der Gruppenseite selbst beziehen drei Gruppenmitglieder Daten aus dem Backend. Die Frontends basieren auf dem CMS grav, dass per Synchronisation die aktuellen Infos erhält. Zudem ist das ganze Projekt mehrsprachig.'

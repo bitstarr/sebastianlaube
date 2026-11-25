@@ -1,0 +1,64 @@
+.embedvideo {
+    --link-hover: color-mix( in oklab, #fff, var( --global-primary ) 25% );
+    --outline-color: #fff;
+
+    position: relative;
+    aspect-ratio: 16/9;
+    text-align: center;
+    color: #fff;
+    background:
+        linear-gradient( to bottom, hsl( 0 0% 100% / .25 ), rgb( 0 0 0 / .25 ) ),
+        radial-gradient( at top center, hsl( 0 0% 100% / .6 ) 0%, rgb( 0 0 0 / .6 ) 120%),
+        #989898;
+    background-blend-mode: multiply, multiply;
+
+    &__media {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+    &__media[src=''] {
+        display: none;
+    }
+
+    &__privacy {
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10%;
+
+        .buttons {
+            --_space: clamp( .5rem, 7.5vw + -1rem, 2rem );
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1ex var( --_space );
+            margin: var( --_space );
+        }
+
+        @media (max-width: 40em) {
+            padding: 5%;
+            font-size: .8em;
+        }
+    }
+
+    .source {
+        --link-color: currentcolor;
+    }
+}
+
+.video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+}

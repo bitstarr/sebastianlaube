@@ -1,6 +1,10 @@
 {%- import 'macros/navigation.twig' as nav -%}
 
-<nav class="navigation">
+<nav
+    class="navigation"
+    id="mainnav"
+    aria-label="{{ 'THEME_C.NAV.SR_MAIN'|t|e }}"
+    >
     <ul class="menu">
         {{ nav.loop(pages) }}
     </ul>

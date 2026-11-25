@@ -1,0 +1,188 @@
+THEME_C:
+  A11Y:
+    SKIP2CONTENT: Zum Inhalt springen
+    SKIP2TOP: Nach oben
+  NAV:
+    MENU: Menü
+    MAIN_MENU: Hauptnavigation
+    SR_MAIN: Haupt
+    SR_FOOT: Abschluss
+    REVEAL: Menü öffnen
+    HIDE: Menü schließen
+    TOGGLE: Menu Öffnen/Schließen
+    SUBMENU: Untermenü
+    SUBMENU_REVEAL: Untermenü anzeigen
+    SUBMENU_HIDE: Untermenü verbergen
+    CURRENT_PAGE: Aktuelle Seite
+    BREADCRUMBS: Brotkrumen
+    FOOTER: Abschluss
+    SOCIAL: Social Media
+  SITE:
+    ENV_STATUS: Enviroment Status
+    ENV_PROD: Production
+    ENV_STG: Stage
+    ENV_PRV: Preview
+    ENV_DEV: Development
+    ENV_BANNER: Banner anzeigen
+  PAGE:
+    MENU_CLASSES: CSS Klassen für Menü-Eintrag
+    BREADCRUMB: Breadcrumb
+    SHOW: Anzeigen
+    HIDE: Verbergen
+    SYSTEMIC: Das ist eine System-Seite und du kannst hier nichts tun.
+  MODULE:
+    TITLE: Titel
+    CONTENT: Inhalt
+    DESCRIPTION: Beschreibung
+    FILE: Datei
+    MEDIA: Medien
+    IMAGE: Bild
+    IMAGES: Bilder
+    THUMBNAIL: Vorschaubild
+    AUDIOVIDEO: Audio/Video
+    EXT_VIDEO: Externes Video (YouTube/Vimeo)
+    CAPTION: Bildunterschrift
+    TEXT: Text
+    URL: URL
+    ICON: Icon
+    ID: Anker-ID
+    ENTRIES: Einträge
+    TABS: Tabs
+    ACCORDION: Akkordeon
+    LAYOUT:
+      OPTIONS: Layout Optionen
+      DEFAULT: Standard
+      HIDE_TITLE: Überschrift verbergen
+      INVERT: Invertieren
+      ALTERNATE: Alternatives Layout
+      FLIP: Reihenfolge umkehren
+      SPLIT: Nebeneinander
+      LAYOUT: Darstellung
+      GRID: Raster
+      COLUMNS: Spalten
+      SPREAD: Ausbreitung
+      WIDERWIDTH: Breiter
+      FULLWIDTH: Volle Breite
+      LEFT: Links
+      RIGHT: Rechts
+      TOP: Oben
+      BOTTOM: Unten
+    REFERENCE:
+      SELECT: Modul auswählen
+      HINT: Bitte darauf achten, dass diese Refenz nicht automatisch aktualisiert wird, wenn das Referenzierte Objekt in einen anderen Ordner verschoben wird.
+    UNIVERSAL:
+      TEXTANDMEDIA: Text und Media Layout
+      MEDIAONLY: Media Only Layout
+      TEXTONLY: Text Only Layout
+      READABILITY: Spalten/Lesbarkeit
+      2COL: 2 Spalten (~50 Zeichen pro Zeile)
+      3COL: 3 Spalten (~38 Zeichen pro Zeile)
+      BEST: Lesbarkeit (80 Zeichen pro Zeile)
+      AUDIOCONTROL: Audio abspielen/pausieren
+    CAROUSEL:
+      CONFIGURE: Karusell konfigurieren
+      IMGWIDTH: Bildbreite
+      IMGWIDTH_HELP: Setze die Breite auf 0 um Zoom/Beschnitt zu vermiden
+      IMGHEIGHT: Bildhöhe
+    QUOTE:
+      AUTHOR: Autor
+      NAME: Name
+      POSITION: Job/Titel/Position
+      PORTRAIT: Portrait
+      PORTR_POS: Portrait Position
+      PORTR_BEFORE: Vor Zitat
+      PORTR_AFTER: Nach Zitat
+    DOWNLOADS:
+      DOWNLOADS: Downloads
+      LAYOUT: Darstellung
+      LAYOUT_COMPACT: Kompakt
+      LAYOUT_VERBOSE: Ausführlich
+      LAYOUT_HELP: Bei der ausführlichen Darstellung werden Vorschaubild und Beschreibung angezeigt
+      THUMBNAIL_SEPARATE: Abweichendes Vorschaubild
+    NOTICE:
+      STATUS: Status
+      0: Standard (grau)
+      1: Erfolg (grün)
+      2: Warnung (orange)
+      3: Fehler (rot)
+    GALLERY:
+      FORMAT: Bildformat
+      SQUARE: Quadratisch
+      PORTRAIT: Hochkant
+      LANDSCAPE: Querformat
+      MASONRY: Masonry
+      NOTICE: Die Reihenfolge der Bilder entspricht der Reihenfolge der Seitenmedien. Du kannst sie oben per Drag & Drop ändern.
+    PANELS:
+      HIGHLIGHT: Position des großen Bildes
+  HERO:
+    IMAGE: Titelbild
+    HEADLINE: Überschrift auf dem Titelbild
+    SOURCE: Bildquelle
+  PAGINATION:
+    NEWER: Neuer
+    OLDER: Älter
+  BLOG:
+    CONTINUE_READING: Weiterlesen →
+    POST_NAV: Beitragsnavigation
+    NEXT_POST: Nächster Beitrag
+    PREV_POST: Vorheriger Beitrag
+    POSTED_IN: Abgelegt in
+    TAGS: Schlagworte
+    ARCHIVE_OF: Archiv für
+    NOT_TRANSLATED: Dieser Text ist leider noch nicht übersetzt.
+    DEPRICATED_WARNING: Aufgrund des Alters dises Beitrags, könnten Code Beispiele und Vorgehensweisen veraltet sein. Bitte prüfe auch andere Quellen.
+  VIDEO:
+    EMBEDDED_VIDEO: Eingebettetes Video
+    PRIVACY: Hier befindet sich ein eingebetteter externer Inhalt. Wenn Sie diesen Inhalt laden, werden personenbezogene Daten an diese Plattform und eventuell weitere Dritte übertragen.
+    LOAD_ONCE: Inhalt einmal laden
+    LOAD_ALWAYS: Inhalte immer laden
+    WATCH_AT_YT: Bei YouTube ansehen
+    WATCH_AT_VIMEO: Bei Vimeo ansehen
+  TICKER:
+    DEV: +++ DEV Umgebung +++ Festhalten, es könnte gefährlich werden! +++ Drücke Shift+T um diese Nachricht auszublenden +++
+    STAGE: +++ Stage-Server +++ Dies ist eine Vorschau des aktuellen Entwicklingsstandes +++ Drücke Shift+T um diese Nachricht auszublenden +++
+    PREVIEW: +++ Preview-Server +++ Die Änderungen sind noch nicht im Live-System +++ Drücke Shift+T um diese Nachricht auszublenden +++
+    FALLBACK: +++ Warum bist du hier? +++
+  CALLTOACTION:
+    OPTIONS: „Callt to action“ Link
+    PAGE: Seite
+    URL: URL
+    LABEL: Link-Text
+    EXTERNAL: In neuem Tab öffnen
+    EXTERNAL_HELP: Überlasse den Nutzer/innen die Entscheidung! Nutze diese Option sehr vorsichtig.
+  FORM:
+    FIELD:
+      RECIPIENT: Bitte wählen Sie den Empfänger Ihrer Nachricht
+      NAME: Name
+      NAME_PH: Ihr Name
+      EMAIL: E-Mail
+      EMAIL_PH: Ihre E-Mail-Adresse
+      PHONE: Telefonnummer
+      PHONE_PH: Ihre Telefonnummer
+      MESSAGE: Nachricht
+      MESSAGE_PH: Ihre Nachricht an mich
+      SPAM_Q: 'Anti-Spam-Frage: Wie lautet der Vorname von Pablo Picasso?'
+      SPAM_FAIL: Bei der Anti-Spam-Frage versagt.
+      DSGVO: 'Ich stimme den [Datenschutzrichtlinien](/impressum) zu.'
+      SUBMIT: Nachricht senden
+      FAX: Fax
+    OPTIONAL: optional
+    GENERAL: Allgemeine Anfrage
+    THANKS: Danke für Ihre Nachricht
+  PORTFOLIO:
+    TITLE: Referenzen
+    NEXT: Nächste Referenz
+    PREV: Vorherige Referenz
+    CLOSE: Schließen
+    VIEW: Ansehen
+    MOCKUP: Screenshot von %s
+    COUNTER: Referenz %s von %s
+    VISIT: Website besuchen
+    SCREENSHOT: Screenshot ansehen
+    FILE: Datei ansehen
+  HOME:
+    MADE_BY_ME: Das hab ich gemacht
+    MORE_ABOUT: Mehr über mich
+    MORE_PROJECTS: Mehr Projekte
+    WRITTEN_BY_ME: Das hab' ich zu erzählen
+    MORE_BLOG: Zum Blog

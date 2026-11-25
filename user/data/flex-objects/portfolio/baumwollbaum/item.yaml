@@ -1,0 +1,21 @@
+published: true
+private: false
+title: Baumwollbaum
+description: 'Für unseren etwas unregelmäßigen Handarbeitsmarkt auf dem Brühl in Chemnitz brauchte es natürlich Kommunikationskanäle. Ich entwickelte über die Jahre einige Designs und übertrug sie auf Drucksachen, Social-Media-Grafiken und natürlich die Website.'
+date: '2014-06-01'
+url: 'http://baumwollbaum.de'
+image:
+  baumwollbaum.jpg:
+    name: baumwollbaum.jpg
+    type: image/jpeg
+    size: 116607
+    path: user/data/flex-objects/portfolio/baumwollbaum/baumwollbaum.jpg
+services:
+  - 'Logo Design'
+  - 'Corporate Design'
+  - Entwicklung
+  - 'Responsive Web Design'
+  - 'Print Design'
+  - WordPress
+outdated: false
+offline: false

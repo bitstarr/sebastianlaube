@@ -1,0 +1,18 @@
+published: true
+private: false
+title: 'Haarstudio Kerstin Härtwig'
+description: 'Viele kleine Handwerksbetriebe haben keine eigene Website. Informationen über sie findet man im Netz oft nur über Dritte. Für Kerstin wurde es Zeit, das zu ändern und Kontrolle über die eigene Außendarstellung zu erlangen. Dazu habe ich einen eleganten und funktionalen One-Pager geschaffen und eine kleine Einführung in Google My Business gegeben.'
+date: '2020-12-12'
+url: 'https://salon-haertwig.de'
+image:
+  kerstin-haertwig.jpg:
+    name: kerstin-haertwig.jpg
+    type: image/jpeg
+    size: 153093
+    path: user/data/flex-objects/portfolio/salon-haertwig/kerstin-haertwig.jpg
+services:
+  - 'Web Design'
+  - Entwicklung
+  - 'One Pager'
+outdated: false
+offline: false

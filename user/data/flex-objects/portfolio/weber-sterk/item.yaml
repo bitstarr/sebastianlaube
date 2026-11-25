@@ -1,0 +1,18 @@
+published: false
+private: false
+title: 'Elektro Weber + Sterk'
+description: 'Auch kleine Betriebe sollten im Internet vertreten sein. Für den Fachbetrieb Weber und Sterk habe ich eine simple Web-Visitenkarte mit allen wichtigen Fakten produziert.'
+date: '2012-03-10'
+url: 'http://weber-sterk.de/'
+image:
+  weber.jpg:
+    name: weber.jpg
+    type: image/jpeg
+    size: 56918
+    path: user/data/flex-objects/portfolio/weber-sterk/weber.jpg
+services:
+  - 'Web Design'
+  - Entwicklung
+  - Web-Visitenkarte
+outdated: false
+offline: true

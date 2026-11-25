@@ -1,0 +1,18 @@
+published: true
+private: false
+title: 'Ab nach Hause'
+description: 'Eine kleine Spinnerei im Büro und einer macht Ernst: ab-nach-hause.de und ab-nach-hause-deals.de sind nicht mehr und nicht weniger als ein Feierabend-Countdown mit Augenzwinkern an meinen damaligen Arbeitgeber.'
+date: '2011-08-01'
+url: 'http://ab-nach-hause.de/'
+image:
+  nach-hause.jpg:
+    name: nach-hause.jpg
+    type: image/jpeg
+    size: 35635
+    path: user/data/flex-objects/portfolio/ab-nach-hause/nach-hause.jpg
+services:
+  - 'Web Design'
+  - Entwicklung
+  - 'Pure Unterhaltung'
+outdated: false
+offline: false

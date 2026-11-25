@@ -1,90 +1,53 @@
 .reference {
-    --space: var( --gap );
+    position: relative;
     display: flex;
     flex-direction: column;
-    background: #fff;
-    box-shadow:
-        0 2.3px 3.3px rgb( 0 0 0 / .028 ),
-        0 7.8px 11.2px rgb( 0 0 0 / .042 ),
-        0 35px 50px rgb( 0 0 0 / .07)
-    ;
+    gap: var( --gap-xs );
+    padding-block-end: var( --gap-xs );
+    background: var( --global-ui );
+    box-shadow: var( --shadow-1 );
+    border-radius: var( --global-radius );
+    overflow: hidden;
+    width: min( 100%, 25rem );
 
-    &__list {
-        --grid-gap: var( --gap-mars );
-        --size: 28em;
-        display: grid;
-        grid-gap: var( --grid-gap );
-        grid-template-columns: repeat( auto-fill, minmax( var( --size ), 1fr ) );
-        width: 90vw;
-        max-width: 80rem;
-        margin: var( --gap-mars ) auto var( --gap-jupiter );
-
-        @media ( max-width: 30rem ) {
-            --size: 90vw;
-        }
-    }
-
-    &__image {
-        display: block;
+    .image {
         width: 100%;
-        height: auto;
-
-        &__link {
-            display: block;
-        }
     }
 
-    &__info {
-        padding: var( --space );
-        padding-bottom: 0;
-    }
-    &__title {
-        margin-bottom: var( --gap );
-        font-size: 1.2em;
-        font-weight: 700;
-    }
-    &__meta {
-        display: flex;
-        margin-top: auto;
-        padding: var( --space );
-        font-size: .9em;
-        line-height: 1.3;
+    .title {
+        padding-inline: var( --gap-xs );
+        font-weight: 600;
     }
 
-    &__link {
-        &:focus,
-        &:hover {
-            --link-color: var( --color-secondary );
-        }
+    .services {
+        padding-inline: var( --gap-xs );
+        font-size: var( --size--1 );
     }
-    &__image__link {
-        position: relative;
+
+    .more {
+        align-self: flex-start;
+        display: block;
+        /* margin: auto var( --gap-xs ) var( --gap-xs ); */
 
         &::after {
             content: '';
             position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            box-shadow: inset 0 0 0 .3em var( --hover-brd, hsl( 0 0% 0% / 0 ) );
-            pointer-events: none;
+            inset: 0;
         }
-
-        &:focus {
-            --hover-brd: hsl( var( --orange-hs ) var( --orange-l ) / .5 );
+        &:focus-visible {
+            outline: none;
         }
     }
 
-    &__date {
-        padding-right: 1em;
+    &:focus-within {
+        outline: var( --outline-size ) var( --outline-style ) var( --outline-color );
+        outline-offset: var( --outline-offset, var( --outline-size ) );
     }
 
-    @media ( min-width: 104rem ) {
-        --space: var( --gap-mars );
-        &__list {
-            --grid-gap: var( --gap-saturn );
-            max-width: 100rem;
-        }
+    /* visual affordance for the missing button */
+    transition: box-shadow .2s;
+
+    &:has( .more:hover, .more:focus-visible ) {
+        box-shadow: var( --shadow-2 );
     }
 }

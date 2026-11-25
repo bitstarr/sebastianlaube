@@ -1,0 +1,188 @@
+THEME_C:
+  A11Y:
+    SKIP2CONTENT: Skip to content
+    SKIP2TOP: Back to top
+  NAV:
+    MENU: Menu
+    MAIN_MENU: Main Navigation
+    SR_MAIN: Main
+    SR_FOOT: Closing
+    REVEAL: Open Menu
+    HIDE: Hide Menu
+    TOGGLE: Open/Close Menu
+    SUBMENU: Submenu
+    SUBMENU_REVEAL: Show Submenu
+    SUBMENU_HIDE: Hide Submenu
+    CURRENT_PAGE: Current Page
+    BREADCRUMBS: Breadcrumbs
+    FOOTER: Conclusive
+    SOCIAL: Social Media
+  SITE:
+    ENV_STATUS: Enviroment Status
+    ENV_PROD: Production
+    ENV_STG: Stage
+    ENV_PRV: Preview
+    ENV_DEV: Development
+    ENV_BANNER: Show Banner
+  PAGE:
+    MENU_CLASSES: CSS Classes for Menu Entry
+    BREADCRUMB: Breadcrumb
+    SHOW: Show
+    HIDE: Hide
+    SYSTEMIC: This is a system page. You can't do anything here.
+  MODULE:
+    TITLE: Title
+    CONTENT: Content
+    DESCRIPTION: Description
+    FILE: File
+    MEDIA: Media
+    IMAGE: Image
+    IMAGES: Images
+    THUMBNAIL: Thumbnail Image
+    AUDIOVIDEO: Audio/Video
+    EXT_VIDEO: External Video (YouTube/Vimeo)
+    CAPTION: Image Caption
+    TEXT: Text
+    URL: URL
+    ICON: Icon
+    ID: Anchor-ID
+    ENTRIES: Entries
+    TABS: Tabs
+    ACCORDION: Accordion
+    LAYOUT:
+      OPTIONS: Layout options
+      DEFAULT: Standard
+      HIDE_TITLE: Hide Title
+      INVERT: Invert
+      ALTERNATE: Alternative Layout
+      FLIP: Reverese Order
+      SPLIT: Next to each other
+      LAYOUT: Layout
+      GRID: Grid
+      COLUMNS: Columns
+      SPREAD: Spread
+      WIDERWIDTH: Wider
+      FULLWIDTH: Full Width
+      LEFT: Left
+      RIGHT: Right
+      TOP: Top
+      BOTTOM: Bottom
+    REFERENCE:
+      SELECT: Select Module
+      HINT: Please note that this reference will not be automatically updated if the referenced module is moved to another folder.
+    UNIVERSAL:
+      TEXTANDMEDIA: Text and Media Layout
+      MEDIAONLY: Media Only Layout
+      TEXTONLY: Text Only Layout
+      READABILITY: Columns/Readability
+      2COL: 2 Columns (~50 Characters per line)
+      3COL: 3 Columns (~38 Characters per line)
+      BEST: Readable (80 Characters per line)
+      AUDIOCONTROL: Play/pause audio
+    CAROUSEL:
+      CONFIGURE: Carousel configuration
+      IMGWIDTH: Image Width
+      IMGWIDTH_HELP: Set width to 0 to avoid cropping/zooming
+      IMGHEIGHT: Image Height
+    QUOTE:
+      AUTHOR: Author
+      NAME: Name
+      POSITION: Job/Title/Position
+      PORTRAIT: Portrait
+      PORTR_POS: Portrait Position
+      PORTR_BEFORE: Before quote
+      PORTR_AFTER: After quote
+    DOWNLOADS:
+      DOWNLOADS: Downloads
+      LAYOUT: Layout
+      LAYOUT_COMPACT: Compact
+      LAYOUT_VERBOSE: Verbose
+      LAYOUT_HELP: With the verbose layout, thumbnail and description will be displayed
+      THUMBNAIL_SEPARATE: Divergent thumbnail image
+    NOTICE:
+      STATUS: Status
+      0: Default (grey)
+      1: Succsess (green)
+      2: Warning (orange)
+      3: Error (red)
+    GALLERY:
+      FORMAT: Image Format
+      SQUARE: Square
+      PORTRAIT: Portrait
+      LANDSCAPE: Landscape
+      MASONRY: Masonry
+      NOTICE: The order of the images corresponds to the order of the page media. You can change them above using drag & drop.
+    PANELS:
+      HIGHLIGHT: Position of the large image
+  HERO:
+    IMAGE: Hero Image
+    HEADLINE: Headline on top of Hero Image
+    SOURCE: Source of Image
+  PAGINATION:
+    NEWER: Newer
+    OLDER: Older
+  BLOG:
+    CONTINUE_READING: Continue reading →
+    POST_NAV: Post Navigation
+    NEXT_POST: Next Post
+    PREV_POST: Previous Post
+    POSTED_IN: Posted in
+    TAGS: Tags
+    ARCHIVE_OF: Achive of
+    NOT_TRANSLATED: Sorry, this text is not translated yet.
+    DEPRICATED_WARNING: Due to the age of this post, code examples and procedures may be outdated. Please also check other sources.
+  VIDEO:
+    EMBEDDED_VIDEO: Embedded Video
+    PRIVACY: Here you will find embedded external content. If you load this content, personal data will be transferred to this platform and possibly to other third parties.
+    LOAD_ONCE: Load once
+    LOAD_ALWAYS: Always load
+    WATCH_AT_YT: Watch at YouTube
+    WATCH_AT_VIMEO: Watch at Vimeo
+  TICKER:
+    DEV: +++ DEV Enviroment +++ Buckle up +++ Press Shift+T to hide this message +++
+    STAGE: +++ Stage Enviroment +++ This is a preview of the current development state +++ Press Shift+T to hide this message +++
+    PREVIEW: +++ Preview Enviroment +++ These changes are not part of the live enviroment yet +++ Press Shift+T to hide this message +++
+    FALLBACK: +++ Why are you here? +++
+  CALLTOACTION:
+    OPTIONS: Call to action link
+    PAGE: Page
+    URL: URL
+    LABEL: Link text
+    EXTERNAL: Open in new tab
+    EXTERNAL_HELP: Leave the decision to the user! Use this option very carefully.
+  FORM:
+    FIELD:
+      RECIPIENT: Please select the recipient of your message
+      NAME: Name
+      NAME_PH: Your name
+      EMAIL: Email
+      EMAIL_PH: Your email address
+      PHONE: Phone
+      PHONE_PH: Your phone number
+      MESSAGE: Message
+      MESSAGE_PH: Your message to me
+      SPAM_Q: "Anti-Spam-Question: What's the first name of Pablo Picasso?"
+      SPAM_FAIL: You failed the Spam Test.
+      DSGVO: 'I agree with the [Privacy Policy](/imprint).'
+      SUBMIT: Send message
+      FAX: Fax
+    OPTIONAL: optional
+    GENERAL: 'General Request'
+    THANKS: Thanks for your message.
+  PORTFOLIO:
+    TITLE: References
+    NEXT: Next reference
+    PREV: Previous reference
+    CLOSE: Close
+    VIEW: View
+    MOCKUP: Screenshot of %s
+    COUNTER: Reference %s of %s
+    VISIT: Visit website
+    SCREENSHOT: View screenshot
+    FILE: View file
+  HOME:
+    MADE_BY_ME: That's what I made
+    MORE_ABOUT: More about me
+    MORE_PROJECTS: More projects
+    WRITTEN_BY_ME: What I have to tell
+    MORE_BLOG: The Blog

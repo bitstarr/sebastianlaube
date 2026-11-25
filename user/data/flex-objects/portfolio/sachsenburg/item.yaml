@@ -1,0 +1,20 @@
+published: true
+private: false
+title: 'Gedenkstätte Sachsenburg'
+description: 'In Sachsenburg entstand eines der ersten Konzentrationslager. Bis heute gibt es keine würdige Gedenkstätte, doch der Verein Geschichtswerkstatt Sachsenburg arbeitet unermüdlich gegen das Vergessen an. Diese Website ist Informationszentrum und Online-Gedenkstätte zugleich. Das Design unterstützt die Vermittlung der Informationen, ohne zu ermüden.'
+date: '2017-11-16'
+url: 'https://gedenkstaette-sachsenburg.de/'
+image:
+  sachsenburg.jpg:
+    name: sachsenburg.jpg
+    type: image/jpeg
+    size: 164307
+    path: user/data/flex-objects/portfolio/sachsenburg/sachsenburg.jpg
+services:
+  - 'Logo Design'
+  - 'Corporate Design'
+  - 'Web Design'
+  - Entwicklung
+  - WordPress
+outdated: false
+offline: false

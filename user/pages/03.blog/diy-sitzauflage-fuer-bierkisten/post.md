@@ -1,7 +1,8 @@
 ---
 title: DIY Sitzauflage für Bierkisten
 date: 20-05-2014 20:19
-post_image: bierkiste.jpg
+hero:
+  image: bierkiste.jpg
 routes:
   aliases:
     - '/2014/05/diy-sitzauflage-fuer-bierkisten'

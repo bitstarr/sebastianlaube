@@ -8,10 +8,10 @@
         {% if p.header.menu_classes %}
             {% set classes = classes|merge([ p.header.menu_classes ]) %}
         {% endif %}
-            <li class="menu__item {{ classes|join( ' ' ) }}">
-                <a class="menu__link" href="{{ p.url }}">
-                    {{ p.menu }}
-                </a>
-            </li>
+        <li class="item {{ classes|join( ' ' ) }}">
+            <a class="link" href="{{ p.url }}"{% if p.active %} aria-current="page"{% endif %}>
+                {{ p.menu }}
+            </a>
+        </li>
     {% endfor %}
 {% endmacro %}

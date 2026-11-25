@@ -1,41 +1,56 @@
 .notice {
-    --comp-bg: #fff;
-    --comp-brd: #777;
-    --comp-txt: var( --text-default );
+    /*
+        API:
+        --notice-backgroundColor
+        --notice-accent
+        --notice-success-accent
+        --notice-warning-accent
+        --notice-error-accent
+    */
+    --_bg: var( --notice-backgroundColor, #fff );
+    --_accent: var( --notice-accent, var( --global-primary ) );
 
-    padding: var( --gap-moon );
-    color: var( --comp-txt );
-    background: var( --comp-bg );
-    border-left: .4em solid var( --comp-brd );
+    padding: var( --gap-s );
+    text-wrap: pretty;
+    background: var( --_bg );
+    border-inline-start: .4em solid var( --_accent );
 
     &:empty { display: none; }
 
     a {
         text-decoration: underline;
         color: inherit;
+
+        &:hover {
+            text-decoration: underline dashed;
+        }
     }
 
     &--success {
-        --comp-brd: #859900;
+        --_accent: var( --notice-success-accent, #859900 );
     }
 
     &--warning {
-        --comp-brd: #b58900;
+        --_accent: var( --notice-warning-accent, #b58900 );
     }
 
     &--error {
-        --comp-brd: #dc322f;
+        --_accent: var( --notice-error-accent, #dc322f );
     }
 
-    &--extended {
+    &:has( .icon ) {
         display: grid;
         grid-template-columns: 3em auto;
         align-items: center;
-        gap: 1em;
+        gap: var( --gap-xs ) var( --gap-s );
 
         .icon {
             justify-self: center;
             font-size: 1.5em;
+        }
+
+        .title + .textflow {
+            grid-area: 2/2;
         }
 
         .icon--language {
@@ -43,5 +58,14 @@
             height: 1em;
             font-size: 1em;
         }
+    }
+
+    .title {
+        font-weight: 700;
+    }
+
+    & > * + * {
+        /* flow-space https://piccalil.li/quick-tip/flow-utility/ */
+        margin-block-start: var( --flow-space, var( --global-lineHeight: ) );
     }
 }

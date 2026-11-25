@@ -1,0 +1,18 @@
+published: false
+private: false
+title: 'Europäische Kunstgemeinschaft'
+description: 'Für den Verein, der Menschen an die Vielfältigkeit von Kunst heranführen will und junge Künstler:innen fördert, habe ich einen One-Pager produziert. Mit seiner Farbigkeit repräsentiert er die Vielfältigkeit der Künste, ohne die Inhalte in den Hintergrund rücken zu lassen.'
+date: '2014-02-19'
+url: 'http://europaeische-kunst-gemeinschaft.de/'
+image:
+  ekg.jpg:
+    name: ekg.jpg
+    type: image/jpeg
+    size: 115496
+    path: user/data/flex-objects/portfolio/ekg/ekg.jpg
+services:
+  - 'Web Design'
+  - Entwicklung
+  - 'One Pager'
+outdated: false
+offline: false

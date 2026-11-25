@@ -1,0 +1,25 @@
+published: true
+private: false
+title: 'JM Dietrich Immobilien'
+description: 'Jürgen Dietrich ist ein engagierter und sympathischer Makler, der seine Leistungen und seinen Bestand bodenständig und modern präsentiert haben wollte. Neben dem One-Pager in klar strukturierter Optik entstand noch eine kleine Verwaltung für Exposés.'
+date: '2022-03-04'
+url: 'https://jm-dietrich-immobilien.de/'
+image:
+  jmd-immo.jpg:
+    name: jmd-immo.jpg
+    type: image/jpeg
+    size: 126707
+    path: user/data/flex-objects/portfolio/jmd-immo/jmd-immo.jpg
+services:
+  - 'Web Design'
+  - Entwicklung
+  - 'One Pager'
+  - 'grav CMS'
+outdated: true
+offline: false
+placeholder:
+  jmd-immo.png:
+    name: jmd-immo.png
+    type: image/png
+    size: 3215570
+    path: jmd-immo.png

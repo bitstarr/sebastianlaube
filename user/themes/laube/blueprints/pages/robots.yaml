@@ -1,0 +1,32 @@
+title: Robots
+extends@:
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+        system:
+          type: tab
+          title: System
+          fields:
+            hint:
+              type: display
+              style: vertical
+              outerclasses: user-notice is-warning
+              content: THEME_C.PAGE.SYSTEMIC
+        content:
+          unset@: true
+        hero:
+          unset@: true
+        options:
+          unset@: true
+        advanced:
+          unset@: true
+        security:
+          fields:
+          _site:
+            unset@: true
+          _admin:
+            unset@: true

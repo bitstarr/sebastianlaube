@@ -16,9 +16,20 @@ session:
   initialize: false
   name: grav-site
 
+default_locale: 'de'
 languages:
   supported: [ de, en ]
+  default_lang: de
   include_default_lang: false
+  include_default_lang_file_extension: false
 
-username_regex: '^[a-z0-9_-]{3,16}$'
+images:
+  default_image_quality: 70
+  defaults:
+    loading: lazy
+
+strict_mode:
+  twig2_compat: false
+  twig3_compat: true
+
 pwd_regex: '^[ -~]{8,}$'

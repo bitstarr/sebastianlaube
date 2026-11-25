@@ -1,19 +1,33 @@
+{% spaceless %}
+{% set modular_classes = [
+    'modular',
+    'modular--bullets',
+    'wrapping',
+    'bullets',
+] %}
+
+{% if header.layout.inverted %}
+    {% set modular_classes = modular_classes|merge( ['is-inverted'] ) %}
+{% endif %}
+{% endspaceless %}
+
 {% if header.bullets %}
-    <div class="modular wrapping bullets">
+    <div class="{{ modular_classes|join( ' ' )|trim }}">
         <div class="wrapped">
-            <h2 class="bullets__headline" >{{ page.title }}</h2>
+            {% if header.layout.hide_title != true -%}
+            <h2 class="modular__title" >{{ page.title }}</h2>
+            {% endif %}
             <ul class="bullets__list">
                 {% for bullet in header.bullets %}
                     {% if bullet.icon %}
                     <li class="bullets__item">
                         <a class="bullets__link" href="{{ bullet.url }}">
-                            {{ svg( bullet.icon, 'bullets__icon icon' ) }}
+                            {{ svg( bullet.icon, 'bullets__icon icon' )|raw }}
                             <span class="bullets__label">{{ bullet.label }}</span>
                         </a>
                     </li>
                     {% endif %}
                 {% endfor %}
-                <li aria-hidden="true" class="bullets__stopper"></li>
             </ul>
         </div>
     </div>

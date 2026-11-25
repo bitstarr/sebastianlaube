@@ -1,0 +1,20 @@
+published: true
+private: false
+title: 'Maharadscha Palast'
+description: 'Nach über 10 Jahren war es Zeit für einen Relaunch. Und auch 2026 ist es nicht leicht, eine passende Designsprache für ein indisches Restaurant zu finden. Die Balance aus (erwartetem) Kitsch und Modernität ist eine Herausforderung. Darum habe ich zuerst die Informationen strukturiert und anschließend drumherum das Design iteriert. Durch grav CMS ist die Seite kein klassischer One-Pager mehr, macht aber die Pflege einfacher.'
+date: '2026-10-20'
+url: 'http://maharadschapalast.de/'
+image:
+  maharadschapalast-2026.jpg:
+    name: maharadschapalast-2026.jpg
+    type: image/jpeg
+    size: 201388
+    path: maharadschapalast-2026.jpg
+services:
+  - Entwicklung
+  - 'Web Design'
+  - 'grav CMS'
+  - 'One Pager'
+  - Mehrsprachigkeit
+outdated: false
+offline: false

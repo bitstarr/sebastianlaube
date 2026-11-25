@@ -1,0 +1,17 @@
+published: false
+private: false
+title: 'Event Crew'
+description: 'Mit dieser Website hatte ich die Gelegenheit, dem Gründer Sven Umlauft zu einem erfolgreichen Start zu verhelfen. Zusammen mit dem Designer Rico Langer haben wir einen One-Pager geschaffen, der das Leistungsspektrum für Eventtechnik und -durchführung hervorragend darstellt.'
+date: '2018-11-20'
+url: 'https://eventcrew.rocks/'
+image:
+  eventcrew.jpg:
+    name: eventcrew.jpg
+    type: image/jpeg
+    size: 116686
+    path: user/data/flex-objects/portfolio/eventcrew/eventcrew.jpg
+services:
+  - 'One Pager'
+  - Entwicklung
+outdated: false
+offline: false

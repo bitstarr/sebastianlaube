@@ -1,0 +1,19 @@
+published: true
+private: false
+title: 'Charming Arts'
+description: 'Frank Müller macht stilvolle Portraits und will das natürlich nicht für sich behalten. Ich habe ihm eine zeitgemäße Website produziert, bei der sich alles um seine Arbeiten dreht.'
+date: '2015-10-05'
+url: 'https://charmingarts.de/'
+image:
+  charmingarts.jpg:
+    name: charmingarts.jpg
+    type: image/jpeg
+    size: 131278
+    path: user/data/flex-objects/portfolio/charmingarts/charmingarts.jpg
+services:
+  - 'Web Design'
+  - 'Responsive Web Design'
+  - Entwicklung
+  - WordPress
+outdated: false
+offline: false

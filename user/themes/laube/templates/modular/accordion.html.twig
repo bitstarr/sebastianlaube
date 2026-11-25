@@ -1,0 +1,27 @@
+{% spaceless %}
+{% set modular_classes = [
+    'modular',
+    'modular--accordion',
+    'wrapping',
+] %}
+
+{% endspaceless %}
+
+<div class="{{ modular_classes|join( ' ' )|trim }}">
+    {% if header.layout.hide_title != true -%}
+    <h2 class="modular__title">{{ page.title }}</h2>
+    {% endif -%}
+
+    {% for object in header.items -%}
+        <div class="details details--accordion js-details" data-expanded="true">
+            <h3 class="details__title">
+                <button class="details__trigger" aria-expanded="true">
+                    {{ object.title }}
+                </button>
+            </h3>
+            <div class="details__content textflow">
+                {{ object.content|markdown|raw}}
+            </div>
+        </div>
+    {% endfor -%}
+</div>

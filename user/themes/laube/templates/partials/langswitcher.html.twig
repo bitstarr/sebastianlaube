@@ -1,0 +1,29 @@
+{% extends 'partials/langswitcher-logic.html.twig' %}
+
+{% block language_block_start %}
+<nav class="babel" aria-label="Sprachen / Languages">
+    <ul class="list">
+{% endblock %}
+
+{% block language_item %}
+    {% if show_language %}
+    <li class="item">
+        <a
+            href="{{ lang_url ~ uri.params ~ (uri.query|length > 1 ? '?' ~ uri.query) }}"
+            class="{{ ['link', active_class]|join( ' ' )|trim }}"
+            title="{{ native_name(language)|capitalize }}"
+            aria-label="{{ native_name(language)|capitalize }}"
+            {{ ( active_class == 'active' ) ? 'aria-current="true"' }}
+            lang="{{ language }}"
+            hreflang="{{ language }}"
+        >
+            {{ language|upper }}
+        </a>
+    </li>
+    {% endif %}
+{% endblock %}
+
+{% block language_block_end %}
+    </ul>
+</nav>
+{% endblock %}

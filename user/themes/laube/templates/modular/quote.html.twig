@@ -1,0 +1,45 @@
+{% spaceless %}
+{% set modular_classes = [
+    'modular',
+    'modular--quote',
+    'wrapping',
+] %}
+
+{% set img = page.media[ header.image.file ] -%}
+
+{% if header.image.position == 'after' %}
+    {% set modular_classes = modular_classes|merge( ['is-flipped'] ) %}
+{% endif %}
+{% endspaceless %}
+
+<div class="{{ modular_classes|join( ' ' )|trim }}">
+    <div class="quote">
+        {% if img -%}
+            <img
+                class="image"
+                src="{{ img.cropZoom(490,490).quality(70).url }}"
+                width="490"
+                height="490"
+                alt="{{ img.metadata.alt }}"
+                loading="lazy"
+                decoding="async"
+            >
+        {% endif -%}
+
+        <figure class="figure">
+            <blockquote class="content">
+                <div class="textflow">
+                {{ page.content|raw }}
+                </div>
+            </blockquote>
+            <figcaption>
+                <cite class="citation">
+                    {{ header.author.name }}
+                    {% if header.author.job %}
+                    <br>{{ header.author.job }}
+                    {% endif %}
+                </cite>
+            </figcaption>
+        </figure>
+    </div>
+</div>

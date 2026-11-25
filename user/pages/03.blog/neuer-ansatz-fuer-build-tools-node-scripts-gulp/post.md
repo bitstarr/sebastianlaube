@@ -146,5 +146,3 @@ Ich habe auch von der Entscheidung von styelint erfahren, die Unterstützung fü
 Aber im Großen und Ganzen können wir sehen, dass es keine großen Unterschiede in der Dateigröße der optimierten Dateien gibt, was ein Ergebnis ist, mit dem ich ziemlich zufrieden bin.
 
 !! Ich habe den code in einem [GitHub Reop veröffentlicht](https://github.com/bitstarr/new-build-process). Schau dir die Dateien in Ruhe an und entscheide was für dich von Nutzen sein kann. Ich freue mich über Verbesserungsvorschläge.
-
-! Da ich mich während meiner Arbeitszeit ausgiebig mit dem Thema beschäftigen durfte, sei an dieser Stelle der [mindbox](https://mindbox.de/) gedankt. Wir suchen übrigens gerade Versärkung im Entwicklungsbereich ;)

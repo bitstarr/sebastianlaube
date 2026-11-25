@@ -2,50 +2,89 @@
 {% set page_title = page.header.headline|default( page.title ) %}
 {% extends 'partials/base.html.twig' %}
 
-{% block content %}
-<div class="blog">
+{% set portfolio = grav.get('flex')
+    .collection( 'portfolio' )
+    .filterBy( { 'published': true, 'private': false } )
+    .sort( { date: 'DESC' } )
+%}
 
-    <div class="wrapping">
-        <h1 class="headline">
-            {{ page_title }}
-        </h1>
+{% block content %}
+    <div class="modular wrapping">
+        {% if header.hero.headline is not defined %}
+            <h1 class="pageHeadline">
+                {{ page_title }}
+            </h1>
+        {% endif %}
     </div>
 
-    <div class="reference__list">
-    {% for post in page.collection() %}
-        {% if post.header.url matches '~^\/|^https?:\/\/~' %}
-            {% set post_url = post.header.url %}
-        {% else %}
-            {% set post_url = post.media[post.header.url].url %}
-        {% endif %}
-        <article class="reference" id="{{ post.title|hyphenize }}">
-            <a class="reference__image__link" href="{{ post_url }}" target="_blank" rel="noopener">
-                {{ post.media[post.header.image].html( null, null, 'reference__image' )|raw }}
-            </a>
-            <div class="reference__info">
-                <h2 class="reference__title">
-                    <a class="reference__link" href="{{ post_url }}" target="_blank" rel="noopener">
-                        {{ post.title }}
-                    </a>
-                    {% if post.header.disconnected == true %}
-                        <small>(offline)</small>
+    <div class="portfolio">
+        {% for item in portfolio -%}
+            {% set image = item.media[ item.image|first.name ] -%}
+            {% set placeholder = item.media[ item.placeholder|first.name ] -%}
+            <div class="item" id="{{ item.key }}">
+                <img class="image"
+                    src="{{ image.resize( 960, null ).url }}"
+                    alt="{{ 'THEME_C.PORTFOLIO.MOCKUP'|t( item.title )|e }}"
+                    loading="lazy">
+                <div class="content">
+                    <h2 class="headline">
+                        {{ item.title }}
+                        {% if item.offline %}
+                            <small>(offline)</small>
+                        {% endif %}
+                    </h2>
+
+                    <div class="meta">
+                        <p class="date">
+                            {{  item.date|date( 'm/Y' ) }}
+                        </p>
+                        <p class="services">
+                            {{ item.services|join( ', ' )|trim }}
+                        </p>
+                    </div>
+
+                    {% if item.description -%}
+                        <div class="textflow">
+                            {{ item.description|markdown|raw }}
+                        </div>
+                    {% endif -%}
+
+                    {% if item.outdated %}
+                        <div class="notice notice--warning">
+                            {{ svg('retro')|raw }}
+                            <p>
+                                Die Website wurde inzwischen durch eine Neue abgelöst.
+                            </p>
+                        </div>
                     {% endif %}
-                </h2>
-                <div class="textflow">
-                    {{ post.content|raw }}
+
+                    {% if item.url and ( not item.offline and not item.outdated ) -%}
+                        <p class="callout">
+                            <a class="link" href="{{ item.url }}">
+                                <span class="vh">{{  item.title }}:</span>
+                                {{ 'THEME_C.PORTFOLIO.VISIT'|t|e }}
+                                {{ svg( 'external' )|raw }}
+                            </a>
+                        </p>
+                    {% elseif item.offline or item.outdated and item.placeholder -%}
+                        <p class="callout">
+                            <a class="link" href="{{ placeholder.url }}">
+                                {{ svg( 'image' )|raw }}
+                                <span class="vh">{{  item.title }}:</span>
+                                {{ 'THEME_C.PORTFOLIO.SCREENSHOT'|t|e }}
+                            </a>
+                        </p>
+                    {% elseif item.fileOnly and item.placeholder -%}
+                        <p class="callout">
+                            <a class="link" href="{{ placeholder.url }}">
+                                {{ svg( 'file' )|raw }}
+                                <span class="vh">{{  item.title }}:</span>
+                                {{ 'THEME_C.PORTFOLIO.FILE'|t|e }}
+                            </a>
+                        </p>
+                    {% endif -%}
                 </div>
             </div>
-            <div class="reference__meta">
-                <p class="reference__date">
-                    {{ post.date|localizeddate( 'none', 'none', site.default_lang, null, 'MM/yyyy' ) }}
-                </p>
-                <p class="reference__tags">
-                    {{ post.taxonomy.service|join( ', ' )|trim}}
-                </p>
-            </div>
-        </article>
-    {% endfor %}
+        {% endfor -%}
     </div>
-</div>
-
 {% endblock %}

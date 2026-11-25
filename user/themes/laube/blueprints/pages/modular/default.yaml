@@ -1,0 +1,34 @@
+title: Default
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        # content:
+          # fields:
+            # content:
+            #   unset@: true
+            # header.media_order:
+            #   ordering@: 99
+
+        hero:
+          unset@: true
+
+        options:
+          unset@: true
+
+        advanced:
+          fields:
+            overrides:
+              security: admin.super
+              fields:
+                _publish:
+                  type: section
+                  import@:
+                    type: partials/id
+                    context: blueprints://
+            routes_only:
+              security: admin.super
+            admin_only:
+              security: admin.super

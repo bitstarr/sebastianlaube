@@ -1,0 +1,18 @@
+published: true
+private: true
+title: 'SWE Energie'
+description: 'Zusammen mit einem großartigen Designer habe ich bei Zebra einen Frontend auf Basis von grav entwickelt. Im CMS konnten die Kunden dann schon selbst Elemente testen und Seiten zusammenstellen. Die SWE digital hat dann den Code in ihr proprietäres CMS integriert. Zwischenzeitlich haben wir mit der SWE noch umfangreiche Optimierungen der Barrierefreiheit durchgeführt. Darüber hinaus mussten auch die Tarifabfrage und andere Dienste angebunden werden.'
+date: '2022-07-01'
+url: 'http://swe-energie.de'
+image:
+  swe.jpg:
+    name: swe.jpg
+    type: image/jpeg
+    size: 275797
+    path: swe.jpg
+services:
+  - 'grav CMS'
+  - 'Responsive Web Design'
+  - Barrierefreiheit
+outdated: false
+offline: false

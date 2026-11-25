@@ -1,0 +1,20 @@
+published: true
+private: false
+title: 'Freie Mediengruppe “binario stern”'
+description: 'Annett, Georg und ihre Arbeiten kenne ich schon eine ganze Weile. Die beiden Kreativen wollten nun ihre volle Aufmerksamkeit ihrer Unternehmung widmen und brauchten dafür ein aussagekräftiges Portfolio. Bei der Gelegenheit haben wir auch das alte Logo überarbeitet und eine grafische Sprache für ihre Präsentation entwickelt.'
+date: '2019-12-11'
+url: 'https://binario-stern.de/'
+image:
+  binario-stern.jpg:
+    name: binario-stern.jpg
+    type: image/jpeg
+    size: 53349
+    path: user/data/flex-objects/portfolio/binario-stern/binario-stern.jpg
+services:
+  - 'Logo Design'
+  - 'Corporate Design'
+  - 'Web Design'
+  - Entwicklung
+  - 'One Pager'
+outdated: false
+offline: false

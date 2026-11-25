@@ -1,20 +1,22 @@
 .details {
-    padding: var( --gap-moon ) var( --gap );
-    background: var( --color-ui );
-    border-bottom: 2px solid var( --color-border );
+    --_vSpace: var( --gap );
+    --_hSpace: var( --gap );
+
+    background: var( --global-ui );
+    border-bottom: 2px solid var( --global-borderColor );
 
     & + & {
-        margin-top: var( --body-lh );;
+        margin-top: var( --global-lineHeight );
     }
 
     &__trigger {
         all: inherit;
-        display: flex;
+        display: block;
         justify-content: space-between;
         align-items: center;
         width: 100%;
         margin: 0;
-        padding: var( --gap-moon ) 0;
+        padding: var( --_hSpace ) var( --_vSpace );
         border: 0;
         cursor: pointer;
     }
@@ -24,27 +26,47 @@
     &__trigger::-webkit-details-marker {
         display: none;
     }
-    & .indicator {
-        height: 1rem;
-        margin: 0 0 0 .5em;
-        fill: currentColor;
+    .js &__trigger {
+        padding-right: calc( var( --_vSpace ) + 1rem );
     }
 
-    & &__title { /* high specifity */
-        margin: 0;
-        font-size: 1.4em;
+    &__title {
+        position: relative;
+        display: block;
         font-weight: 700;
+    }
+    .js &__title::before,
+    .js &__title::after {
+        content: '';
+    }
+    &__title::before,
+    &__title::after {
+        position: absolute;
+        top: 50%;
+        background: currentcolor;
+    }
+    &__title::after {
+        right: calc( var( --_vSpace ) + .5rem );
+        transform: translate(50%, -50%);
+        height: 1rem;
+        width: .25rem;
+    }
+    &__title::before {
+        right: var( --_vSpace );
+        transform: translate(0, -50%);
+        height: .25rem;
+        width: 1rem;
     }
 
     &__content {
-        padding-bottom: var( --gap-moon );
+        padding: 0 var( --_vSpace ) var( --_hSpace );
     }
 
     &[data-expanded='false'] &__content {
         display: none;
     }
-    &[open] .indicator__vert,
-    &[data-expanded='true'] .indicator__vert {
+    &[open] &__title::after,
+    &[data-expanded='true'] &__title::after {
         display: none;
     }
 }

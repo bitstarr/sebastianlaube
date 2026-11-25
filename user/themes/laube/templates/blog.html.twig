@@ -1,54 +1,29 @@
 {% set tpl_body_classes = 't-blog' %}
 {% extends 'partials/base.html.twig' %}
+{% do assets.addCss('theme://dist/css/blog.css', 99) %}
 
 {% set page_title = page.header.headline|default( page.title ) %}
 {% if uri.param( 'category' ) %}
-    {% set page_title = 'Archiv für <q>' ~ uri.param( 'category' ) ~ '</q>' %}
+    {% set page_title = 'THEME_C.BLOG.ARCHIVE_OF'|t|e ~ ' <q>' ~ uri.param( 'category' ) ~ '</q>' %}
 {% endif %}
 {% if uri.param( 'tag' ) %}
-    {% set page_title = 'Archiv für <q>' ~ uri.param( 'tag' ) ~ '</q>' %}
+    {% set page_title = 'THEME_C.BLOG.ARCHIVE_OF'|t|e ~ ' <q>' ~ uri.param( 'tag' ) ~ '</q>' %}
 {% endif %}
 
 {% block content %}
-<div class="wrapping blog">
-
     <div class="wrapping">
-        <h1 class="headline">
+        <h1 class="pageHeadline">
             {{ page_title }}
         </h1>
-    </div>
 
-    {% for post in page.collection() %}
-    <article class="article">
-        <header class="article__header">
-            <h2 class="article__title">
-                <a href="{{ post.url }}" rel="bookmark">
-                {{ post.title }}
-                </a>
-            </h2>
-            <p class="article__date">
-                <time class="article__datetime dt-published" datetime="{{ post.date|date("c") }}">
-                    {{ post.date|localizeddate( 'long', 'none', site.default_lang ) }}
-                </time>
-            </p>
-        </header>
-        {% include 'partials/blog/image.html.twig' with { post: post, link: true } %}
-        <div class="textflow">
-            {{ post.summary|raw }}
-            {% if post.content|length > post.summary|length %}
-            <p>
-                <a href="{{ post.url }}#continue" class="continue">{{ 'THEME_C.BLOG.CONTINUE_READING'|t|e }}</a>
-            </p>
-            {% endif %}
+        <div class="blog">
+            {% for post in page.collection() %}
+                {% include 'partials/blog/list-item.html.twig' with { post: post } %}
+            {% endfor %}
         </div>
-    </article>
-    {% endfor %}
-</div>
 
-{% if config.plugins.pagination.enabled and page.collection.params.pagination %}
-    <div class="wrapping">
-    {% include 'partials/pagination.html.twig' with {base_url: page.url, pagination: page.collection.params.pagination} %}
+        {% if config.plugins.pagination.enabled and page.collection.params.pagination %}
+            {% include 'partials/pagination.html.twig' with {base_url: page.url, pagination: page.collection.params.pagination} %}
+        {% endif %}
     </div>
-{% endif %}
-
 {% endblock %}

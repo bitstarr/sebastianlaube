@@ -1,19 +1,30 @@
 .tabs {
+    /*
+        API:
+        --tabs-borderWidth        border width
+        --tabs-borderColor        border color
+        --tabs-borderHover        border color on hover
+    */
+
     &__head {
         display: none;
     }
 
-    &__content {
-        margin-bottom: var( --gap-mars );
-    }
+    /* &__content {
+        margin-bottom: var( --gap-m );
+    } */
 
     &__title {
-        margin-bottom: var( --gap-moon );
+        margin-bottom: var( --gap-xs );
         font-size: 1.2em;
     }
 
     &.is-interactive &__head {
         display: flex;
+        align-items: flex-end;
+        gap: max( 1px, .15em );
+        margin-bottom: calc( -1 * var( --_borderWidth ) );
+        padding-inline: var( --_borderWidth );
     }
     &.is-interactive &__title{
         display: none;
@@ -21,25 +32,28 @@
 
 
     &--default {
-        --comp-brd: var( --grey-60 );
-        --comp-bg: #fff;
+        --_borderWidth: var( --tabs-borderWidth, min( 2px, .15em ) );
+        --_borderColor: var( --tabs-borderColor, var( --global-borderColor) );
+        --_hoverColor: var( --tabs-borderHover, var( --global-primary ) );
+        --_fill: #f9f9f9;
     }
     &--default &__toggle {
         display: block;
+        height: 100%;
         text-align: center;
-        padding: var( --gap-moon );
+        padding: var( --gap-xs );
+        border-bottom: var( --_borderWidth ) solid var( --_borderColor, transparent );
+        background-color: var( --_fill );
+    }
+    &--default &__toggle:not( [aria-selected] ):hover {
+        --_borderColor: var( --global-primary );
     }
     &--default &__toggle[aria-selected] {
-        position: relative;
-        top: 2px;
-        border: 2px solid var( --comp-brd );
-        border-bottom: 0;
-        background: var( --comp-bg );
+        --_borderColor: var( --global-primary );
+        --_fill: color-mix( in oklab, var( --_hoverColor ), transparent 90% );
     }
     &--default.is-interactive &__content {
-        padding: var( --gap ) var( --gap-moon );
-        border: 2px solid var( --comp-brd );
-        background: var( --comp-bg );
-        border-radius: 0 0 5px 5px;
+        padding: var( --gap ) var( --gap-s );
+        border: var( --_borderWidth ) solid var( --_borderColor );
     }
 }

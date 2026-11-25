@@ -1,0 +1,142 @@
+{% set tpl_body_classes = 't-cv' %}
+{% set page_title = page.header.headline|default( page.title ) %}
+{% extends 'partials/base.html.twig' %}
+
+{% set collection = grav.get('flex').collection( 'portfolio' ) %}
+
+{% if header.portfolio is iterable %}
+    {% set portfolio = collection.select( header.portfolio ) %}
+{% else %}
+    {% set portfolio = collection
+        .filterBy( { 'published': true } )
+        .sort( { date: 'DESC' } )
+        .limit( 0, 4 )
+    %}
+{% endif %}
+
+{% block langswitcher %}
+{% endblock %}
+
+{% block content %}
+    <div class="modular wrapping">
+        {% if header.hero.headline is not defined %}
+            <h1 class="pageHeadline">
+                {{ page_title }}
+            </h1>
+        {% endif %}
+        {% if page.content|length %}
+            <p class="jobtitle">
+                {{ header.claim }}
+            </p>
+        {% endif %}
+    </div>
+
+    <div class="columns">
+        <div class="item aboutme">
+            <h2 class="headline vh">Über Mich</h2>
+            <div class="textflow">
+            {{ page.content|raw }}
+            </div>
+        </div>
+
+        <div class="item cv">
+            <h2 class="headline vh">Lebenslauf</h2>
+            <ul class="timeline">
+            {% for item in header.cv %}
+                <li class="item">
+                    <p class="date">{{ item.date }}</p>
+                    {% if item.job -%}
+                    <p class="job">{{ item.job }}</p>
+                    {% endif -%}
+                    {% if item.company -%}
+                    <p class="job">{{ item.company }}</p>
+                    {% endif -%}
+                    {% if item.description -%}
+                    <div class="textflow">
+                        {{ item.description|markdown|raw }}
+                    </div>
+                    {% endif -%}
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+
+        <div class="item references">
+            <h2 class="headline vh">{{ 'THEME_C.PORTFOLIO.TITLE'|t|e }}</h2>
+            <div class="list">
+            {% for item in portfolio -%}
+                {% set file = item.media[ item.image|first.name ] -%}
+                {% set ref = 'ref-' ~ loop.index -%}
+                {% set prev = 'ref-' ~ ( loop.first ? loop.length : loop.index - 1 ) -%}
+                {% set next = 'ref-' ~ ( loop.last ? 1 : loop.index + 1 ) -%}
+                <div class="reference">
+                    <img class="image" src="{{ file.resize( 400, null ).url }}" alt="" loading="lazy">
+                    <h3 class="title">
+                        {{ item.title }}
+                        {% if item.offline %}
+                            <small>(offline)</small>
+                        {% endif %}
+                    </h3>
+                    <p class="services">
+                        {{ item.services|join( ', ' )|trim }}
+
+                        <button class="more" id="{{ ref }}-open" commandfor="{{ ref }}" command="show-modal" aria-haspopup="dialog">
+                            <span class="vh">{{ 'THEME_C.PORTFOLIO.VIEW'|t|e }}: {{ item.title }}</span>
+                        </button>
+                    </p>
+                </div>
+                <dialog class="ref-dialog" id="{{ ref }}" closedby="any" aria-labelledby="{{ ref }}-title">
+                    <div class="inner">
+                        <button class="close" commandfor="{{ ref }}" command="close" autofocus>
+                            {{ svg( 'close' )|raw }}
+                            <span class="vh">{{ 'THEME_C.PORTFOLIO.CLOSE'|t|e }}</span>
+                        </button>
+                        <img class="image" src="{{ file.resize( 1600, null ).url }}" alt="{{ 'THEME_C.PORTFOLIO.MOCKUP'|t( item.title )|e }}" loading="lazy">
+                        <h2 class="headline" id="{{ ref }}-title">
+                            {{ item.title }}
+                            {% if item.offline %}
+                                <small>(offline)</small>
+                            {% endif %}
+                        </h2>
+                        <p class="services">
+                            {{ item.services|join( ', ' )|trim }}
+                        </p>
+                        {% if item.description -%}
+                        <div class="textflow">
+                            {{ item.description|markdown|raw }}
+                        </div>
+                        {% endif -%}
+                        {% if item.url and not item.offline -%}
+                        <p>
+                            <a class="button is-ghost is-small" href="{{ item.url }}">
+                                {{ 'THEME_C.PORTFOLIO.VISIT'|t|e }}
+                                {{ svg( 'external' )|raw }}
+                            </a>
+                        </p>
+                        {% endif -%}
+                        <nav class="nav" aria-label="{{ 'THEME_C.PORTFOLIO.TITLE'|t|e }}">
+                            <button class="button is-quiet is-small" commandfor="{{ prev }}" command="show-modal" data-nav="prev">
+                                {{ svg( 'angle-left' )|raw }}
+                                {{ 'THEME_C.PORTFOLIO.PREV'|t|e }}
+                            </button>
+                            <p class="counter">
+                                <span aria-hidden="true">{{ loop.index }} / {{ loop.length }}</span>
+                                <span class="vh">{{ 'THEME_C.PORTFOLIO.COUNTER'|t( loop.index, loop.length )|e }}</span>
+                            </p>
+                            <button class="button is-quiet is-small" commandfor="{{ next }}" command="show-modal" data-nav="next">
+                                {{ 'THEME_C.PORTFOLIO.NEXT'|t|e }}
+                                {{ svg( 'angle-right' )|raw }}
+                            </button>
+                        </nav>
+                    </div>
+                </dialog>
+            {% endfor -%}
+                <p class="callout">
+                    <a href="/portfolio" class="button is-ghost">
+                        Mehr Referenzen
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

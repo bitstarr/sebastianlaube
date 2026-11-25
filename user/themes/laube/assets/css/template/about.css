@@ -1,0 +1,48 @@
+.about {
+    grid-column: mid;
+    display: grid;
+    gap: var( --gap-m ) var( --gap-l );
+
+    .pageHeadline {
+        margin-block-end: 0;
+    }
+
+    .photo {
+        justify-self: center;
+        max-width: 20rem;
+        padding: .6em;
+        background: #fff;
+        box-shadow: var( --shadow-1 );
+        rotate: -2deg;
+        transition: rotate .2s, scale .2s, box-shadow .2s;
+
+        &:hover {
+            box-shadow: var( --shadow-2 );
+            rotate: -3deg;
+            scale: 1.1;
+        }
+    }
+
+    .caption {
+        text-align: center;
+        padding-block: .4em;
+    }
+
+    @media (width > 46em) {
+        grid-template-columns: 33% auto;
+        grid-template-rows: auto 1fr;
+
+        .pageHeadline {
+            text-align: start;
+
+            &::after {
+                inset-inline-start: 0;
+                transform: translate( 0, -50% );
+            }
+        }
+
+        .photo {
+            grid-row: 1/3;
+        }
+    }
+}
